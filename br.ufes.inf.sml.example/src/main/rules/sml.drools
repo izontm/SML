@@ -1,0 +1,76 @@
+package br.ufes.inf.sml.example.rules;
+
+import org.drools.situation.base.SituationHelper;
+import org.drools.situation.base.CurrentSituation;
+import org.drools.situation.base.DeactivateSituationEvent;
+import br.ufes.inf.sml.example.model.*;
+import br.ufes.inf.sml.example.situation.*;
+import br.ufes.inf.sml.example.builtin.*;
+
+
+rule "LoggedInRule"
+    when
+        account : Account()
+        device : Device()
+        $access1 : Access(isAccessed == account, isAcessing == device)
+        
+    then
+        SituationHelper.situationDetected(drools, LoggedInSituation.class);
+
+end
+rule "OngoingSuspiciousWithdrawalRule"
+    when
+        $account1 : Account()
+        $atm1 : ATM()
+        $ongoingwithdrawal1 : OngoingWithdrawal(value > new Monetary("$1000"), hasWithdrawal == $account1, doWithdrawal == $atm1)
+        
+    then
+        SituationHelper.situationDetected(drools, OngoingSuspiciousWithdrawalSituation.class);
+
+end
+rule "SuspiciousParallelLoginRule"
+    when
+        $loggedin1 : LoggedInSituation($loggedin1_account:account)
+        exists(CurrentSituation (situation == $loggedin1))
+        $loggedin2 : LoggedInSituation(this overlaps $loggedin1, account == $loggedin1_account)
+        exists(CurrentSituation (situation == $loggedin2))
+        
+    then
+        SituationHelper.situationDetected(drools, SuspiciousParallelLoginSituation.class);
+
+end
+rule "SuspiciousFarawayLoginRule"
+    when
+        $device1 : Device($device1_location:location)
+        $loggedin1 : LoggedInSituation($loggedin1_account:account, device == $device1)
+        exists(CurrentSituation (situation == $loggedin1))
+        $device2 : Device(location not near["500km"] $device1_location)
+        $loggedin2 : LoggedInSituation(this before[0s, 2s] $loggedin1, account == $loggedin1_account, device == $device2)
+        not(exists(CurrentSituation (situation == $loggedin2)))
+        
+    then
+        SituationHelper.situationDetected(drools, SuspiciousFarawayLoginSituation.class);
+
+end
+rule "AccountUnderObservationRule"
+    when
+        account : Account()
+        $ongoingsuspiciouswithdrawal1 : OngoingSuspiciousWithdrawalSituation(account == account)
+        not(exists(CurrentSituation (situation == $ongoingsuspiciouswithdrawal1)))
+        exists(DeactivateSituationEvent(situation == $ongoingsuspiciouswithdrawal1) over window:time(30d))
+        
+    then
+        SituationHelper.situationDetected(drools, AccountUnderObservationSituation.class);
+
+end
+rule "AnyAccountUnderObservationRule"
+    when
+        $ongoingsuspiciouswithdrawal1 : OngoingSuspiciousWithdrawalSituation()
+        not(exists(CurrentSituation (situation == $ongoingsuspiciouswithdrawal1)))
+        exists(DeactivateSituationEvent(situation == $ongoingsuspiciouswithdrawal1) over window:time(30d))
+        
+    then
+        SituationHelper.situationDetected(drools, AnyAccountUnderObservationSituation.class);
+
+end
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ctx:ContextModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.example.org/ctx">
+  <elements xsi:type="ctx:EntityClass" name="SpatialEntity" isAbstract="true">
+    <attribute name="location" datatype="//@elements.20"/>
+  </elements>
+  <elements xsi:type="ctx:EntityClass" name="Device" superclass="//@elements.0" isAbstract="true"/>
+  <elements xsi:type="ctx:DataType" name="double"/>
+  <elements xsi:type="ctx:EntityClass" name="ATM" superclass="//@elements.1"/>
+  <elements xsi:type="ctx:EntityClass" name="Computer" superclass="//@elements.1"/>
+  <elements xsi:type="ctx:EntityClass" name="MobileDevice" superclass="//@elements.1"/>
+  <elements xsi:type="ctx:EntityClass" name="IntangibleEntity" isAbstract="true"/>
+  <elements xsi:type="ctx:EntityClass" name="Account" superclass="//@elements.6"/>
+  <elements xsi:type="ctx:RelatorClass" name="OngoingWithdrawal">
+    <attribute name="value" datatype="//@elements.21"/>
+  </elements>
+  <elements xsi:type="ctx:RelatorClass" name="Access"/>
+  <elements xsi:type="ctx:Association" name="isAccessed" source="//@elements.9" target="//@elements.7"/>
+  <elements xsi:type="ctx:Association" name="hasWithdrawal" source="//@elements.8" target="//@elements.7"/>
+  <elements xsi:type="ctx:Association" name="doWithdrawal" source="//@elements.8" target="//@elements.3"/>
+  <elements xsi:type="ctx:Association" name="isAcessing" source="//@elements.9" target="//@elements.1"/>
+  <elements xsi:type="ctx:ComparativeFormalRelation" name="equals"/>
+  <elements xsi:type="ctx:ComparativeFormalRelation" name="greater than"/>
+  <elements xsi:type="ctx:ComparativeFormalRelation" name="&lt;"/>
+  <elements xsi:type="ctx:ComparativeFormalRelation" name="&lt;="/>
+  <elements xsi:type="ctx:ComparativeFormalRelation" name=">="/>
+  <elements xsi:type="ctx:ComparativeFormalRelation" name="near"/>
+  <elements xsi:type="ctx:DataType" name="Location"/>
+  <elements xsi:type="ctx:DataType" name="Monetary"/>
+</ctx:ContextModel>
