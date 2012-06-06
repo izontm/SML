@@ -1,0 +1,48 @@
+package br.ufes.inf.sml.example.rules;
+
+import org.drools.situation.base.SituationHelper;
+import br.ufes.inf.sml.example.*;
+
+
+rule "BigTest"
+    when
+        $sit_test1 : Test(/*TODO*/)
+        $sit_fever1 : Fever(/*TODO*/)
+        $carro : Car($carro_internal:internal, internal == "38")
+        $car1 : Car($car1_internal:internal, external == $carro_internal, external == $car1_internal)
+        $pessoa : Person(external > $car1_internal)
+        $person1 : Person()
+        $loving1 : Loving(lover = $person1, loving = $pessoa)
+        $sit_fever2 : Fever(/*TODO*/)
+        $drive1 : Drive($drive1_external:external, car = $carro, person = $person1)
+        $person2 : Person(this == $sit_fever2_pessoa, external > $drive1_external)
+        $loving2 : Loving(lover = $pessoa, loving = $person2)
+        $loving3 : Loving(lover = $person2, loving = $person1)
+        $drive2 : Drive(person = $pessoa, car = $car1)
+        
+    then
+        SituationBigTest s = new SituationBigTest();
+        s.setPessoa($pessoa); 
+        s.setCarro($carro); 
+        insert(s);
+        
+end
+rule "Fever"
+    when
+        $person : Person(temperature > "37")
+        
+    then
+        SituationFever s = new SituationFever();
+        s.setPerson($person); 
+        insert(s);
+        
+end
+rule "Test"
+    when
+        $person1 : Person()
+        
+    then
+        SituationTest s = new SituationTest();
+        insert(s);
+        
+end

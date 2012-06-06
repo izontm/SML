@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/br.ufes.inf.sml/src"
+    modelPluginID="br.ufes.inf.sml" modelName="Sml" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../br.ufes.inf.ctx/model/ctx.genmodel#//ctx">
+  <foreignModel>sml.ecore</foreignModel>
+  <genPackages prefix="Sml" disposableProviderFactory="true" ecorePackage="sml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sml.ecore#//TemporalOperatorType">
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/after"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/before"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/coincides"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/during"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/finishes"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/finished_by"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/includes"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/meets"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/met_by"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/overlaps"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/overlapped_by"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/starts"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//TemporalOperatorType/started_by"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sml.ecore#//SituationAttributeType">
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//SituationAttributeType/startTime"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//SituationAttributeType/finalTime"/>
+    </genEnums>
+    <genClasses ecoreClass="sml.ecore#//SMLModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//SMLModel/elements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SMLModel/contextModel"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//SMLModelElement"/>
+    <genClasses ecoreClass="sml.ecore#//SituationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//SituationType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//SituationType/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//SituationTypeBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//SituationTypeBlock/disjoint"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//SituationTypeElement"/>
+    <genClasses image="false" ecoreClass="sml.ecore#//Node">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Node/nodeParameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Node/sourceRelation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Node/targetRelation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//ExportableNode"/>
+    <genClasses ecoreClass="sml.ecore#//EntityParticipant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//EntityParticipant/isOfType"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//RelatorParticipant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//RelatorParticipant/isOfType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//RelatorParticipant/links"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Link">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Link/isOfType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Link/entity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Link/relator"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//SituationTypeParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SituationTypeParameter/nodeReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//SituationTypeParameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//AttributeReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//AttributeReference/entity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//AttributeReference/attribute"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//OperatorExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//OperatorExpression/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ComparativeRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//ComparativeRelation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//ComparativeRelation/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//ComparativeRelation/relation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//SituationTypeElementContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//SituationTypeElementContainer/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Literal/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Literal/dataType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//Participant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Participant/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//SituationParticipant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SituationParticipant/situationType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SituationParticipant/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//SituationParticipant/isPast"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SituationParticipant/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//SituationParticipant/isNegated"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//SituationParameterReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SituationParameterReference/parameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SituationParameterReference/situation"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//TemporalOperatorExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//TemporalOperatorExpression/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//TemporalOperatorExpression/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//TemporalOperatorExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//SituationAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SituationAttribute/situation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//SituationAttribute/isOfType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//SituationAttribute/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ForallSituation"/>
+    <genClasses ecoreClass="sml.ecore#//ExistsSituation"/>
+  </genPackages>
+</genmodel:GenModel>

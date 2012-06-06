@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ctx:ContextModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.example.org/ctx">
+  <elements xsi:type="ctx:EntityClass" name="Person">
+    <attribute name="internal" datatype="//@elements.8"/>
+    <attribute name="external" datatype="//@elements.8"/>
+    <attribute name="temperature" datatype="//@elements.8"/>
+  </elements>
+  <elements xsi:type="ctx:RelatorClass" name="Loving"/>
+  <elements xsi:type="ctx:Association" name="loving" source="//@elements.1" target="//@elements.0"/>
+  <elements xsi:type="ctx:Association" name="lover" source="//@elements.1" target="//@elements.0"/>
+  <elements xsi:type="ctx:EntityClass" name="Car"/>
+  <elements xsi:type="ctx:RelatorClass" name="Drive"/>
+  <elements xsi:type="ctx:Association" name="person" source="//@elements.5" target="//@elements.0"/>
+  <elements xsi:type="ctx:Association" name="car" source="//@elements.5" target="//@elements.4"/>
+  <elements xsi:type="ctx:DataType" name="Temperature"/>
+  <elements xsi:type="ctx:ComparativeFormalRelation" name=">" target="//@elements.8" source="//@elements.8"/>
+  <elements xsi:type="ctx:ComparativeFormalRelation" name="==" target="//@elements.8" source="//@elements.8"/>
+</ctx:ContextModel>

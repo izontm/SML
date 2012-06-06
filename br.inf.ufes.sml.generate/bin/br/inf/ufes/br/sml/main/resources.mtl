@@ -1,0 +1,221 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains some helpers to code generation 
+ */]
+[module resources('http://www.example.org/sml')]
+
+
+[**
+ * Union of two OrderedSet(SituationTypeElement)
+ */]
+[query public osunion(la: OrderedSet(SituationTypeElement), lb: OrderedSet(SituationTypeElement)): OrderedSet(SituationTypeElement) =
+	lb->iterate(
+		ei : SituationTypeElement;
+		acci : OrderedSet(SituationTypeElement) = la
+		| if acci->includes(ei) then
+			acci
+		else
+			acci->append(ei)
+		endif
+	)
+/]
+
+
+[**
+ * SituationParticipant temporal dependency
+ */]
+[query public situation_tdependency(e : SituationParticipant) : OrderedSet(SituationTypeElement) =
+	e.eContainer(SituationType).eContents(TemporalOperatorExpression)->select(t:TemporalOperatorExpression| t.source = e)->iterate(
+		r:TemporalOperatorExpression;
+		acc : OrderedSet(SituationTypeElement) = OrderedSet{}
+		| if r.target.oclIsUndefined() then
+			acc
+		else
+			let dep : OrderedSet(SituationTypeElement)= dependency(r.target) in
+			if dep->includes(r.source) then
+				osunion(acc, dep)
+			else
+				osunion(acc, dep)->append(r.target)
+			endif
+		endif
+	)
+/]
+
+
+[**
+ * SituationParticipant formal dependency
+ */]
+[query public situation_fdependency(e : SituationParticipant) : OrderedSet(SituationTypeElement) =
+	e.parameter.sourceRelation->iterate(
+		r:ComparativeRelation;
+		acc : OrderedSet(SituationTypeElement) = OrderedSet{}
+		| if r.target.oclIsUndefined() then
+			acc
+		else
+			let dep : OrderedSet(SituationTypeElement)= dependency(r.target) in
+			if dep->includes(r.source) then
+				osunion(acc, dep)
+			else
+				osunion(acc, dep)->append(r.target)
+			endif
+		endif
+	)
+/]
+
+
+[**
+ * Add an SituationTypeElement to a OrderedSet if are not included in
+ */]
+[query public add_dep(acc:OrderedSet(SituationTypeElement), e : SituationTypeElement) : OrderedSet(SituationTypeElement) =
+	let dep : OrderedSet(SituationTypeElement)= dependency(e) in
+	if dep->includes(e) then
+		osunion(acc, dep)
+	else
+		osunion(acc, dep)->append(e)
+	endif
+/]
+
+
+[**
+ * Relational dependency between entities
+ */]
+[query public relational_dependency(e : RelatorParticipant) : OrderedSet(SituationTypeElement) =
+	e.links->iterate(
+			l: Link;
+			acc : OrderedSet(SituationTypeElement) = OrderedSet{}
+			| if l.entity.oclIsUndefined() then
+				acc
+			else
+				if acc->includes(l.entity) then
+					acc
+				else
+					osunion(acc, dependency(l.entity))->append(l.entity)
+				endif
+			endif
+		)
+/]
+
+
+[**
+ * Formal dependency between entities
+ */]
+[query public formal_dependency(e : Participant) : OrderedSet(SituationTypeElement) =
+	e.targetRelation->asSequence()->union(e.sourceRelation->asSequence())->union(e.reference.targetRelation)->union(e.reference.sourceRelation)->iterate(
+		r:ComparativeRelation;
+		acc : OrderedSet(SituationTypeElement) = OrderedSet{}
+		| 
+		if r.target.oclIsUndefined() then
+			acc
+		else
+			if r.target.oclIsTypeOf(AttributeReference) then
+				let rn: AttributeReference = r.target.oclAsType(AttributeReference) in
+				if acc->includes(rn.entity) then
+					acc
+				else
+					if rn.entity = e then
+						acc
+					else
+						let dep : OrderedSet(SituationTypeElement)= dependency(rn.entity) in
+						if dep->includes(rn.entity) then
+							osunion(acc, dep)
+						else
+							osunion(acc, dep)->append(rn.entity)
+						endif
+					endif
+				endif
+			else
+				if r.target.oclIsTypeOf(SituationParameterReference) then
+					let sp: SituationParameterReference = r.target.oclAsType(SituationParameterReference) in
+					if acc->includes(sp.situation) then
+						acc
+					else
+						let dep : OrderedSet(SituationTypeElement)= dependency(sp.situation) in
+						if dep->includes(sp.situation) then
+							osunion(acc, dep)
+						else
+							osunion(acc, dep)->append(sp.situation)
+						endif
+					endif
+				else
+					if acc->includes(r.target) then
+						acc
+					else
+						if r.target = e then
+							acc
+						else
+							if r.target.oclIsKindOf(Participant) then
+								let dep : OrderedSet(SituationTypeElement)= dependency(r.target) in
+								if dep->includes(r.target) then
+									osunion(acc, dep)
+								else
+									osunion(acc, dep)->append(r.target)
+								endif
+							else
+								acc
+							endif
+						endif
+					endif
+				endif
+			endif
+		endif
+	)
+/]
+
+
+[**
+ * OrderedSet of SituationTypeElement that a SituationTypeElement depends
+ */]
+[query public dependency(e : SituationTypeElement) : OrderedSet(SituationTypeElement) =
+	let ordered : OrderedSet(SituationTypeElement) = OrderedSet(SituationTypeElement){} in
+	if e.oclIsTypeOf(RelatorParticipant) then
+		osunion(relational_dependency(e.oclAsType(RelatorParticipant)), formal_dependency(e.oclAsType(RelatorParticipant)))
+	else
+		if e.oclIsTypeOf(EntityParticipant) then
+			formal_dependency(e.oclAsType(EntityParticipant))
+		else
+			if e.oclIsKindOf(SituationParticipant) then
+				osunion(situation_tdependency(e.oclAsType(SituationParticipant)),situation_fdependency(e.oclAsType(SituationParticipant)))
+			else
+				ordered
+			endif
+		endif
+	endif
+ /]
+
+
+[**
+ * Build the dependency relationships among a set of entities (SituationTypeElement).
+ */]
+[query public ordered(origin : OrderedSet(SituationTypeElement)) : OrderedSet(SituationTypeElement) = 
+	let ordered : OrderedSet(SituationTypeElement) = OrderedSet(SituationTypeElement){} in
+	origin->select(e:SituationTypeElement| e.oclIsTypeOf(EntityParticipant) or e.oclIsTypeOf(RelatorParticipant) or e.oclIsKindOf(SituationParticipant))->iterate(
+		e : SituationTypeElement;
+		acc : OrderedSet(SituationTypeElement) = OrderedSet{}
+		|  if acc->includes(e) then
+			acc
+		else
+			let dep : OrderedSet(SituationTypeElement)= dependency(e) in
+			if dep->includes(e) then
+				osunion(acc, dep)
+			else
+				osunion(acc, dep)->append(e)
+			endif
+		endif
+	)
+/]
+
+
+[**
+ * Name of a java class thar represent a situation element
+ */]
+[template public class_name(n : OclAny) post (trim())]
+	[if (n.oclIsTypeOf(SituationType))]
+		[n.oclAsType(SituationType).name.toUpperFirst()/]Situation
+	[/if]
+	[if (n.oclIsTypeOf(EntityParticipant))]
+		[n.oclAsType(EntityParticipant).isOfType.name.toUpperFirst()/]
+	[/if]
+	[if (n.oclIsTypeOf(RelatorParticipant))]
+		[n.oclAsType(RelatorParticipant).isOfType.name.toUpperFirst()/]
+	[/if]
+[/template]

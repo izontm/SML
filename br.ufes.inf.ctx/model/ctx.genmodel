@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/br.ufes.inf.ctx/src"
+    modelPluginID="br.ufes.inf.ctx" modelName="Ctx" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>ctx.ecore</foreignModel>
+  <genPackages prefix="Ctx" disposableProviderFactory="true" ecorePackage="ctx.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ctx.ecore#//PrimitiveDataTypeType">
+      <genEnumLiterals ecoreEnumLiteral="ctx.ecore#//PrimitiveDataTypeType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="ctx.ecore#//PrimitiveDataTypeType/Number"/>
+      <genEnumLiterals ecoreEnumLiteral="ctx.ecore#//PrimitiveDataTypeType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="ctx.ecore#//PrimitiveDataTypeType/double"/>
+      <genEnumLiterals ecoreEnumLiteral="ctx.ecore#//PrimitiveDataTypeType/boolean"/>
+    </genEnums>
+    <genClasses ecoreClass="ctx.ecore#//ContextModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ctx.ecore#//ContextModel/elements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ctx.ecore#//ModelClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ctx.ecore#//ModelClass/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="ctx.ecore#//EntityClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctx.ecore#//EntityClass/superclass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctx.ecore#//EntityClass/isAbstract"/>
+    </genClasses>
+    <genClasses ecoreClass="ctx.ecore#//RelatorClass"/>
+    <genClasses ecoreClass="ctx.ecore#//Attribute">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ctx.ecore#//Attribute/aclass"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ctx.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctx.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ctx.ecore#//DataType"/>
+    <genClasses ecoreClass="ctx.ecore#//ComparativeFormalRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctx.ecore#//ComparativeFormalRelation/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctx.ecore#//ComparativeFormalRelation/source"/>
+    </genClasses>
+    <genClasses ecoreClass="ctx.ecore#//Association">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctx.ecore#//Association/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctx.ecore#//Association/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ctx.ecore#//ContextModelElement"/>
+    <genClasses ecoreClass="ctx.ecore#//PrimitiveDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctx.ecore#//PrimitiveDataType/primitive"/>
+    </genClasses>
+    <genClasses ecoreClass="ctx.ecore#//QualitativeFormalRelation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ctx.ecore#//QualitativeFormalRelation/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="ctx.ecore#//QualitativeParameter"/>
+    <genClasses image="false" ecoreClass="ctx.ecore#//TypedElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctx.ecore#//TypedElement/datatype"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ctx.ecore#//ComparableElements"/>
+  </genPackages>
+</genmodel:GenModel>

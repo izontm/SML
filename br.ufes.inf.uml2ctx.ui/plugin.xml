@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.uml"
+            id="br.ufes.inf.uml2context.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="SML" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="br.ufes.inf.uml2context.ui.popupMenus.AcceleoGenerateUMLtoContextModelAction"
+               enablesFor="+"
+               id="br.ufes.inf.uml2context.ui.popupMenus.acceleoGenerateUMLtoContextModelAction"
+               icon="icons/default.gif"
+               label="Generate Context Model"
+               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+      </objectContribution>
+   </extension>
+</plugin>

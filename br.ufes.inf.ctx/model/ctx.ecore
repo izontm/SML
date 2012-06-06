@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ctx"
+    nsURI="http://www.example.org/ctx" nsPrefix="ctx">
+  <eClassifiers xsi:type="ecore:EClass" name="ContextModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ContextModelElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelClass" abstract="true" eSuperTypes="#//ContextModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//Attribute" containment="true" eOpposite="#//Attribute/aclass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityClass" eSuperTypes="#//ModelClass #//ComparableElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superclass" eType="#//EntityClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelatorClass" eSuperTypes="#//ModelClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement #//TypedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aclass" eType="#//ModelClass"
+        eOpposite="#//ModelClass/attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//ContextModelElement #//ComparableElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComparativeFormalRelation" eSuperTypes="#//ContextModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+        eType="#//ComparableElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
+        eType="#//ComparableElements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//ContextModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//RelatorClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//EntityClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextModelElement" abstract="true"
+      eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QualitativeFormalRelation" eSuperTypes="#//ContextModelElement #//TypedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//QualitativeParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualitativeParameter" eSuperTypes="#//NamedElement #//TypedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComparableElements" abstract="true"/>
+</ecore:EPackage>

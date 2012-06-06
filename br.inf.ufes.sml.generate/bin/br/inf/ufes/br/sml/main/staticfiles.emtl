@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="staticfiles" nsURI="br::inf::ufes::br::sml::main::staticfiles" startHeaderPosition="83" endHeaderPosition="183">
+    <documentation xsi:type="mtl:ModuleDocumentation">
+      <body startPosition="32" endPosition="80" value="&#xA;The documentation of the module generate.&#xA;&#xA;"/>
+    </documentation>
+    <input>
+      <takesTypesFrom href="http://www.example.org/sml#/"/>
+    </input>
+    <imports href="resources.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="javaStatic" visibility="Public">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/javaMain">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aSMLModel" referredVariable="/0/javaStatic/aSMLModel">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/javaRuleThread">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aSMLModel" referredVariable="/0/javaStatic/aSMLModel">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+        </argument>
+      </body>
+      <parameter name="aSMLModel">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="javaMain" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/14">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="javaPackage">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#xA;import org.drools.KnowledgeBase;&#xA;import org.drools.KnowledgeBaseFactory;&#xA;import org.drools.builder.KnowledgeBuilder;&#xA;import org.drools.builder.KnowledgeBuilderConfiguration;&#xA;import org.drools.builder.KnowledgeBuilderError;&#xA;import org.drools.builder.KnowledgeBuilderErrors;&#xA;import org.drools.builder.KnowledgeBuilderFactory;&#xA;import org.drools.builder.ResourceType;&#xA;import org.drools.builder.conf.EvaluatorOption;&#xA;&#xA;import org.drools.io.ResourceFactory;&#xA;import org.drools.runtime.StatefulKnowledgeSession;&#xA;import org.drools.situation.base.SituationHelper;&#xA;&#xA;import "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/15">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="javaPackage">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".model.*;&#xA;import "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/16">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="javaPackage">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".situation.*;&#xA;import "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/17">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="builtinsPackage">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".*;&#xA;// "/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;// &#xA;// import java.lang.*&#xA;//&#xA;// "/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="for imports">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;/**&#xA; * This is a sample class to launch a rule.&#xA; */&#xA;&#xA;public class Main {&#xA;&#xA;&#x9;static RuleEngineThread engine = null;&#xA;&#x9;&#xA;    public static final void main(String"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="  args) {&#xA;        try {&#xA;            // load up the knowledge base&#xA;            KnowledgeBase kbase = readKnowledgeBase();&#xA;            StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();&#xA;            engine = new RuleEngineThread(ksession);&#xA;            engine.start();&#xA;            &#xA;&#x9;&#x9;&#x9;// "/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;// Insert initial objects in knowledge session, for instance:&#xA;&#x9;&#x9;&#x9;// &#xA;&#x9;&#x9;&#x9;// Person p = new Person(&quot;Mary&quot;);&#xA;&#x9;&#x9;&#x9;// ksession.insert(p);&#xA;&#x9;&#x9;&#x9;// &#xA;&#x9;&#x9;&#x9;// "/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="for initial ksession objects">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;            &#xA;        } catch (Throwable t) {&#xA;            t.printStackTrace();&#xA;        }&#xA;    }&#xA;&#xA;    private static KnowledgeBase readKnowledgeBase() throws Exception {&#xA;    &#x9;&#xA;    &#x9;KnowledgeBuilderConfiguration builderConf = KnowledgeBuilderFactory.newKnowledgeBuilderConfiguration();&#xA;        SituationHelper.setBuilderConfSituationAwareness(builderConf);&#xA;&#x9;&#x9;// "/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;// Insert aditional options here, for instance:&#xA;&#x9;&#x9;// &#xA;&#x9;&#x9;// builderConf.setOption(EvaluatorOption.get(&quot;near&quot;, new NearEvaluatorDefinition()));&#xA;&#x9;&#x9;// &#xA;&#x9;&#x9;// "/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="for aditional conf">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;    &#x9;KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder(builderConf);&#xA;    &#x9;SituationHelper.setKnowledgeBuilderSituationAwareness(kbuilder);&#xA;        &#xA;    &#x9;//Rule Resources&#xA;    &#x9;kbuilder.add(ResourceFactory.newClassPathResource(&quot;"/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/23">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="situationFile">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;), ResourceType.DRL);&#xA;&#xA;&#x9;&#x9;// "/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;// Insert aditional resources here, for instance:&#xA;&#x9;&#x9;// &#xA;&#x9;&#x9;// kbuilder.add(ResourceFactory.newClassPathResource(&quot;my.drl&quot;), ResourceType.DRL);&#xA;&#x9;&#x9;// &#xA;&#x9;&#x9;// "/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="for aditional resources">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;   &#xA;        SituationHelper.refactorSaliences(kbuilder);&#xA;        &#xA;        KnowledgeBuilderErrors errors = kbuilder.getErrors();&#xA;        if (errors.size() > 0) {&#xA;            for (KnowledgeBuilderError error: errors) {&#xA;                System.err.println(error);&#xA;            }&#xA;            throw new IllegalArgumentException(&quot;Could not parse knowledge.&quot;);&#xA;        }        &#xA;&#xA;        &#xA;        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();&#xA;        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());&#xA;        &#xA;        return kbase;&#xA;    }&#xA;&#xA;}&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/12">
+                      <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="genDir">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </argument>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </source>
+                <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/12">
+                    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="javaDir">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </source>
+            <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/replaceAll">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/12">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="javaPackage">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="\.">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </argument>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/Main.java">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aSMLModel">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="javaRuleThread" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/31">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="javaPackage">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#xA;import org.drools.runtime.StatefulKnowledgeSession;&#xA;&#xA;class RuleEngineThread extends Thread {&#xA;&#x9;&#xA;&#x9;private StatefulKnowledgeSession ksession;&#xA;&#x9;&#xA;&#x9;public RuleEngineThread(StatefulKnowledgeSession ksession) {&#xA;&#x9;&#x9;this.ksession = ksession;&#xA;&#x9;}&#xA;&#xA;    public void run() {&#xA;    &#x9;&#xA;    &#x9;this.ksession.fireUntilHalt();&#xA;    &#x9;&#xA;    }&#xA;&#xA;}&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/29">
+                      <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="genDir">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </argument>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </source>
+                <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/29">
+                    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="javaDir">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </source>
+            <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/replaceAll">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/29">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="javaPackage">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="\.">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </argument>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/RuleEngineThread.java">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aSMLModel">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="replaceAll">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="substring">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="replacement">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="javaStatic">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/javaStatic"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aSMLModel">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="javaMain">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/javaMain"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aSMLModel">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="javaRuleThread">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/javaRuleThread"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aSMLModel">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+      <eOperations name="getProperty">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="key">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SMLModel_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/sml#//SMLModel"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(SituationTypeElement)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="resources.emtl#/3/OrderedSet(SituationTypeElement)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SituationParticipant_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/sml#//SituationParticipant"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RelatorParticipant_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/sml#//RelatorParticipant"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Participant_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/sml#//Participant"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SituationTypeElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/sml#//SituationTypeElement"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/sml#//SMLModel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/@documentation">
+      <details key="start" value="29"/>
+      <details key="end" value="82"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/javaStatic">
+      <details key="start" value="187"/>
+      <details key="end" value="302"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/javaStatic/@body.0">
+      <details key="start" value="239"/>
+      <details key="end" value="258"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/javaStatic/@body.0/aSMLModel">
+      <details key="start" value="248"/>
+      <details key="end" value="257"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/javaStatic/@body.1">
+      <details key="start" value="260"/>
+      <details key="end" value="262"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/javaStatic/@body.2">
+      <details key="start" value="263"/>
+      <details key="end" value="288"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/javaStatic/@body.2/aSMLModel">
+      <details key="start" value="278"/>
+      <details key="end" value="287"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/javaStatic/aSMLModel">
+      <details key="start" value="215"/>
+      <details key="end" value="235"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/javaMain">
+      <details key="start" value="304"/>
+      <details key="end" value="3646"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/javaMain/@body.0">
+      <details key="start" value="353"/>
+      <details key="end" value="3634"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/javaMain/@body.0/@body.0">
+      <details key="start" value="494"/>
+      <details key="end" value="502"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/javaMain/@body.0/@body.1">
+      <details key="start" value="503"/>
+      <details key="end" value="529"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/javaMain/@body.0/@body.1/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/javaMain/@body.0/@body.1/@argument.0">
+      <details key="start" value="515"/>
+      <details key="end" value="528"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/javaMain/@body.0/@body.2">
+      <details key="start" value="531"/>
+      <details key="end" value="1095"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/javaMain/@body.0/@body.3">
+      <details key="start" value="1096"/>
+      <details key="end" value="1122"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/javaMain/@body.0/@body.3/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/javaMain/@body.0/@body.3/@argument.0">
+      <details key="start" value="1108"/>
+      <details key="end" value="1121"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/javaMain/@body.0/@body.4">
+      <details key="start" value="1124"/>
+      <details key="end" value="1141"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/javaMain/@body.0/@body.5">
+      <details key="start" value="1142"/>
+      <details key="end" value="1168"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/javaMain/@body.0/@body.5/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/javaMain/@body.0/@body.5/@argument.0">
+      <details key="start" value="1154"/>
+      <details key="end" value="1167"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/javaMain/@body.0/@body.6">
+      <details key="start" value="1170"/>
+      <details key="end" value="1191"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/javaMain/@body.0/@body.7">
+      <details key="start" value="1192"/>
+      <details key="end" value="1222"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/javaMain/@body.0/@body.7/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/javaMain/@body.0/@body.7/@argument.0">
+      <details key="start" value="1204"/>
+      <details key="end" value="1221"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/javaMain/@body.0/@body.8">
+      <details key="start" value="1224"/>
+      <details key="end" value="1231"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/javaMain/@body.0/@body.9">
+      <details key="start" value="1231"/>
+      <details key="end" value="1303"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/javaMain/@body.0/@body.9/@body.0">
+      <details key="start" value="1258"/>
+      <details key="end" value="1291"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/javaMain/@body.0/@body.9/@marker">
+      <details key="start" value="1243"/>
+      <details key="end" value="1256"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/javaMain/@body.0/@body.10">
+      <details key="start" value="1303"/>
+      <details key="end" value="1461"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/javaMain/@body.0/@body.11">
+      <details key="start" value="1463"/>
+      <details key="end" value="1466"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/javaMain/@body.0/@body.12">
+      <details key="start" value="1469"/>
+      <details key="end" value="1470"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/javaMain/@body.0/@body.13">
+      <details key="start" value="1472"/>
+      <details key="end" value="1475"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/javaMain/@body.0/@body.14">
+      <details key="start" value="1478"/>
+      <details key="end" value="1784"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/javaMain/@body.0/@body.15">
+      <details key="start" value="1784"/>
+      <details key="end" value="1989"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/javaMain/@body.0/@body.15/@body.0">
+      <details key="start" value="1828"/>
+      <details key="end" value="1977"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/javaMain/@body.0/@body.15/@marker">
+      <details key="start" value="1796"/>
+      <details key="end" value="1826"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/javaMain/@body.0/@body.16">
+      <details key="start" value="1989"/>
+      <details key="end" value="2348"/>
+      <details key="line" value="65"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/javaMain/@body.0/@body.17">
+      <details key="start" value="2348"/>
+      <details key="end" value="2550"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/javaMain/@body.0/@body.17/@body.0">
+      <details key="start" value="2382"/>
+      <details key="end" value="2538"/>
+      <details key="line" value="76"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/javaMain/@body.0/@body.17/@marker">
+      <details key="start" value="2360"/>
+      <details key="end" value="2380"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/javaMain/@body.0/@body.18">
+      <details key="start" value="2550"/>
+      <details key="end" value="2799"/>
+      <details key="line" value="81"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/javaMain/@body.0/@body.19">
+      <details key="start" value="2800"/>
+      <details key="end" value="2828"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/javaMain/@body.0/@body.19/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/javaMain/@body.0/@body.19/@argument.0">
+      <details key="start" value="2812"/>
+      <details key="end" value="2827"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/javaMain/@body.0/@body.20">
+      <details key="start" value="2830"/>
+      <details key="end" value="2859"/>
+      <details key="line" value="85"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/javaMain/@body.0/@body.21">
+      <details key="start" value="2859"/>
+      <details key="end" value="3065"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/javaMain/@body.0/@body.21/@body.0">
+      <details key="start" value="2898"/>
+      <details key="end" value="3053"/>
+      <details key="line" value="88"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/javaMain/@body.0/@body.21/@marker">
+      <details key="start" value="2871"/>
+      <details key="end" value="2896"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/javaMain/@body.0/@body.22">
+      <details key="start" value="3065"/>
+      <details key="end" value="3627"/>
+      <details key="line" value="93"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/javaMain/@body.0/@fileUrl">
+      <details key="start" value="360"/>
+      <details key="end" value="475"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/javaMain/@body.0/@fileUrl/@source">
+      <details key="start" value="360"/>
+      <details key="end" value="462"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/javaMain/@body.0/@fileUrl/@source/@source">
+      <details key="start" value="360"/>
+      <details key="end" value="412"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source">
+      <details key="start" value="360"/>
+      <details key="end" value="408"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source/@source">
+      <details key="start" value="360"/>
+      <details key="end" value="385"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source/@source/@source">
+      <details key="start" value="360"/>
+      <details key="end" value="381"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source/@source/@source/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source/@source/@source/@argument.0">
+      <details key="start" value="372"/>
+      <details key="end" value="380"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source/@source/@argument.0">
+      <details key="start" value="382"/>
+      <details key="end" value="385"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source/@argument.0">
+      <details key="start" value="386"/>
+      <details key="end" value="408"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source/@argument.0/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@source/@argument.0/@argument.0">
+      <details key="start" value="398"/>
+      <details key="end" value="407"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/javaMain/@body.0/@fileUrl/@source/@source/@argument.0">
+      <details key="start" value="409"/>
+      <details key="end" value="412"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/javaMain/@body.0/@fileUrl/@source/@argument.0">
+      <details key="start" value="413"/>
+      <details key="end" value="462"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/javaMain/@body.0/@fileUrl/@source/@argument.0/@source">
+      <details key="start" value="413"/>
+      <details key="end" value="439"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/javaMain/@body.0/@fileUrl/@source/@argument.0/@source/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/javaMain/@body.0/@fileUrl/@source/@argument.0/@source/@argument.0">
+      <details key="start" value="425"/>
+      <details key="end" value="438"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/javaMain/@body.0/@fileUrl/@source/@argument.0/@argument.0">
+      <details key="start" value="451"/>
+      <details key="end" value="456"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/javaMain/@body.0/@fileUrl/@source/@argument.0/@argument.1">
+      <details key="start" value="458"/>
+      <details key="end" value="461"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/javaMain/@body.0/@fileUrl/@argument.0">
+      <details key="start" value="463"/>
+      <details key="end" value="475"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/javaMain/@body.0/@charset">
+      <details key="start" value="484"/>
+      <details key="end" value="491"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/javaMain/aSMLModel">
+      <details key="start" value="330"/>
+      <details key="end" value="350"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/javaRuleThread">
+      <details key="start" value="3648"/>
+      <details key="end" value="4232"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/javaRuleThread/@body.0">
+      <details key="start" value="3703"/>
+      <details key="end" value="4220"/>
+      <details key="line" value="117"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/javaRuleThread/@body.0/@body.0">
+      <details key="start" value="3856"/>
+      <details key="end" value="3864"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/javaRuleThread/@body.0/@body.1">
+      <details key="start" value="3865"/>
+      <details key="end" value="3891"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/javaRuleThread/@body.0/@body.1/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/javaRuleThread/@body.0/@body.1/@argument.0">
+      <details key="start" value="3877"/>
+      <details key="end" value="3890"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/javaRuleThread/@body.0/@body.2">
+      <details key="start" value="3893"/>
+      <details key="end" value="4213"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/javaRuleThread/@body.0/@fileUrl">
+      <details key="start" value="3710"/>
+      <details key="end" value="3837"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/javaRuleThread/@body.0/@fileUrl/@source">
+      <details key="start" value="3710"/>
+      <details key="end" value="3812"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source">
+      <details key="start" value="3710"/>
+      <details key="end" value="3762"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source">
+      <details key="start" value="3710"/>
+      <details key="end" value="3758"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source/@source">
+      <details key="start" value="3710"/>
+      <details key="end" value="3735"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source/@source/@source">
+      <details key="start" value="3710"/>
+      <details key="end" value="3731"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source/@source/@source/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source/@source/@source/@argument.0">
+      <details key="start" value="3722"/>
+      <details key="end" value="3730"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source/@source/@argument.0">
+      <details key="start" value="3732"/>
+      <details key="end" value="3735"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source/@argument.0">
+      <details key="start" value="3736"/>
+      <details key="end" value="3758"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source/@argument.0/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@source/@argument.0/@argument.0">
+      <details key="start" value="3748"/>
+      <details key="end" value="3757"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@source/@argument.0">
+      <details key="start" value="3759"/>
+      <details key="end" value="3762"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@argument.0">
+      <details key="start" value="3763"/>
+      <details key="end" value="3812"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@argument.0/@source">
+      <details key="start" value="3763"/>
+      <details key="end" value="3789"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@argument.0/@source/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@argument.0/@source/@argument.0">
+      <details key="start" value="3775"/>
+      <details key="end" value="3788"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@argument.0/@argument.0">
+      <details key="start" value="3801"/>
+      <details key="end" value="3806"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/javaRuleThread/@body.0/@fileUrl/@source/@argument.0/@argument.1">
+      <details key="start" value="3808"/>
+      <details key="end" value="3811"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/javaRuleThread/@body.0/@fileUrl/@argument.0">
+      <details key="start" value="3813"/>
+      <details key="end" value="3837"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/javaRuleThread/@body.0/@charset">
+      <details key="start" value="3846"/>
+      <details key="end" value="3853"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/javaRuleThread/aSMLModel">
+      <details key="start" value="3680"/>
+      <details key="end" value="3700"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>
