@@ -31,6 +31,7 @@ package [getProperty('droolsPackage')/];
 
 import org.drools.situation.base.SituationHelper;
 import org.drools.situation.base.CurrentSituation;
+import org.drools.situation.base.ActivateSituationEvent;
 import org.drools.situation.base.DeactivateSituationEvent;
 import [getProperty('javaPackage')/].model.*;
 import [getProperty('javaPackage')/].situation.*;
@@ -92,14 +93,18 @@ end
  * Drools pattern for a SituationParticipant in SML model
  */]
 [template public situation_ref(s : SituationParticipant)post (trim())]
-[binding_name(s)/] : [class_name(situationType)/]([relations(s)/])
+[if (s.attribute->size()=0 and s.oclIsTypeOf(ExistsSituation))]
+[if (s.oclAsType(ExistsSituation).isNegated)]not([/if]exists([binding_name(s)/]:[class_name(situationType)/]([relations(s)/]) and [if (s.isPast)]not([/if]exists(CurrentSituation (situation == [binding_name(s)/]))[if (s.isPast)])[/if])[if (s.oclAsType(ExistsSituation).isNegated)])[/if]
+[else]
+[binding_name(s)/]:[class_name(situationType)/]([relations(s)/])
 [if (s.isPast)]
 not(exists(CurrentSituation (situation == [binding_name(s)/])))
 [else]
 exists(CurrentSituation (situation == [binding_name(s)/]))
 [/if]
-[if (s.attribute->size()>0)]
-[if (s.oclIsTypeOf(ExistsSituation))]exists([/if]DeactivateSituationEvent(situation == [binding_name(s)/]) over window:time([s.attribute.literal.value.replace(' days', 'd')/])[if (s.oclIsTypeOf(ExistsSituation))])[/if]
+	[for (a : SituationAttribute | attribute)]
+[if (s.oclIsTypeOf(ExistsSituation))][if (s.oclAsType(ExistsSituation).isNegated)]not([/if]exists([/if][if (a.isOfType.toString() = 'finalTime')]DeactivateSituationEvent[else]ActivateSituationEvent[/if](situation == [binding_name(s)/]) over window:time([a.literal.value.replace(' days', 'd')/])[if (s.oclIsTypeOf(ExistsSituation))][if (s.oclAsType(ExistsSituation).isNegated)])[/if])[/if]
+	[/for]
 [/if]
 [/template]
 
