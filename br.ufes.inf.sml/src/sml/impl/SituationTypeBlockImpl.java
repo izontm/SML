@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import sml.Node;
+import sml.ExportableNode;
 import sml.SituationTypeBlock;
 import sml.SituationTypeElement;
 import sml.SituationTypeElementContainer;
@@ -34,13 +36,12 @@ import sml.SmlPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link sml.impl.SituationTypeBlockImpl#getElements <em>Elements</em>}</li>
- *   <li>{@link sml.impl.SituationTypeBlockImpl#isDisjoint <em>Disjoint</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SituationTypeBlockImpl extends SituationTypeElementImpl implements SituationTypeBlock {
+public class SituationTypeBlockImpl extends NodeImpl implements SituationTypeBlock {
 	/**
 	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -49,27 +50,7 @@ public class SituationTypeBlockImpl extends SituationTypeElementImpl implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SituationTypeElement> elements;
-
-	/**
-	 * The default value of the '{@link #isDisjoint() <em>Disjoint</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDisjoint()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean DISJOINT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isDisjoint() <em>Disjoint</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDisjoint()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean disjoint = DISJOINT_EDEFAULT;
+	protected EList<Node> elements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,32 +76,11 @@ public class SituationTypeBlockImpl extends SituationTypeElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SituationTypeElement> getElements() {
+	public EList<Node> getElements() {
 		if (elements == null) {
-			elements = new EObjectContainmentEList<SituationTypeElement>(SituationTypeElement.class, this, SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS);
+			elements = new EObjectContainmentEList<Node>(Node.class, this, SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS);
 		}
 		return elements;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isDisjoint() {
-		return disjoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisjoint(boolean newDisjoint) {
-		boolean oldDisjoint = disjoint;
-		disjoint = newDisjoint;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmlPackage.SITUATION_TYPE_BLOCK__DISJOINT, oldDisjoint, disjoint));
 	}
 
 	/**
@@ -147,8 +107,6 @@ public class SituationTypeBlockImpl extends SituationTypeElementImpl implements 
 		switch (featureID) {
 			case SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS:
 				return getElements();
-			case SmlPackage.SITUATION_TYPE_BLOCK__DISJOINT:
-				return isDisjoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,10 +122,7 @@ public class SituationTypeBlockImpl extends SituationTypeElementImpl implements 
 		switch (featureID) {
 			case SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS:
 				getElements().clear();
-				getElements().addAll((Collection<? extends SituationTypeElement>)newValue);
-				return;
-			case SmlPackage.SITUATION_TYPE_BLOCK__DISJOINT:
-				setDisjoint((Boolean)newValue);
+				getElements().addAll((Collection<? extends Node>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -184,9 +139,6 @@ public class SituationTypeBlockImpl extends SituationTypeElementImpl implements 
 			case SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS:
 				getElements().clear();
 				return;
-			case SmlPackage.SITUATION_TYPE_BLOCK__DISJOINT:
-				setDisjoint(DISJOINT_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,58 +153,8 @@ public class SituationTypeBlockImpl extends SituationTypeElementImpl implements 
 		switch (featureID) {
 			case SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS:
 				return elements != null && !elements.isEmpty();
-			case SmlPackage.SITUATION_TYPE_BLOCK__DISJOINT:
-				return disjoint != DISJOINT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == SituationTypeElementContainer.class) {
-			switch (derivedFeatureID) {
-				case SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS: return SmlPackage.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == SituationTypeElementContainer.class) {
-			switch (baseFeatureID) {
-				case SmlPackage.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS: return SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (disjoint: ");
-		result.append(disjoint);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SituationTypeBlockImpl

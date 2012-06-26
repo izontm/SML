@@ -570,6 +570,52 @@ public interface CtxPackage extends EPackage {
 	int COMPARABLE_ELEMENTS_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link ctx.impl.PrimitiveFormalRelationImpl <em>Primitive Formal Relation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ctx.impl.PrimitiveFormalRelationImpl
+	 * @see ctx.impl.CtxPackageImpl#getPrimitiveFormalRelation()
+	 * @generated
+	 */
+	int PRIMITIVE_FORMAL_RELATION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_FORMAL_RELATION__NAME = COMPARATIVE_FORMAL_RELATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_FORMAL_RELATION__TARGET = COMPARATIVE_FORMAL_RELATION__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_FORMAL_RELATION__SOURCE = COMPARATIVE_FORMAL_RELATION__SOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Primitive Formal Relation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_FORMAL_RELATION_FEATURE_COUNT = COMPARATIVE_FORMAL_RELATION_FEATURE_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link ctx.ContextModel <em>Context Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -842,6 +888,16 @@ public interface CtxPackage extends EPackage {
 	EClass getComparableElements();
 
 	/**
+	 * Returns the meta object for class '{@link ctx.PrimitiveFormalRelation <em>Primitive Formal Relation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Primitive Formal Relation</em>'.
+	 * @see ctx.PrimitiveFormalRelation
+	 * @generated
+	 */
+	EClass getPrimitiveFormalRelation();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1098,6 +1154,16 @@ public interface CtxPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPARABLE_ELEMENTS = eINSTANCE.getComparableElements();
+
+		/**
+		 * The meta object literal for the '{@link ctx.impl.PrimitiveFormalRelationImpl <em>Primitive Formal Relation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ctx.impl.PrimitiveFormalRelationImpl
+		 * @see ctx.impl.CtxPackageImpl#getPrimitiveFormalRelation()
+		 * @generated
+		 */
+		EClass PRIMITIVE_FORMAL_RELATION = eINSTANCE.getPrimitiveFormalRelation();
 
 	}
 

@@ -143,15 +143,6 @@ public interface SmlFactory extends EFactory {
 	TemporalOperatorExpression createTemporalOperatorExpression();
 
 	/**
-	 * Returns a new object of class '<em>Situation Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Situation Attribute</em>'.
-	 * @generated
-	 */
-	SituationAttribute createSituationAttribute();
-
-	/**
 	 * Returns a new object of class '<em>Exists Situation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

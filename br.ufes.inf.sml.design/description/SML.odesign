@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.obeo.fr/dsl/viewpoint/description/1.1.0" xmlns:description_1="http://www.obeo.fr/dsl/viewpoint/table/description/1.1.0" xmlns:style="http://www.obeo.fr/dsl/viewpoint/description/style/1.1.0" xmlns:tool="http://www.obeo.fr/dsl/viewpoint/description/tool/1.1.0" name="SML">
+  <ownedViewpoints name="sml_viewpoint" label="SML" modelFileExtension="sml">
+    <ownedRepresentations xsi:type="description:DiagramDescription" name="sml_diagram" label="SML Diagram" initialisation="true" showOnStartup="true" domainClass="sml.SMLModel">
+      <metamodel href="http://www.example.org/sml#/"/>
+      <metamodel href="http://www.example.org/ctx#/"/>
+      <diagramInitialisation>
+        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[self/]">
+          <subModelOperations xsi:type="tool:If" conditionExpression="[self.primitiveContextElements->filter(ctx::DataType)->select(d:ctx::DataType|d.name='Time')->size()=0/]">
+            <subModelOperations xsi:type="tool:CreateInstance" typeName="ctx.DataType" referenceName="primitiveContextElements" variableName="datatype">
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Time"/>
+              <subModelOperations xsi:type="tool:If" conditionExpression="[siblings(ctx::PrimitiveFormalRelation)->select(d:ctx::PrimitiveFormalRelation|d.name='within the past')->size()=0/]">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[eContainer()/]">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="ctx.PrimitiveFormalRelation" referenceName="primitiveContextElements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="source" valueExpression="[datatype/]"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="[datatype/]"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="within the past"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </subModelOperations>
+            </subModelOperations>
+          </subModelOperations>
+          <subModelOperations xsi:type="tool:If" conditionExpression="[self.primitiveContextElements->filter(ctx::DataType)->select(d:ctx::DataType|d.name='Duration')->size()=0/]">
+            <subModelOperations xsi:type="tool:CreateInstance" typeName="ctx.DataType" referenceName="primitiveContextElements" variableName="datatype">
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Duration"/>
+            </subModelOperations>
+          </subModelOperations>
+          <subModelOperations xsi:type="tool:If" conditionExpression="[self.primitiveContextElements->filter(ctx::EntityClass)->select(e:ctx::EntityClass|e.name='Situation')->size()=0/]">
+            <subModelOperations xsi:type="tool:CreateInstance" typeName="ctx.EntityClass" referenceName="primitiveContextElements" variableName="situation">
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Situation"/>
+              <subModelOperations xsi:type="tool:SetValue" featureName="isAbstract" valueExpression="[true/]"/>
+              <subModelOperations xsi:type="tool:For" expression="[Sequence{'after','before'}/]" iteratorName="operator">
+                <subModelOperations xsi:type="tool:If" conditionExpression="[siblings(ctx::PrimitiveFormalRelation)->select(d:ctx::PrimitiveFormalRelation|d.name=operator)->size()=0/]">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[eContainer()/]">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="ctx.PrimitiveFormalRelation" referenceName="primitiveContextElements">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="source" valueExpression="[situation/]"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="[situation/]"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[operator/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </subModelOperations>
+              <subModelOperations xsi:type="tool:CreateInstance" typeName="ctx.Attribute" referenceName="attribute">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="final time"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="datatype" valueExpression="[eContainer(SMLModel).primitiveContextElements->filter(ctx::DataType)->select(d:ctx::DataType|d.name='Time')->first()/]"/>
+              </subModelOperations>
+              <subModelOperations xsi:type="tool:CreateInstance" typeName="ctx.Attribute" referenceName="attribute">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="start time"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="datatype" valueExpression="[eContainer(SMLModel).primitiveContextElements->filter(ctx::DataType)->select(d:ctx::DataType|d.name='Time')->first()/]"/>
+              </subModelOperations>
+              <subModelOperations xsi:type="tool:CreateInstance" typeName="ctx.Attribute" referenceName="attribute">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="duration"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="datatype" valueExpression="[eContainer(SMLModel).primitiveContextElements->filter(ctx::DataType)->select(d:ctx::DataType|d.name='Duration')->first()/]"/>
+              </subModelOperations>
+            </subModelOperations>
+          </subModelOperations>
+        </firstModelOperations>
+      </diagramInitialisation>
+      <defaultLayer name="Default">
+        <edgeMappings name="association" label="Association" semanticCandidatesExpression="&lt;%eAllContents()%>" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator']" targetFinderExpression="&lt;%entity%>" sourceFinderExpression="&lt;%relator%>" domainClass="sml.Link" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelExpression="&lt;%isOfType.name%>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="parameter_link" label="Parameter Link" labelDirectEdit="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@optionalLayers[name='test_layer']/@toolSections.0/@ownedTools[name='label_situation']" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@borderedNodeMappings[name='parameter'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@borderedNodeMappings[name='parameter']" targetFinderExpression="&lt;%nodeReference%>">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="&lt;%name%>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="formal_relation" label="Formal Relation" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']/@borderedNodeMappings[name='parameter_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='literal'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']/@borderedNodeMappings[name='parameter_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='block'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" targetFinderExpression="&lt;%target%>" sourceFinderExpression="&lt;%source%>" domainClass="sml.ComparativeRelation" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="&lt;%relation.name%>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="[(not parameter.oclIsUndefined()) and not(parameter = '') and not isNegated/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription labelExpression="&lt;%relation.name%>[&lt;%parameter%>]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[(not parameter.oclIsUndefined()) and not(parameter = '') and isNegated/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription labelExpression="not &lt;%relation.name%>[&lt;%parameter%>]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="temporal_relation" label="Temporal Relation" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" targetFinderExpression="&lt;%target%>" sourceFinderExpression="&lt;%source%>" domainClass="sml.TemporalOperatorExpression" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="&lt;%operator%>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="[(not parameter.oclIsUndefined()) and not(parameter = '') and not isNegated/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription labelExpression="&lt;%operator%>[&lt;%parameter%>]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[(not parameter.oclIsUndefined()) and not(parameter = '') and isNegated/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription labelExpression="not &lt;%operator%>[&lt;%parameter%>]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="entity_attribute" label="Entity Attribute" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" targetFinderExpression="&lt;%entity%>">
+          <style lineStyle="dot" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="&lt;%attribute.name%>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="situation_attribute_edge" label="Situation Attribute" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='sit_attribute']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" targetFinderExpression="&lt;%situation%>">
+          <style lineStyle="dot" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="[isOfType/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="situation_attribute_literal_edge" label="Situation Attribute Literal" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='sit_attribute']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='literal']" targetFinderExpression="&lt;%literal%>">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="within the past">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Situation" labelDirectEdit="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@optionalLayers[name='test_layer']/@toolSections.0/@ownedTools[name='label_situation']" semanticCandidatesExpression="[elements/]" domainClass="sml.SituationType">
+          <borderedNodeMappings name="parameter" label="Parameter" labelDirectEdit="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@optionalLayers[name='test_layer']/@toolSections.0/@ownedTools[name='label_situation']" semanticCandidatesExpression="&lt;%eAllContents()%>" domainClass="sml.SituationTypeParameter">
+            <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="" resizeKind="NSEW" widthComputationExpression="2" heightComputationExpression="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </style>
+          </borderedNodeMappings>
+          <subNodeMappings name="entity" label="Entity" semanticCandidatesExpression="&lt;%eContents()%>" domainClass="sml.EntityParticipant">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="&lt;%isOfType.name%>" labelPosition="node" resizeKind="NSEW" width="5" height="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="&lt;%isOfType.isAbstract%>">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelFormat="italic" showIcon="false" labelExpression="&lt;%isOfType.name%>" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="relator" label="Relator" semanticCandidatesExpression="&lt;%eContents()%>" domainClass="sml.RelatorParticipant">
+            <style xsi:type="style:LozengeNodeDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="&lt;%isOfType.name%>" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="attribute" label="Attribute" semanticCandidatesExpression="&lt;%eContents()%>" domainClass="sml.AttributeReference">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="&lt;%attribute.datatype.name%>" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="6" verticalDiameterComputationExpression="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="literal" label="Literal" labelDirectEdit="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@optionalLayers[name='test_layer']/@toolSections.0/@ownedTools[name='label_literal']" semanticCandidatesExpression="&lt;%eContents()%>" domainClass="sml.Literal">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="&lt;%value%>" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="6" verticalDiameterComputationExpression="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="sit_attribute" label="Situation Attribute" semanticCandidatesExpression="&lt;%eContents()%>" domainClass="sml.SituationAttribute">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Time" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="block" label="Situation Block" semanticCandidatesExpression="&lt;%eAllContents()%>" domainClass="sml.SituationTypeBlock" reusedNodeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='literal']">
+            <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" labelExpression="OR">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="situation_ref" label="Situation Participant" semanticCandidatesExpression="&lt;%eContents()%>" domainClass="sml.SituationParticipant">
+            <borderedNodeMappings name="parameter_ref" label="Parameter Reference" semanticCandidatesExpression="&lt;%parameter%>" domainClass="sml.SituationParameterReference">
+              <style xsi:type="style:LozengeNodeDescription" labelExpression="&lt;%parameter.name%>" resizeKind="NSEW" widthComputationExpression="2" heightComputationExpression="2">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" showIcon="false" labelExpression="  &lt;%situationType.name%>" labelAlignment="LEFT" roundedCorner="true" foregroundColor="//@userColorsPalettes[name='Cores']/@entries[name='Ativo']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+            </style>
+            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(ExistsSituation) and self.oclAsType(ExistsSituation).isNegated/]">
+              <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" showIcon="false" labelExpression="  !∃ &lt;%situationType.name%>" labelAlignment="LEFT" roundedCorner="true" foregroundColor="//@userColorsPalettes[name='Cores']/@entries[name='Ativo']">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(ExistsSituation) and not self.oclAsType(ExistsSituation).isNegated/]">
+              <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" showIcon="false" labelExpression="  ∃ &lt;%situationType.name%>" labelAlignment="LEFT" roundedCorner="true" foregroundColor="//@userColorsPalettes[name='Cores']/@entries[name='Ativo']">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+              </style>
+            </conditionnalStyles>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" showIcon="false" labelExpression="  &lt;%name%>" labelAlignment="LEFT" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <toolSections name="entity_tools" label="Entities">
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="wzd_entity" label="Entity" precondition="[container.oclIsTypeOf(SituationType) or container.oclIsTypeOf(SituationTypeBlock)/]" forceRefresh="true" candidatesExpression="&lt;%eContainer(&quot;SMLModel&quot;).contextModel.eAllContents(&quot;EntityClass&quot;)%>" message="Message">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.EntityParticipant" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="isOfType" valueExpression="&lt;%$element%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="wzd_relator" label="Relator" precondition="[container.oclIsTypeOf(SituationType) or container.oclIsTypeOf(SituationTypeBlock)/]" forceRefresh="true" candidatesExpression="&lt;%eContainer(&quot;SMLModel&quot;).contextModel.eAllContents(&quot;RelatorClass&quot;)%>" message="Message">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.RelatorParticipant" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="isOfType" valueExpression="&lt;%$element%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="new_attribute" label="Attribute" nodeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.AttributeReference" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="wzd_literal" label="Literal" precondition="[container.oclIsTypeOf(SituationType) or container.oclIsTypeOf(SituationTypeBlock)/]" forceRefresh="true" candidatesExpression="&lt;%eContainer(&quot;SMLModel&quot;).contextModel.eAllContents(&quot;DataType&quot;)+eContainer(&quot;SMLModel&quot;).primitiveContextElements.cast(&quot;DataType&quot;)%>" message="Message">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.Literal" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="dataType" valueExpression="&lt;%$element%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="new_block" label="Disjoint" containerMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='block']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationTypeBlock" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="relation_tools" label="Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="new_assoc_ed" label="Association" edgeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@edgeMappings[name='association'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@edgeMappings[name='parameter_link'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@edgeMappings[name='entity_attribute']" extraSourceMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" extraTargetMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[source.eContainer(SituationType)/]">
+                <subModelOperations xsi:type="tool:If" conditionExpression="[source.oclIsTypeOf(RelatorParticipant) and target.oclIsTypeOf(EntityParticipant)/]">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.Link" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="relator" valueExpression="&lt;%$source%>"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="entity" valueExpression="&lt;%$target%>"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[target.oclIsTypeOf(RelatorParticipant) and source.oclIsTypeOf(EntityParticipant)/]">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.Link" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="relator" valueExpression="&lt;%$target%>"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="entity" valueExpression="&lt;%$source%>"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[target.oclIsTypeOf(SituationTypeParameter) and source.oclIsKindOf(ExportableNode)/]">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$target%>">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="nodeReference" valueExpression="&lt;%$source%>"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[source.oclIsTypeOf(SituationTypeParameter) and target.oclIsKindOf(ExportableNode)/]">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$source%>">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="nodeReference" valueExpression="&lt;%$target%>"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[source.oclIsKindOf(Participant) and target.oclIsKindOf(AttributeReference)/]">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$target%>">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="entity" valueExpression="&lt;%$source%>"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[target.oclIsKindOf(Participant) and source.oclIsKindOf(AttributeReference)/]">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$source%>">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="entity" valueExpression="&lt;%$target%>"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="new_formal_ed" label="Formal" edgeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@edgeMappings[name='formal_relation'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@edgeMappings[name='temporal_relation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[source.eContainer(SituationType)/]">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.ComparativeRelation" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="source" valueExpression="&lt;%$source%>"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="&lt;%$target%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="situation_tool" label="Situations">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="new_situation_ref" label="Situation" containerMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:If" conditionExpression="[oclIsTypeOf(SituationType)/]">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationParticipant" referenceName="elements"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[oclIsTypeOf(SMLModel)/]">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationType" referenceName="elements"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="new_param" label="Parameter" nodeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@borderedNodeMappings[name='parameter'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']/@borderedNodeMappings[name='parameter_ref']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:If" conditionExpression="[oclIsTypeOf(SituationType)/]">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationTypeParameter" referenceName="parameter"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[oclIsKindOf(SituationParticipant)/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="situationp_tool" label="Situation Participants">
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="wzd_sit_ref" label="Situation" precondition="&lt;%$container.cast(&quot;SituationType&quot;)%>" candidatesExpression="&lt;%eContainer(&quot;SMLModel&quot;).eAllContents(&quot;SituationType&quot;)%>" message="Message">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationParticipant" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="situationType" valueExpression="&lt;%$element%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="wzd_sit_ref_exists" label="Exists" precondition="&lt;%$container.cast(&quot;SituationType&quot;)%>" candidatesExpression="&lt;%eContainer(&quot;SMLModel&quot;).eAllContents(&quot;SituationType&quot;)%>" message="Message">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.ExistsSituation" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="situationType" valueExpression="&lt;%$element%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="wzd_sit_ref_param" label="Parameter" precondition="&lt;%$container.cast(&quot;SituationParticipant&quot;)%>" candidatesExpression="&lt;%situationType.parameter - parameter.parameter%>" message="Message">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[eContainer(SituationType)/]">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationParameterReference" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="situation" valueExpression="&lt;%$container%>"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="parameter" valueExpression="&lt;%$element%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <optionalLayers name="test_layer" label="Test Tools">
+        <toolSections name="extra_tools" label="Extra Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="new_entity" label="Entity" nodeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.EntityParticipant" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="new_relator" label="Relator" nodeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.RelatorParticipant" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="label_situation" label="Edit Situation Label" forceRefresh="true">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[self/]">
+                <subModelOperations xsi:type="tool:ExternalJavaAction" name="debug" label="debug" id="fr.obeo.dsl.viewpoint.business.api.action.printVariables"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[arg0/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="wzd_sit_ref" label="Situation" precondition="&lt;%$container.cast(&quot;SituationType&quot;)%>" candidatesExpression="&lt;%eContainer(&quot;SMLModel&quot;).eAllContents(&quot;SituationType&quot;)%>" message="Message">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:If" conditionExpression="[oclIsTypeOf(SituationType)/]">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationParticipant" referenceName="elements"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[oclIsTypeOf(SMLModel)/]">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationType" referenceName="elements"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="label_literal" label="Edit Situation Label" forceRefresh="true">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[self/]">
+                <subModelOperations xsi:type="tool:ExternalJavaAction" name="debug" label="debug" id="fr.obeo.dsl.viewpoint.business.api.action.printVariables"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="[arg0/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:PopupMenu" name="teste_pp" label="Teste">
+            <menuItemDescription xsi:type="tool:OperationAction" name="xteste" label="Name">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ExternalJavaAction" name="debug" label="Debug" id="fr.obeo.dsl.viewpoint.business.api.action.printVariables">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[diagram/]">
+                    <subModelOperations xsi:type="tool:ExternalJavaAction" name="debug" label="Debug" id="fr.obeo.dsl.viewpoint.business.api.action.printVariables"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="new_lireral" label="Literal" nodeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='literal']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.Literal" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </optionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="sml_table" label="Situations List" domainClass="sml.SMLModel">
+      <ownedLineMappings name="situations_line" domainClass="sml.SituationType" semanticCandidatesExpression="[elements/]" headerLabelExpression="Teste Linha"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description:DiagramDescription" name="single_situation" label="Single Situation Diagram" domainClass="sml.SituationType">
+      <defaultLayer name="Default">
+        <nodeMappings name="ssd_situation" semanticCandidatesExpression="[self/]" domainClass="sml.SituationType">
+          <style xsi:type="style:SquareDescription" labelExpression="Nome" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+      </defaultLayer>
+      <toolSection>
+        <ownedTools xsi:type="tool:DiagramNavigationDescription" name="navegate_single_situation" label="Situation Diagram" diagramDescription="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='single_situation']">
+          <containerViewVariable name="containerView"/>
+          <containerVariable name="container"/>
+          <representationNameVariable name="diagramName"/>
+        </ownedTools>
+        <ownedTools xsi:type="tool:DiagramCreationDescription" name="new_single_situation" label="Situation Diagram" diagramDescription="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='single_situation']">
+          <initialOperation/>
+          <containerViewVariable name="containerView"/>
+          <representationNameVariable name="diagramName"/>
+        </ownedTools>
+      </toolSection>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <userColorsPalettes name="Cores">
+    <entries xsi:type="description:InterpolatedColor" name="Ativo" colorValueComputationExpression="&lt;%isPast.adapt(&quot;int&quot;)%>">
+      <colorSteps associatedValue="0">
+        <associatedColor href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+      </colorSteps>
+      <colorSteps associatedValue="1">
+        <associatedColor href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+      </colorSteps>
+    </entries>
+    <entries xsi:type="description:UserFixedColor" red="255" green="162" blue="48" name="Laranja"/>
+  </userColorsPalettes>
+</description:Group>

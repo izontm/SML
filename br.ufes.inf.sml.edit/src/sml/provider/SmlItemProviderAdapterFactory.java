@@ -375,29 +375,6 @@ public class SmlItemProviderAdapterFactory extends SmlAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link sml.SituationAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SituationAttributeItemProvider situationAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link sml.SituationAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSituationAttributeAdapter() {
-		if (situationAttributeItemProvider == null) {
-			situationAttributeItemProvider = new SituationAttributeItemProvider(this);
-		}
-
-		return situationAttributeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link sml.ExistsSituation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -532,7 +509,6 @@ public class SmlItemProviderAdapterFactory extends SmlAdapterFactory implements 
 		if (situationParticipantItemProvider != null) situationParticipantItemProvider.dispose();
 		if (situationParameterReferenceItemProvider != null) situationParameterReferenceItemProvider.dispose();
 		if (temporalOperatorExpressionItemProvider != null) temporalOperatorExpressionItemProvider.dispose();
-		if (situationAttributeItemProvider != null) situationAttributeItemProvider.dispose();
 		if (existsSituationItemProvider != null) existsSituationItemProvider.dispose();
 	}
 

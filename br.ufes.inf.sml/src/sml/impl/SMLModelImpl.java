@@ -8,6 +8,7 @@ package sml.impl;
 
 import ctx.ContextModel;
 
+import ctx.ContextModelElement;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import sml.SMLModel;
+import sml.SituationType;
 import sml.SMLModelElement;
 import sml.SmlPackage;
 
@@ -37,6 +39,7 @@ import sml.SmlPackage;
  * <ul>
  *   <li>{@link sml.impl.SMLModelImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link sml.impl.SMLModelImpl#getContextModel <em>Context Model</em>}</li>
+ *   <li>{@link sml.impl.SMLModelImpl#getPrimitiveContextElements <em>Primitive Context Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,7 +54,7 @@ public class SMLModelImpl extends EObjectImpl implements SMLModel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SMLModelElement> elements;
+	protected EList<SituationType> elements;
 
 	/**
 	 * The cached value of the '{@link #getContextModel() <em>Context Model</em>}' reference.
@@ -62,6 +65,16 @@ public class SMLModelImpl extends EObjectImpl implements SMLModel {
 	 * @ordered
 	 */
 	protected ContextModel contextModel;
+
+	/**
+	 * The cached value of the '{@link #getPrimitiveContextElements() <em>Primitive Context Elements</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrimitiveContextElements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ContextModelElement> primitiveContextElements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,9 +100,9 @@ public class SMLModelImpl extends EObjectImpl implements SMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SMLModelElement> getElements() {
+	public EList<SituationType> getElements() {
 		if (elements == null) {
-			elements = new EObjectContainmentEList<SMLModelElement>(SMLModelElement.class, this, SmlPackage.SML_MODEL__ELEMENTS);
+			elements = new EObjectContainmentEList<SituationType>(SituationType.class, this, SmlPackage.SML_MODEL__ELEMENTS);
 		}
 		return elements;
 	}
@@ -137,11 +150,25 @@ public class SMLModelImpl extends EObjectImpl implements SMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ContextModelElement> getPrimitiveContextElements() {
+		if (primitiveContextElements == null) {
+			primitiveContextElements = new EObjectContainmentEList<ContextModelElement>(ContextModelElement.class, this, SmlPackage.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS);
+		}
+		return primitiveContextElements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SmlPackage.SML_MODEL__ELEMENTS:
 				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+			case SmlPackage.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS:
+				return ((InternalEList<?>)getPrimitiveContextElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -159,6 +186,8 @@ public class SMLModelImpl extends EObjectImpl implements SMLModel {
 			case SmlPackage.SML_MODEL__CONTEXT_MODEL:
 				if (resolve) return getContextModel();
 				return basicGetContextModel();
+			case SmlPackage.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS:
+				return getPrimitiveContextElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,10 +203,14 @@ public class SMLModelImpl extends EObjectImpl implements SMLModel {
 		switch (featureID) {
 			case SmlPackage.SML_MODEL__ELEMENTS:
 				getElements().clear();
-				getElements().addAll((Collection<? extends SMLModelElement>)newValue);
+				getElements().addAll((Collection<? extends SituationType>)newValue);
 				return;
 			case SmlPackage.SML_MODEL__CONTEXT_MODEL:
 				setContextModel((ContextModel)newValue);
+				return;
+			case SmlPackage.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS:
+				getPrimitiveContextElements().clear();
+				getPrimitiveContextElements().addAll((Collection<? extends ContextModelElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -197,6 +230,9 @@ public class SMLModelImpl extends EObjectImpl implements SMLModel {
 			case SmlPackage.SML_MODEL__CONTEXT_MODEL:
 				setContextModel((ContextModel)null);
 				return;
+			case SmlPackage.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS:
+				getPrimitiveContextElements().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -213,6 +249,8 @@ public class SMLModelImpl extends EObjectImpl implements SMLModel {
 				return elements != null && !elements.isEmpty();
 			case SmlPackage.SML_MODEL__CONTEXT_MODEL:
 				return contextModel != null;
+			case SmlPackage.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS:
+				return primitiveContextElements != null && !primitiveContextElements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -17,7 +17,6 @@ package sml;
  * <ul>
  *   <li>{@link sml.SituationAttribute#getSituation <em>Situation</em>}</li>
  *   <li>{@link sml.SituationAttribute#getIsOfType <em>Is Of Type</em>}</li>
- *   <li>{@link sml.SituationAttribute#getLiteral <em>Literal</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,31 +81,5 @@ public interface SituationAttribute extends Node {
 	 * @generated
 	 */
 	void setIsOfType(SituationAttributeType value);
-
-	/**
-	 * Returns the value of the '<em><b>Literal</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Literal</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Literal</em>' reference.
-	 * @see #setLiteral(Literal)
-	 * @see sml.SmlPackage#getSituationAttribute_Literal()
-	 * @model
-	 * @generated
-	 */
-	Literal getLiteral();
-
-	/**
-	 * Sets the value of the '{@link sml.SituationAttribute#getLiteral <em>Literal</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Literal</em>' reference.
-	 * @see #getLiteral()
-	 * @generated
-	 */
-	void setLiteral(Literal value);
 
 } // SituationAttribute

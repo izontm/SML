@@ -89,32 +89,22 @@ public interface SmlPackage extends EPackage {
 	int SML_MODEL__CONTEXT_MODEL = 1;
 
 	/**
+	 * The feature id for the '<em><b>Primitive Context Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS = 2;
+
+	/**
 	 * The number of structural features of the '<em>SML Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SML_MODEL_FEATURE_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link sml.impl.SMLModelElementImpl <em>SML Model Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sml.impl.SMLModelElementImpl
-	 * @see sml.impl.SmlPackageImpl#getSMLModelElement()
-	 * @generated
-	 */
-	int SML_MODEL_ELEMENT = 1;
-
-	/**
-	 * The number of structural features of the '<em>SML Model Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SML_MODEL_ELEMENT_FEATURE_COUNT = 0;
+	int SML_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link sml.impl.SituationTypeImpl <em>Situation Type</em>}' class.
@@ -124,16 +114,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationType()
 	 * @generated
 	 */
-	int SITUATION_TYPE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_TYPE__ELEMENTS = SML_MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int SITUATION_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -142,7 +123,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_TYPE__NAME = SML_MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int SITUATION_TYPE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -151,7 +132,16 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_TYPE__PARAMETER = SML_MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int SITUATION_TYPE__PARAMETER = 1;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITUATION_TYPE__ELEMENTS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Situation Type</em>' class.
@@ -160,7 +150,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_TYPE_FEATURE_COUNT = SML_MODEL_ELEMENT_FEATURE_COUNT + 3;
+	int SITUATION_TYPE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link sml.impl.SituationTypeElementImpl <em>Situation Type Element</em>}' class.
@@ -170,7 +160,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationTypeElement()
 	 * @generated
 	 */
-	int SITUATION_TYPE_ELEMENT = 4;
+	int SITUATION_TYPE_ELEMENT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Situation Type Element</em>' class.
@@ -189,34 +179,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationTypeBlock()
 	 * @generated
 	 */
-	int SITUATION_TYPE_BLOCK = 3;
-
-	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_TYPE_BLOCK__ELEMENTS = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Disjoint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_TYPE_BLOCK__DISJOINT = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Situation Type Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_TYPE_BLOCK_FEATURE_COUNT = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 2;
+	int SITUATION_TYPE_BLOCK = 2;
 
 	/**
 	 * The meta object id for the '{@link sml.impl.NodeImpl <em>Node</em>}' class.
@@ -226,7 +189,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 5;
+	int NODE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -265,6 +228,51 @@ public interface SmlPackage extends EPackage {
 	int NODE_FEATURE_COUNT = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITUATION_TYPE_BLOCK__NODE_PARAMETER = NODE__NODE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITUATION_TYPE_BLOCK__SOURCE_RELATION = NODE__SOURCE_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Target Relation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITUATION_TYPE_BLOCK__TARGET_RELATION = NODE__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITUATION_TYPE_BLOCK__ELEMENTS = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Situation Type Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITUATION_TYPE_BLOCK_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link sml.impl.ExportableNodeImpl <em>Exportable Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -272,7 +280,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getExportableNode()
 	 * @generated
 	 */
-	int EXPORTABLE_NODE = 6;
+	int EXPORTABLE_NODE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -318,7 +326,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getParticipant()
 	 * @generated
 	 */
-	int PARTICIPANT = 16;
+	int PARTICIPANT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -373,7 +381,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getEntityParticipant()
 	 * @generated
 	 */
-	int ENTITY_PARTICIPANT = 7;
+	int ENTITY_PARTICIPANT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -437,7 +445,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getRelatorParticipant()
 	 * @generated
 	 */
-	int RELATOR_PARTICIPANT = 8;
+	int RELATOR_PARTICIPANT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -510,7 +518,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getLink()
 	 * @generated
 	 */
-	int LINK = 9;
+	int LINK = 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Of Type</b></em>' reference.
@@ -556,7 +564,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationTypeParameter()
 	 * @generated
 	 */
-	int SITUATION_TYPE_PARAMETER = 10;
+	int SITUATION_TYPE_PARAMETER = 9;
 
 	/**
 	 * The feature id for the '<em><b>Node Reference</b></em>' reference.
@@ -593,7 +601,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getAttributeReference()
 	 * @generated
 	 */
-	int ATTRIBUTE_REFERENCE = 11;
+	int ATTRIBUTE_REFERENCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -657,7 +665,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getOperatorExpression()
 	 * @generated
 	 */
-	int OPERATOR_EXPRESSION = 12;
+	int OPERATOR_EXPRESSION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' attribute.
@@ -694,7 +702,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getComparativeRelation()
 	 * @generated
 	 */
-	int COMPARATIVE_RELATION = 13;
+	int COMPARATIVE_RELATION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' attribute.
@@ -751,34 +759,6 @@ public interface SmlPackage extends EPackage {
 	int COMPARATIVE_RELATION_FEATURE_COUNT = OPERATOR_EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link sml.impl.SituationTypeElementContainerImpl <em>Situation Type Element Container</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sml.impl.SituationTypeElementContainerImpl
-	 * @see sml.impl.SmlPackageImpl#getSituationTypeElementContainer()
-	 * @generated
-	 */
-	int SITUATION_TYPE_ELEMENT_CONTAINER = 14;
-
-	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Situation Type Element Container</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_TYPE_ELEMENT_CONTAINER_FEATURE_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link sml.impl.LiteralImpl <em>Literal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -786,7 +766,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getLiteral()
 	 * @generated
 	 */
-	int LITERAL = 15;
+	int LITERAL = 13;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -850,7 +830,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationParticipant()
 	 * @generated
 	 */
-	int SITUATION_PARTICIPANT = 17;
+	int SITUATION_PARTICIPANT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -859,7 +839,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_PARTICIPANT__NODE_PARAMETER = NODE__NODE_PARAMETER;
+	int SITUATION_PARTICIPANT__NODE_PARAMETER = PARTICIPANT__NODE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
@@ -868,7 +848,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_PARTICIPANT__SOURCE_RELATION = NODE__SOURCE_RELATION;
+	int SITUATION_PARTICIPANT__SOURCE_RELATION = PARTICIPANT__SOURCE_RELATION;
 
 	/**
 	 * The feature id for the '<em><b>Target Relation</b></em>' reference list.
@@ -877,7 +857,16 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_PARTICIPANT__TARGET_RELATION = NODE__TARGET_RELATION;
+	int SITUATION_PARTICIPANT__TARGET_RELATION = PARTICIPANT__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITUATION_PARTICIPANT__REFERENCE = PARTICIPANT__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Situation Type</b></em>' reference.
@@ -886,7 +875,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_PARTICIPANT__SITUATION_TYPE = NODE_FEATURE_COUNT + 0;
+	int SITUATION_PARTICIPANT__SITUATION_TYPE = PARTICIPANT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference list.
@@ -895,7 +884,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_PARTICIPANT__PARAMETER = NODE_FEATURE_COUNT + 1;
+	int SITUATION_PARTICIPANT__PARAMETER = PARTICIPANT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Past</b></em>' attribute.
@@ -904,16 +893,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_PARTICIPANT__IS_PAST = NODE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_PARTICIPANT__ATTRIBUTE = NODE_FEATURE_COUNT + 3;
+	int SITUATION_PARTICIPANT__IS_PAST = PARTICIPANT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Situation Participant</em>' class.
@@ -922,7 +902,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATION_PARTICIPANT_FEATURE_COUNT = NODE_FEATURE_COUNT + 4;
+	int SITUATION_PARTICIPANT_FEATURE_COUNT = PARTICIPANT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link sml.impl.SituationParameterReferenceImpl <em>Situation Parameter Reference</em>}' class.
@@ -932,7 +912,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationParameterReference()
 	 * @generated
 	 */
-	int SITUATION_PARAMETER_REFERENCE = 18;
+	int SITUATION_PARAMETER_REFERENCE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -996,7 +976,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getTemporalOperatorExpression()
 	 * @generated
 	 */
-	int TEMPORAL_OPERATOR_EXPRESSION = 19;
+	int TEMPORAL_OPERATOR_EXPRESSION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' attribute.
@@ -1053,79 +1033,6 @@ public interface SmlPackage extends EPackage {
 	int TEMPORAL_OPERATOR_EXPRESSION_FEATURE_COUNT = OPERATOR_EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link sml.impl.SituationAttributeImpl <em>Situation Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sml.impl.SituationAttributeImpl
-	 * @see sml.impl.SmlPackageImpl#getSituationAttribute()
-	 * @generated
-	 */
-	int SITUATION_ATTRIBUTE = 20;
-
-	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_ATTRIBUTE__NODE_PARAMETER = NODE__NODE_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_ATTRIBUTE__SOURCE_RELATION = NODE__SOURCE_RELATION;
-
-	/**
-	 * The feature id for the '<em><b>Target Relation</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_ATTRIBUTE__TARGET_RELATION = NODE__TARGET_RELATION;
-
-	/**
-	 * The feature id for the '<em><b>Situation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_ATTRIBUTE__SITUATION = NODE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Of Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_ATTRIBUTE__IS_OF_TYPE = NODE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Literal</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_ATTRIBUTE__LITERAL = NODE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Situation Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_ATTRIBUTE_FEATURE_COUNT = NODE_FEATURE_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link sml.impl.ExistsSituationImpl <em>Exists Situation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1133,7 +1040,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getExistsSituation()
 	 * @generated
 	 */
-	int EXISTS_SITUATION = 21;
+	int EXISTS_SITUATION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
@@ -1163,6 +1070,15 @@ public interface SmlPackage extends EPackage {
 	int EXISTS_SITUATION__TARGET_RELATION = SITUATION_PARTICIPANT__TARGET_RELATION;
 
 	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXISTS_SITUATION__REFERENCE = SITUATION_PARTICIPANT__REFERENCE;
+
+	/**
 	 * The feature id for the '<em><b>Situation Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1190,15 +1106,6 @@ public interface SmlPackage extends EPackage {
 	int EXISTS_SITUATION__IS_PAST = SITUATION_PARTICIPANT__IS_PAST;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXISTS_SITUATION__ATTRIBUTE = SITUATION_PARTICIPANT__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Is Negated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1224,7 +1131,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getTemporalOperatorType()
 	 * @generated
 	 */
-	int TEMPORAL_OPERATOR_TYPE = 22;
+	int TEMPORAL_OPERATOR_TYPE = 19;
 
 	/**
 	 * The meta object id for the '{@link sml.SituationAttributeType <em>Situation Attribute Type</em>}' enum.
@@ -1234,7 +1141,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationAttributeType()
 	 * @generated
 	 */
-	int SITUATION_ATTRIBUTE_TYPE = 23;
+	int SITUATION_ATTRIBUTE_TYPE = 20;
 
 
 	/**
@@ -1270,14 +1177,15 @@ public interface SmlPackage extends EPackage {
 	EReference getSMLModel_ContextModel();
 
 	/**
-	 * Returns the meta object for class '{@link sml.SMLModelElement <em>SML Model Element</em>}'.
+	 * Returns the meta object for the containment reference list '{@link sml.SMLModel#getPrimitiveContextElements <em>Primitive Context Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>SML Model Element</em>'.
-	 * @see sml.SMLModelElement
+	 * @return the meta object for the containment reference list '<em>Primitive Context Elements</em>'.
+	 * @see sml.SMLModel#getPrimitiveContextElements()
+	 * @see #getSMLModel()
 	 * @generated
 	 */
-	EClass getSMLModelElement();
+	EReference getSMLModel_PrimitiveContextElements();
 
 	/**
 	 * Returns the meta object for class '{@link sml.SituationType <em>Situation Type</em>}'.
@@ -1312,6 +1220,17 @@ public interface SmlPackage extends EPackage {
 	EReference getSituationType_Parameter();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link sml.SituationType#getElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see sml.SituationType#getElements()
+	 * @see #getSituationType()
+	 * @generated
+	 */
+	EReference getSituationType_Elements();
+
+	/**
 	 * Returns the meta object for class '{@link sml.SituationTypeBlock <em>Situation Type Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1322,15 +1241,15 @@ public interface SmlPackage extends EPackage {
 	EClass getSituationTypeBlock();
 
 	/**
-	 * Returns the meta object for the attribute '{@link sml.SituationTypeBlock#isDisjoint <em>Disjoint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link sml.SituationTypeBlock#getElements <em>Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Disjoint</em>'.
-	 * @see sml.SituationTypeBlock#isDisjoint()
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see sml.SituationTypeBlock#getElements()
 	 * @see #getSituationTypeBlock()
 	 * @generated
 	 */
-	EAttribute getSituationTypeBlock_Disjoint();
+	EReference getSituationTypeBlock_Elements();
 
 	/**
 	 * Returns the meta object for class '{@link sml.SituationTypeElement <em>Situation Type Element</em>}'.
@@ -1631,27 +1550,6 @@ public interface SmlPackage extends EPackage {
 	EReference getComparativeRelation_Relation();
 
 	/**
-	 * Returns the meta object for class '{@link sml.SituationTypeElementContainer <em>Situation Type Element Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Situation Type Element Container</em>'.
-	 * @see sml.SituationTypeElementContainer
-	 * @generated
-	 */
-	EClass getSituationTypeElementContainer();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link sml.SituationTypeElementContainer#getElements <em>Elements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Elements</em>'.
-	 * @see sml.SituationTypeElementContainer#getElements()
-	 * @see #getSituationTypeElementContainer()
-	 * @generated
-	 */
-	EReference getSituationTypeElementContainer_Elements();
-
-	/**
 	 * Returns the meta object for class '{@link sml.Literal <em>Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1748,17 +1646,6 @@ public interface SmlPackage extends EPackage {
 	EAttribute getSituationParticipant_IsPast();
 
 	/**
-	 * Returns the meta object for the reference list '{@link sml.SituationParticipant#getAttribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attribute</em>'.
-	 * @see sml.SituationParticipant#getAttribute()
-	 * @see #getSituationParticipant()
-	 * @generated
-	 */
-	EReference getSituationParticipant_Attribute();
-
-	/**
 	 * Returns the meta object for class '{@link sml.SituationParameterReference <em>Situation Parameter Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1832,49 +1719,6 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTemporalOperatorExpression_Operator();
-
-	/**
-	 * Returns the meta object for class '{@link sml.SituationAttribute <em>Situation Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Situation Attribute</em>'.
-	 * @see sml.SituationAttribute
-	 * @generated
-	 */
-	EClass getSituationAttribute();
-
-	/**
-	 * Returns the meta object for the reference '{@link sml.SituationAttribute#getSituation <em>Situation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Situation</em>'.
-	 * @see sml.SituationAttribute#getSituation()
-	 * @see #getSituationAttribute()
-	 * @generated
-	 */
-	EReference getSituationAttribute_Situation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link sml.SituationAttribute#getIsOfType <em>Is Of Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Of Type</em>'.
-	 * @see sml.SituationAttribute#getIsOfType()
-	 * @see #getSituationAttribute()
-	 * @generated
-	 */
-	EAttribute getSituationAttribute_IsOfType();
-
-	/**
-	 * Returns the meta object for the reference '{@link sml.SituationAttribute#getLiteral <em>Literal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Literal</em>'.
-	 * @see sml.SituationAttribute#getLiteral()
-	 * @see #getSituationAttribute()
-	 * @generated
-	 */
-	EReference getSituationAttribute_Literal();
 
 	/**
 	 * Returns the meta object for class '{@link sml.ExistsSituation <em>Exists Situation</em>}'.
@@ -1966,14 +1810,12 @@ public interface SmlPackage extends EPackage {
 		EReference SML_MODEL__CONTEXT_MODEL = eINSTANCE.getSMLModel_ContextModel();
 
 		/**
-		 * The meta object literal for the '{@link sml.impl.SMLModelElementImpl <em>SML Model Element</em>}' class.
+		 * The meta object literal for the '<em><b>Primitive Context Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see sml.impl.SMLModelElementImpl
-		 * @see sml.impl.SmlPackageImpl#getSMLModelElement()
 		 * @generated
 		 */
-		EClass SML_MODEL_ELEMENT = eINSTANCE.getSMLModelElement();
+		EReference SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS = eINSTANCE.getSMLModel_PrimitiveContextElements();
 
 		/**
 		 * The meta object literal for the '{@link sml.impl.SituationTypeImpl <em>Situation Type</em>}' class.
@@ -2002,6 +1844,14 @@ public interface SmlPackage extends EPackage {
 		EReference SITUATION_TYPE__PARAMETER = eINSTANCE.getSituationType_Parameter();
 
 		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SITUATION_TYPE__ELEMENTS = eINSTANCE.getSituationType_Elements();
+
+		/**
 		 * The meta object literal for the '{@link sml.impl.SituationTypeBlockImpl <em>Situation Type Block</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2012,12 +1862,12 @@ public interface SmlPackage extends EPackage {
 		EClass SITUATION_TYPE_BLOCK = eINSTANCE.getSituationTypeBlock();
 
 		/**
-		 * The meta object literal for the '<em><b>Disjoint</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SITUATION_TYPE_BLOCK__DISJOINT = eINSTANCE.getSituationTypeBlock_Disjoint();
+		EReference SITUATION_TYPE_BLOCK__ELEMENTS = eINSTANCE.getSituationTypeBlock_Elements();
 
 		/**
 		 * The meta object literal for the '{@link sml.impl.SituationTypeElementImpl <em>Situation Type Element</em>}' class.
@@ -2264,24 +2114,6 @@ public interface SmlPackage extends EPackage {
 		EReference COMPARATIVE_RELATION__RELATION = eINSTANCE.getComparativeRelation_Relation();
 
 		/**
-		 * The meta object literal for the '{@link sml.impl.SituationTypeElementContainerImpl <em>Situation Type Element Container</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see sml.impl.SituationTypeElementContainerImpl
-		 * @see sml.impl.SmlPackageImpl#getSituationTypeElementContainer()
-		 * @generated
-		 */
-		EClass SITUATION_TYPE_ELEMENT_CONTAINER = eINSTANCE.getSituationTypeElementContainer();
-
-		/**
-		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS = eINSTANCE.getSituationTypeElementContainer_Elements();
-
-		/**
 		 * The meta object literal for the '{@link sml.impl.LiteralImpl <em>Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2360,14 +2192,6 @@ public interface SmlPackage extends EPackage {
 		EAttribute SITUATION_PARTICIPANT__IS_PAST = eINSTANCE.getSituationParticipant_IsPast();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SITUATION_PARTICIPANT__ATTRIBUTE = eINSTANCE.getSituationParticipant_Attribute();
-
-		/**
 		 * The meta object literal for the '{@link sml.impl.SituationParameterReferenceImpl <em>Situation Parameter Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2426,40 +2250,6 @@ public interface SmlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEMPORAL_OPERATOR_EXPRESSION__OPERATOR = eINSTANCE.getTemporalOperatorExpression_Operator();
-
-		/**
-		 * The meta object literal for the '{@link sml.impl.SituationAttributeImpl <em>Situation Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see sml.impl.SituationAttributeImpl
-		 * @see sml.impl.SmlPackageImpl#getSituationAttribute()
-		 * @generated
-		 */
-		EClass SITUATION_ATTRIBUTE = eINSTANCE.getSituationAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Situation</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SITUATION_ATTRIBUTE__SITUATION = eINSTANCE.getSituationAttribute_Situation();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Of Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SITUATION_ATTRIBUTE__IS_OF_TYPE = eINSTANCE.getSituationAttribute_IsOfType();
-
-		/**
-		 * The meta object literal for the '<em><b>Literal</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SITUATION_ATTRIBUTE__LITERAL = eINSTANCE.getSituationAttribute_Literal();
 
 		/**
 		 * The meta object literal for the '{@link sml.impl.ExistsSituationImpl <em>Exists Situation</em>}' class.

@@ -3,6 +3,7 @@
 
 [comment query that selects the UML motel elements to be transformed into a Context model /]
 [query public isRelator(aClass : Type) : Boolean = (aClass.eContents(Stereotype)->select(s : Stereotype| s.name = 'Relator')->size() = 1) or aClass.name.contains('<<Relator>>')/]
+
 [query public contextContent(aModel : Model) : OrderedSet(Element) =
 	aModel.eAllContents(Element)->select(
 		s : Element |

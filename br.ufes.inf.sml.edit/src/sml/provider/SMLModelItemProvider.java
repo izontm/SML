@@ -7,6 +7,7 @@
 package sml.provider;
 
 
+import ctx.CtxFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -106,6 +107,7 @@ public class SMLModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SmlPackage.Literals.SML_MODEL__ELEMENTS);
+			childrenFeatures.add(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -158,6 +160,7 @@ public class SMLModelItemProvider
 
 		switch (notification.getFeatureID(SMLModel.class)) {
 			case SmlPackage.SML_MODEL__ELEMENTS:
+			case SmlPackage.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -179,6 +182,41 @@ public class SMLModelItemProvider
 			(createChildParameter
 				(SmlPackage.Literals.SML_MODEL__ELEMENTS,
 				 SmlFactory.eINSTANCE.createSituationType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
+				 CtxFactory.eINSTANCE.createEntityClass()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
+				 CtxFactory.eINSTANCE.createRelatorClass()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
+				 CtxFactory.eINSTANCE.createDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
+				 CtxFactory.eINSTANCE.createComparativeFormalRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
+				 CtxFactory.eINSTANCE.createAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
+				 CtxFactory.eINSTANCE.createQualitativeFormalRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
+				 CtxFactory.eINSTANCE.createPrimitiveFormalRelation()));
 	}
 
 	/**

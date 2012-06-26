@@ -178,6 +178,15 @@ public class CtxSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CtxPackage.PRIMITIVE_FORMAL_RELATION: {
+				PrimitiveFormalRelation primitiveFormalRelation = (PrimitiveFormalRelation)theEObject;
+				T result = casePrimitiveFormalRelation(primitiveFormalRelation);
+				if (result == null) result = caseComparativeFormalRelation(primitiveFormalRelation);
+				if (result == null) result = caseContextModelElement(primitiveFormalRelation);
+				if (result == null) result = caseNamedElement(primitiveFormalRelation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -389,6 +398,21 @@ public class CtxSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComparableElements(ComparableElements object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Primitive Formal Relation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Primitive Formal Relation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrimitiveFormalRelation(PrimitiveFormalRelation object) {
 		return null;
 	}
 

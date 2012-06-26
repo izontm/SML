@@ -7,6 +7,7 @@
 package sml;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link sml.SituationType#getName <em>Name</em>}</li>
  *   <li>{@link sml.SituationType#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link sml.SituationType#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SituationType extends SMLModelElement, SituationTypeElementContainer {
+public interface SituationType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,5 +69,21 @@ public interface SituationType extends SMLModelElement, SituationTypeElementCont
 	 * @generated
 	 */
 	EList<SituationTypeParameter> getParameter();
+
+	/**
+	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link sml.SituationTypeElement}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Elements</em>' containment reference list.
+	 * @see sml.SmlPackage#getSituationType_Elements()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SituationTypeElement> getElements();
 
 } // SituationType

@@ -18,6 +18,7 @@ import ctx.DataType;
 import ctx.EntityClass;
 import ctx.ModelClass;
 import ctx.NamedElement;
+import ctx.PrimitiveFormalRelation;
 import ctx.QualitativeFormalRelation;
 import ctx.QualitativeParameter;
 import ctx.RelatorClass;
@@ -133,6 +134,13 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 	 * @generated
 	 */
 	private EClass comparableElementsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass primitiveFormalRelationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -434,6 +442,15 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPrimitiveFormalRelation() {
+		return primitiveFormalRelationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CtxFactory getCtxFactory() {
 		return (CtxFactory)getEFactoryInstance();
 	}
@@ -496,6 +513,8 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 		createEReference(typedElementEClass, TYPED_ELEMENT__DATATYPE);
 
 		comparableElementsEClass = createEClass(COMPARABLE_ELEMENTS);
+
+		primitiveFormalRelationEClass = createEClass(PRIMITIVE_FORMAL_RELATION);
 	}
 
 	/**
@@ -541,6 +560,7 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 		qualitativeFormalRelationEClass.getESuperTypes().add(this.getTypedElement());
 		qualitativeParameterEClass.getESuperTypes().add(this.getNamedElement());
 		qualitativeParameterEClass.getESuperTypes().add(this.getTypedElement());
+		primitiveFormalRelationEClass.getESuperTypes().add(this.getComparativeFormalRelation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contextModelEClass, ContextModel.class, "ContextModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -582,6 +602,8 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 		initEReference(getTypedElement_Datatype(), this.getDataType(), null, "datatype", null, 0, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(comparableElementsEClass, ComparableElements.class, "ComparableElements", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(primitiveFormalRelationEClass, PrimitiveFormalRelation.class, "PrimitiveFormalRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

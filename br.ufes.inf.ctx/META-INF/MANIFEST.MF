@@ -8,7 +8,9 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.uml2.uml,
+ org.eclipse.gmf.runtime.emf.core
 Bundle-ActivationPolicy: lazy
 Export-Package: ctx,
  ctx.impl,

@@ -36,7 +36,7 @@ import sml.SmlPackage;
  * @generated
  */
 public class SituationTypeBlockItemProvider
-	extends SituationTypeElementItemProvider
+	extends NodeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -64,31 +64,8 @@ public class SituationTypeBlockItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDisjointPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Disjoint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDisjointPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SituationTypeBlock_disjoint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SituationTypeBlock_disjoint_feature", "_UI_SituationTypeBlock_type"),
-				 SmlPackage.Literals.SITUATION_TYPE_BLOCK__DISJOINT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -103,7 +80,7 @@ public class SituationTypeBlockItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS);
+			childrenFeatures.add(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -140,8 +117,7 @@ public class SituationTypeBlockItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		SituationTypeBlock situationTypeBlock = (SituationTypeBlock)object;
-		return getString("_UI_SituationTypeBlock_type") + " " + situationTypeBlock.isDisjoint();
+		return getString("_UI_SituationTypeBlock_type");
 	}
 
 	/**
@@ -156,9 +132,6 @@ public class SituationTypeBlockItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SituationTypeBlock.class)) {
-			case SmlPackage.SITUATION_TYPE_BLOCK__DISJOINT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case SmlPackage.SITUATION_TYPE_BLOCK__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -179,62 +152,42 @@ public class SituationTypeBlockItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createSituationTypeBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createEntityParticipant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createRelatorParticipant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createLink()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createAttributeReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createComparativeRelation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createSituationParticipant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createSituationParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createTemporalOperatorExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createSituationAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createExistsSituation()));
 	}
 

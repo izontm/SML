@@ -283,6 +283,29 @@ public class CtxItemProviderAdapterFactory extends CtxAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link ctx.PrimitiveFormalRelation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PrimitiveFormalRelationItemProvider primitiveFormalRelationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ctx.PrimitiveFormalRelation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPrimitiveFormalRelationAdapter() {
+		if (primitiveFormalRelationItemProvider == null) {
+			primitiveFormalRelationItemProvider = new PrimitiveFormalRelationItemProvider(this);
+		}
+
+		return primitiveFormalRelationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -390,6 +413,7 @@ public class CtxItemProviderAdapterFactory extends CtxAdapterFactory implements 
 		if (associationItemProvider != null) associationItemProvider.dispose();
 		if (qualitativeFormalRelationItemProvider != null) qualitativeFormalRelationItemProvider.dispose();
 		if (qualitativeParameterItemProvider != null) qualitativeParameterItemProvider.dispose();
+		if (primitiveFormalRelationItemProvider != null) primitiveFormalRelationItemProvider.dispose();
 	}
 
 }

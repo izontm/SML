@@ -70,6 +70,7 @@ public class CtxFactoryImpl extends EFactoryImpl implements CtxFactory {
 			case CtxPackage.ASSOCIATION: return createAssociation();
 			case CtxPackage.QUALITATIVE_FORMAL_RELATION: return createQualitativeFormalRelation();
 			case CtxPackage.QUALITATIVE_PARAMETER: return createQualitativeParameter();
+			case CtxPackage.PRIMITIVE_FORMAL_RELATION: return createPrimitiveFormalRelation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -163,6 +164,16 @@ public class CtxFactoryImpl extends EFactoryImpl implements CtxFactory {
 	public QualitativeParameter createQualitativeParameter() {
 		QualitativeParameterImpl qualitativeParameter = new QualitativeParameterImpl();
 		return qualitativeParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PrimitiveFormalRelation createPrimitiveFormalRelation() {
+		PrimitiveFormalRelationImpl primitiveFormalRelation = new PrimitiveFormalRelationImpl();
+		return primitiveFormalRelation;
 	}
 
 	/**

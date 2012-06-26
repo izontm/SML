@@ -63,13 +63,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass smlModelElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass situationTypeEClass = null;
 
 	/**
@@ -154,13 +147,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass situationTypeElementContainerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass literalEClass = null;
 
 	/**
@@ -190,13 +176,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * @generated
 	 */
 	private EClass temporalOperatorExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass situationAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,8 +294,8 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSMLModelElement() {
-		return smlModelElementEClass;
+	public EReference getSMLModel_PrimitiveContextElements() {
+		return (EReference)smlModelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -351,6 +330,15 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSituationType_Elements() {
+		return (EReference)situationTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSituationTypeBlock() {
 		return situationTypeBlockEClass;
 	}
@@ -360,8 +348,8 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSituationTypeBlock_Disjoint() {
-		return (EAttribute)situationTypeBlockEClass.getEStructuralFeatures().get(0);
+	public EReference getSituationTypeBlock_Elements() {
+		return (EReference)situationTypeBlockEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -621,24 +609,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSituationTypeElementContainer() {
-		return situationTypeElementContainerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSituationTypeElementContainer_Elements() {
-		return (EReference)situationTypeElementContainerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLiteral() {
 		return literalEClass;
 	}
@@ -720,15 +690,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSituationParticipant_Attribute() {
-		return (EReference)situationParticipantEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSituationParameterReference() {
 		return situationParameterReferenceEClass;
 	}
@@ -785,42 +746,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 */
 	public EAttribute getTemporalOperatorExpression_Operator() {
 		return (EAttribute)temporalOperatorExpressionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSituationAttribute() {
-		return situationAttributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSituationAttribute_Situation() {
-		return (EReference)situationAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSituationAttribute_IsOfType() {
-		return (EAttribute)situationAttributeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSituationAttribute_Literal() {
-		return (EReference)situationAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -890,15 +815,15 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		smlModelEClass = createEClass(SML_MODEL);
 		createEReference(smlModelEClass, SML_MODEL__ELEMENTS);
 		createEReference(smlModelEClass, SML_MODEL__CONTEXT_MODEL);
-
-		smlModelElementEClass = createEClass(SML_MODEL_ELEMENT);
+		createEReference(smlModelEClass, SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS);
 
 		situationTypeEClass = createEClass(SITUATION_TYPE);
 		createEAttribute(situationTypeEClass, SITUATION_TYPE__NAME);
 		createEReference(situationTypeEClass, SITUATION_TYPE__PARAMETER);
+		createEReference(situationTypeEClass, SITUATION_TYPE__ELEMENTS);
 
 		situationTypeBlockEClass = createEClass(SITUATION_TYPE_BLOCK);
-		createEAttribute(situationTypeBlockEClass, SITUATION_TYPE_BLOCK__DISJOINT);
+		createEReference(situationTypeBlockEClass, SITUATION_TYPE_BLOCK__ELEMENTS);
 
 		situationTypeElementEClass = createEClass(SITUATION_TYPE_ELEMENT);
 
@@ -938,9 +863,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		createEReference(comparativeRelationEClass, COMPARATIVE_RELATION__TARGET);
 		createEReference(comparativeRelationEClass, COMPARATIVE_RELATION__RELATION);
 
-		situationTypeElementContainerEClass = createEClass(SITUATION_TYPE_ELEMENT_CONTAINER);
-		createEReference(situationTypeElementContainerEClass, SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS);
-
 		literalEClass = createEClass(LITERAL);
 		createEAttribute(literalEClass, LITERAL__VALUE);
 		createEReference(literalEClass, LITERAL__DATA_TYPE);
@@ -952,7 +874,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		createEReference(situationParticipantEClass, SITUATION_PARTICIPANT__SITUATION_TYPE);
 		createEReference(situationParticipantEClass, SITUATION_PARTICIPANT__PARAMETER);
 		createEAttribute(situationParticipantEClass, SITUATION_PARTICIPANT__IS_PAST);
-		createEReference(situationParticipantEClass, SITUATION_PARTICIPANT__ATTRIBUTE);
 
 		situationParameterReferenceEClass = createEClass(SITUATION_PARAMETER_REFERENCE);
 		createEReference(situationParameterReferenceEClass, SITUATION_PARAMETER_REFERENCE__PARAMETER);
@@ -962,11 +883,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		createEReference(temporalOperatorExpressionEClass, TEMPORAL_OPERATOR_EXPRESSION__SOURCE);
 		createEReference(temporalOperatorExpressionEClass, TEMPORAL_OPERATOR_EXPRESSION__TARGET);
 		createEAttribute(temporalOperatorExpressionEClass, TEMPORAL_OPERATOR_EXPRESSION__OPERATOR);
-
-		situationAttributeEClass = createEClass(SITUATION_ATTRIBUTE);
-		createEReference(situationAttributeEClass, SITUATION_ATTRIBUTE__SITUATION);
-		createEAttribute(situationAttributeEClass, SITUATION_ATTRIBUTE__IS_OF_TYPE);
-		createEReference(situationAttributeEClass, SITUATION_ATTRIBUTE__LITERAL);
 
 		existsSituationEClass = createEClass(EXISTS_SITUATION);
 		createEAttribute(existsSituationEClass, EXISTS_SITUATION__IS_NEGATED);
@@ -1007,10 +923,7 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		situationTypeEClass.getESuperTypes().add(this.getSMLModelElement());
-		situationTypeEClass.getESuperTypes().add(this.getSituationTypeElementContainer());
-		situationTypeBlockEClass.getESuperTypes().add(this.getSituationTypeElement());
-		situationTypeBlockEClass.getESuperTypes().add(this.getSituationTypeElementContainer());
+		situationTypeBlockEClass.getESuperTypes().add(this.getNode());
 		nodeEClass.getESuperTypes().add(this.getSituationTypeElement());
 		exportableNodeEClass.getESuperTypes().add(this.getNode());
 		entityParticipantEClass.getESuperTypes().add(this.getParticipant());
@@ -1021,25 +934,24 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		comparativeRelationEClass.getESuperTypes().add(this.getOperatorExpression());
 		literalEClass.getESuperTypes().add(this.getNode());
 		participantEClass.getESuperTypes().add(this.getExportableNode());
-		situationParticipantEClass.getESuperTypes().add(this.getNode());
+		situationParticipantEClass.getESuperTypes().add(this.getParticipant());
 		situationParameterReferenceEClass.getESuperTypes().add(this.getNode());
 		temporalOperatorExpressionEClass.getESuperTypes().add(this.getOperatorExpression());
-		situationAttributeEClass.getESuperTypes().add(this.getNode());
 		existsSituationEClass.getESuperTypes().add(this.getSituationParticipant());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(smlModelEClass, SMLModel.class, "SMLModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSMLModel_Elements(), this.getSMLModelElement(), null, "elements", null, 0, -1, SMLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSMLModel_Elements(), this.getSituationType(), null, "elements", null, 0, -1, SMLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSMLModel_ContextModel(), theCtxPackage.getContextModel(), null, "contextModel", null, 0, 1, SMLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(smlModelElementEClass, SMLModelElement.class, "SMLModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSMLModel_PrimitiveContextElements(), theCtxPackage.getContextModelElement(), null, "primitiveContextElements", null, 0, -1, SMLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(situationTypeEClass, SituationType.class, "SituationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSituationType_Name(), ecorePackage.getEString(), "name", null, 0, 1, SituationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSituationType_Parameter(), this.getSituationTypeParameter(), null, "parameter", null, 0, -1, SituationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSituationType_Elements(), this.getSituationTypeElement(), null, "elements", null, 0, -1, SituationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(situationTypeBlockEClass, SituationTypeBlock.class, "SituationTypeBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSituationTypeBlock_Disjoint(), ecorePackage.getEBoolean(), "disjoint", null, 0, 1, SituationTypeBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSituationTypeBlock_Elements(), this.getNode(), null, "elements", null, 0, -1, SituationTypeBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(situationTypeElementEClass, SituationTypeElement.class, "SituationTypeElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1055,7 +967,7 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 
 		initEClass(relatorParticipantEClass, RelatorParticipant.class, "RelatorParticipant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelatorParticipant_IsOfType(), theCtxPackage.getRelatorClass(), null, "isOfType", null, 0, 1, RelatorParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRelatorParticipant_Links(), this.getLink(), this.getLink_Relator(), "links", null, 0, -1, RelatorParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRelatorParticipant_Links(), this.getLink(), this.getLink_Relator(), "links", null, 0, -1, RelatorParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLink_IsOfType(), theCtxPackage.getAssociation(), null, "isOfType", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1079,9 +991,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		initEReference(getComparativeRelation_Target(), this.getNode(), this.getNode_TargetRelation(), "target", null, 0, 1, ComparativeRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComparativeRelation_Relation(), theCtxPackage.getComparativeFormalRelation(), null, "relation", null, 0, 1, ComparativeRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(situationTypeElementContainerEClass, SituationTypeElementContainer.class, "SituationTypeElementContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSituationTypeElementContainer_Elements(), this.getSituationTypeElement(), null, "elements", null, 0, -1, SituationTypeElementContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, Literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLiteral_DataType(), theCtxPackage.getDataType(), null, "dataType", null, 0, 1, Literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1093,7 +1002,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		initEReference(getSituationParticipant_SituationType(), this.getSituationType(), null, "situationType", null, 0, 1, SituationParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSituationParticipant_Parameter(), this.getSituationParameterReference(), this.getSituationParameterReference_Situation(), "parameter", null, 0, -1, SituationParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSituationParticipant_IsPast(), ecorePackage.getEBoolean(), "isPast", null, 0, 1, SituationParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSituationParticipant_Attribute(), this.getSituationAttribute(), this.getSituationAttribute_Situation(), "attribute", null, 0, -1, SituationParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(situationParameterReferenceEClass, SituationParameterReference.class, "SituationParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSituationParameterReference_Parameter(), this.getSituationTypeParameter(), null, "parameter", null, 0, 1, SituationParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1103,11 +1011,6 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		initEReference(getTemporalOperatorExpression_Source(), this.getSituationParticipant(), null, "source", null, 0, 1, TemporalOperatorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTemporalOperatorExpression_Target(), this.getSituationParticipant(), null, "target", null, 0, 1, TemporalOperatorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalOperatorExpression_Operator(), this.getTemporalOperatorType(), "operator", null, 0, 1, TemporalOperatorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(situationAttributeEClass, SituationAttribute.class, "SituationAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSituationAttribute_Situation(), this.getSituationParticipant(), this.getSituationParticipant_Attribute(), "situation", null, 0, 1, SituationAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSituationAttribute_IsOfType(), this.getSituationAttributeType(), "isOfType", null, 0, 1, SituationAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSituationAttribute_Literal(), this.getLiteral(), null, "literal", null, 0, 1, SituationAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(existsSituationEClass, ExistsSituation.class, "ExistsSituation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExistsSituation_IsNegated(), ecorePackage.getEBoolean(), "isNegated", null, 0, 1, ExistsSituation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

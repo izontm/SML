@@ -76,25 +76,17 @@ public class SmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmlPackage.SML_MODEL_ELEMENT: {
-				SMLModelElement smlModelElement = (SMLModelElement)theEObject;
-				T result = caseSMLModelElement(smlModelElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SmlPackage.SITUATION_TYPE: {
 				SituationType situationType = (SituationType)theEObject;
 				T result = caseSituationType(situationType);
-				if (result == null) result = caseSMLModelElement(situationType);
-				if (result == null) result = caseSituationTypeElementContainer(situationType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SmlPackage.SITUATION_TYPE_BLOCK: {
 				SituationTypeBlock situationTypeBlock = (SituationTypeBlock)theEObject;
 				T result = caseSituationTypeBlock(situationTypeBlock);
+				if (result == null) result = caseNode(situationTypeBlock);
 				if (result == null) result = caseSituationTypeElement(situationTypeBlock);
-				if (result == null) result = caseSituationTypeElementContainer(situationTypeBlock);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,12 +168,6 @@ public class SmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmlPackage.SITUATION_TYPE_ELEMENT_CONTAINER: {
-				SituationTypeElementContainer situationTypeElementContainer = (SituationTypeElementContainer)theEObject;
-				T result = caseSituationTypeElementContainer(situationTypeElementContainer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SmlPackage.LITERAL: {
 				Literal literal = (Literal)theEObject;
 				T result = caseLiteral(literal);
@@ -202,6 +188,8 @@ public class SmlSwitch<T> extends Switch<T> {
 			case SmlPackage.SITUATION_PARTICIPANT: {
 				SituationParticipant situationParticipant = (SituationParticipant)theEObject;
 				T result = caseSituationParticipant(situationParticipant);
+				if (result == null) result = caseParticipant(situationParticipant);
+				if (result == null) result = caseExportableNode(situationParticipant);
 				if (result == null) result = caseNode(situationParticipant);
 				if (result == null) result = caseSituationTypeElement(situationParticipant);
 				if (result == null) result = defaultCase(theEObject);
@@ -223,18 +211,12 @@ public class SmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmlPackage.SITUATION_ATTRIBUTE: {
-				SituationAttribute situationAttribute = (SituationAttribute)theEObject;
-				T result = caseSituationAttribute(situationAttribute);
-				if (result == null) result = caseNode(situationAttribute);
-				if (result == null) result = caseSituationTypeElement(situationAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SmlPackage.EXISTS_SITUATION: {
 				ExistsSituation existsSituation = (ExistsSituation)theEObject;
 				T result = caseExistsSituation(existsSituation);
 				if (result == null) result = caseSituationParticipant(existsSituation);
+				if (result == null) result = caseParticipant(existsSituation);
+				if (result == null) result = caseExportableNode(existsSituation);
 				if (result == null) result = caseNode(existsSituation);
 				if (result == null) result = caseSituationTypeElement(existsSituation);
 				if (result == null) result = defaultCase(theEObject);
@@ -256,21 +238,6 @@ public class SmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSMLModel(SMLModel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>SML Model Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>SML Model Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSMLModelElement(SMLModelElement object) {
 		return null;
 	}
 
@@ -455,21 +422,6 @@ public class SmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Situation Type Element Container</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Situation Type Element Container</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSituationTypeElementContainer(SituationTypeElementContainer object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Literal</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -541,21 +493,6 @@ public class SmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTemporalOperatorExpression(TemporalOperatorExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Situation Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Situation Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSituationAttribute(SituationAttribute object) {
 		return null;
 	}
 

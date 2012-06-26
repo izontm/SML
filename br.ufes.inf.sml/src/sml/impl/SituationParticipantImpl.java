@@ -37,13 +37,12 @@ import sml.SmlPackage;
  *   <li>{@link sml.impl.SituationParticipantImpl#getSituationType <em>Situation Type</em>}</li>
  *   <li>{@link sml.impl.SituationParticipantImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link sml.impl.SituationParticipantImpl#isIsPast <em>Is Past</em>}</li>
- *   <li>{@link sml.impl.SituationParticipantImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SituationParticipantImpl extends NodeImpl implements SituationParticipant {
+public class SituationParticipantImpl extends ParticipantImpl implements SituationParticipant {
 	/**
 	 * The cached value of the '{@link #getSituationType() <em>Situation Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -83,16 +82,6 @@ public class SituationParticipantImpl extends NodeImpl implements SituationParti
 	 * @ordered
 	 */
 	protected boolean isPast = IS_PAST_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttribute()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SituationAttribute> attribute;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,26 +178,12 @@ public class SituationParticipantImpl extends NodeImpl implements SituationParti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SituationAttribute> getAttribute() {
-		if (attribute == null) {
-			attribute = new EObjectWithInverseResolvingEList<SituationAttribute>(SituationAttribute.class, this, SmlPackage.SITUATION_PARTICIPANT__ATTRIBUTE, SmlPackage.SITUATION_ATTRIBUTE__SITUATION);
-		}
-		return attribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SmlPackage.SITUATION_PARTICIPANT__PARAMETER:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameter()).basicAdd(otherEnd, msgs);
-			case SmlPackage.SITUATION_PARTICIPANT__ATTRIBUTE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAttribute()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -223,8 +198,6 @@ public class SituationParticipantImpl extends NodeImpl implements SituationParti
 		switch (featureID) {
 			case SmlPackage.SITUATION_PARTICIPANT__PARAMETER:
 				return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
-			case SmlPackage.SITUATION_PARTICIPANT__ATTRIBUTE:
-				return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -244,8 +217,6 @@ public class SituationParticipantImpl extends NodeImpl implements SituationParti
 				return getParameter();
 			case SmlPackage.SITUATION_PARTICIPANT__IS_PAST:
 				return isIsPast();
-			case SmlPackage.SITUATION_PARTICIPANT__ATTRIBUTE:
-				return getAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,10 +240,6 @@ public class SituationParticipantImpl extends NodeImpl implements SituationParti
 			case SmlPackage.SITUATION_PARTICIPANT__IS_PAST:
 				setIsPast((Boolean)newValue);
 				return;
-			case SmlPackage.SITUATION_PARTICIPANT__ATTRIBUTE:
-				getAttribute().clear();
-				getAttribute().addAll((Collection<? extends SituationAttribute>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -294,9 +261,6 @@ public class SituationParticipantImpl extends NodeImpl implements SituationParti
 			case SmlPackage.SITUATION_PARTICIPANT__IS_PAST:
 				setIsPast(IS_PAST_EDEFAULT);
 				return;
-			case SmlPackage.SITUATION_PARTICIPANT__ATTRIBUTE:
-				getAttribute().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -315,8 +279,6 @@ public class SituationParticipantImpl extends NodeImpl implements SituationParti
 				return parameter != null && !parameter.isEmpty();
 			case SmlPackage.SITUATION_PARTICIPANT__IS_PAST:
 				return isPast != IS_PAST_EDEFAULT;
-			case SmlPackage.SITUATION_PARTICIPANT__ATTRIBUTE:
-				return attribute != null && !attribute.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

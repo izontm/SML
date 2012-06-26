@@ -5,17 +5,22 @@
     nsURI="http://www.example.org/sml" nsPrefix="sml">
   <eClassifiers xsi:type="ecore:EClass" name="SMLModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//SMLModelElement" containment="true"/>
+        eType="#//SituationType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextModel" eType="ecore:EClass ../../br.ufes.inf.ctx/model/ctx.ecore#//ContextModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primitiveContextElements"
+        upperBound="-1" eType="ecore:EClass ../../br.ufes.inf.ctx/model/ctx.ecore#//ContextModelElement"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SMLModelElement" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SituationType" eSuperTypes="#//SMLModelElement #//SituationTypeElementContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="SituationType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//SituationTypeParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//SituationTypeElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SituationTypeBlock" eSuperTypes="#//SituationTypeElement #//SituationTypeElementContainer">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="disjoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SituationTypeBlock" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Node" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SituationTypeElement" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//SituationTypeElement">
@@ -63,10 +68,6 @@
         eOpposite="#//Node/targetRelation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" eType="ecore:EClass ../../br.ufes.inf.ctx/model/ctx.ecore#//ComparativeFormalRelation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SituationTypeElementContainer" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//SituationTypeElement" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//Node">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../br.ufes.inf.ctx/model/ctx.ecore#//DataType"/>
@@ -75,13 +76,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" upperBound="-1"
         eType="#//AttributeReference" eOpposite="#//AttributeReference/entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SituationParticipant" eSuperTypes="#//Node">
+  <eClassifiers xsi:type="ecore:EClass" name="SituationParticipant" eSuperTypes="#//Participant">
     <eStructuralFeatures xsi:type="ecore:EReference" name="situationType" eType="#//SituationType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//SituationParameterReference" eOpposite="#//SituationParameterReference/situation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPast" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
-        eType="#//SituationAttribute" eOpposite="#//SituationAttribute/situation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SituationParameterReference" eSuperTypes="#//Node">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//SituationTypeParameter"/>
@@ -107,12 +106,6 @@
     <eLiterals name="overlapped_by" literal="overlappedby"/>
     <eLiterals name="starts"/>
     <eLiterals name="started_by" literal="startedby"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SituationAttribute" eSuperTypes="#//Node">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="situation" eType="#//SituationParticipant"
-        eOpposite="#//SituationParticipant/attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOfType" eType="#//SituationAttributeType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="#//Literal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SituationAttributeType">
     <eLiterals name="startTime"/>

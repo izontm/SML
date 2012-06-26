@@ -74,7 +74,6 @@ public class SmlFactoryImpl extends EFactoryImpl implements SmlFactory {
 			case SmlPackage.SITUATION_PARTICIPANT: return createSituationParticipant();
 			case SmlPackage.SITUATION_PARAMETER_REFERENCE: return createSituationParameterReference();
 			case SmlPackage.TEMPORAL_OPERATOR_EXPRESSION: return createTemporalOperatorExpression();
-			case SmlPackage.SITUATION_ATTRIBUTE: return createSituationAttribute();
 			case SmlPackage.EXISTS_SITUATION: return createExistsSituation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -243,16 +242,6 @@ public class SmlFactoryImpl extends EFactoryImpl implements SmlFactory {
 	public TemporalOperatorExpression createTemporalOperatorExpression() {
 		TemporalOperatorExpressionImpl temporalOperatorExpression = new TemporalOperatorExpressionImpl();
 		return temporalOperatorExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SituationAttribute createSituationAttribute() {
-		SituationAttributeImpl situationAttribute = new SituationAttributeImpl();
-		return situationAttribute;
 	}
 
 	/**

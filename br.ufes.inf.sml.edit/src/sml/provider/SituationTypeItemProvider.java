@@ -13,6 +13,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -23,6 +24,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import sml.SituationType;
@@ -36,7 +38,7 @@ import sml.SmlPackage;
  * @generated
  */
 public class SituationTypeItemProvider
-	extends SMLModelElementItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -103,8 +105,8 @@ public class SituationTypeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS);
 			childrenFeatures.add(SmlPackage.Literals.SITUATION_TYPE__PARAMETER);
+			childrenFeatures.add(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -162,8 +164,8 @@ public class SituationTypeItemProvider
 			case SmlPackage.SITUATION_TYPE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case SmlPackage.SITUATION_TYPE__ELEMENTS:
 			case SmlPackage.SITUATION_TYPE__PARAMETER:
+			case SmlPackage.SITUATION_TYPE__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,68 +185,74 @@ public class SituationTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__PARAMETER,
+				 SmlFactory.eINSTANCE.createSituationTypeParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createSituationTypeBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createEntityParticipant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createRelatorParticipant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createLink()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createAttributeReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createComparativeRelation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createSituationParticipant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createSituationParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createTemporalOperatorExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createSituationAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createExistsSituation()));
+	}
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE__PARAMETER,
-				 SmlFactory.eINSTANCE.createSituationTypeParameter()));
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return SmlEditPlugin.INSTANCE;
 	}
 
 }

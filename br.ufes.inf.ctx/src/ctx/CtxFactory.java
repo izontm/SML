@@ -107,6 +107,15 @@ public interface CtxFactory extends EFactory {
 	QualitativeParameter createQualitativeParameter();
 
 	/**
+	 * Returns a new object of class '<em>Primitive Formal Relation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Primitive Formal Relation</em>'.
+	 * @generated
+	 */
+	PrimitiveFormalRelation createPrimitiveFormalRelation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

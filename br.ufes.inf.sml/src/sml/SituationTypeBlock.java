@@ -6,6 +6,8 @@
  */
 package sml;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +17,7 @@ package sml;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link sml.SituationTypeBlock#isDisjoint <em>Disjoint</em>}</li>
+ *   <li>{@link sml.SituationTypeBlock#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,31 +25,21 @@ package sml;
  * @model
  * @generated
  */
-public interface SituationTypeBlock extends SituationTypeElement, SituationTypeElementContainer {
+public interface SituationTypeBlock extends Node {
 	/**
-	 * Returns the value of the '<em><b>Disjoint</b></em>' attribute.
+	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link sml.Node}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Disjoint</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Disjoint</em>' attribute.
-	 * @see #setDisjoint(boolean)
-	 * @see sml.SmlPackage#getSituationTypeBlock_Disjoint()
-	 * @model
+	 * @return the value of the '<em>Elements</em>' containment reference list.
+	 * @see sml.SmlPackage#getSituationTypeBlock_Elements()
+	 * @model containment="true"
 	 * @generated
 	 */
-	boolean isDisjoint();
-
-	/**
-	 * Sets the value of the '{@link sml.SituationTypeBlock#isDisjoint <em>Disjoint</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Disjoint</em>' attribute.
-	 * @see #isDisjoint()
-	 * @generated
-	 */
-	void setDisjoint(boolean value);
+	EList<Node> getElements();
 
 } // SituationTypeBlock

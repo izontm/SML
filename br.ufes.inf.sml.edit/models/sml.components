@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_ZfpgQLMYEeG1U_loq58soQ" documentation="Edition Context for sml GenPackage">
+    <categories xmi:id="_ZfpgQbMYEeG1U_loq58soQ" name="sml">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHULMYEeG1U_loq58soQ" name="SMLModel" views="_ZfquZrMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHUbMYEeG1U_loq58soQ" name="elements" views="_ZfquaLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SMLModel/elements"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHUrMYEeG1U_loq58soQ" name="contextModel" views="_ZfquabMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SMLModel/contextModel"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SMLModel"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHU7MYEeG1U_loq58soQ" name="SituationType" views="_ZfquarMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHVLMYEeG1U_loq58soQ" name="elements" views="_ZfqubLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationTypeElementContainer/elements"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHVbMYEeG1U_loq58soQ" name="name" views="_ZfqubbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationType/name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationType"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHVrMYEeG1U_loq58soQ" name="SituationTypeBlock" views="_ZfqubrMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHV7MYEeG1U_loq58soQ" name="elements" views="_ZfqucLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationTypeElementContainer/elements"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHWLMYEeG1U_loq58soQ" name="disjoint" views="_ZfqucbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationTypeBlock/disjoint"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationTypeBlock"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHWbMYEeG1U_loq58soQ" name="EntityParticipant" views="_ZfqucrMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHWrMYEeG1U_loq58soQ" name="nodeParameter" views="_ZfqudLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/nodeParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHW7MYEeG1U_loq58soQ" name="sourceRelation" views="_ZfqudbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/sourceRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHXLMYEeG1U_loq58soQ" name="targetRelation" views="_ZfqudrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/targetRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHXbMYEeG1U_loq58soQ" name="reference" views="_Zfqud7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Participant/reference"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHXrMYEeG1U_loq58soQ" name="isOfType" views="_ZfqueLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//EntityParticipant/isOfType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//EntityParticipant"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHX7MYEeG1U_loq58soQ" name="RelatorParticipant" views="_ZfquebMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHYLMYEeG1U_loq58soQ" name="nodeParameter" views="_Zfque7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/nodeParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHYbMYEeG1U_loq58soQ" name="sourceRelation" views="_ZfqufLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/sourceRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHYrMYEeG1U_loq58soQ" name="targetRelation" views="_ZfqufbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/targetRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHY7MYEeG1U_loq58soQ" name="reference" views="_ZfqufrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Participant/reference"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHZLMYEeG1U_loq58soQ" name="isOfType" views="_Zfquf7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//RelatorParticipant/isOfType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHZbMYEeG1U_loq58soQ" name="links" views="_ZfqugLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//RelatorParticipant/links"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//RelatorParticipant"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHZrMYEeG1U_loq58soQ" name="Link" views="_ZfqugbMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHZ7MYEeG1U_loq58soQ" name="isOfType" views="_Zfqug7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Link/isOfType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHaLMYEeG1U_loq58soQ" name="entity" views="_ZfquhLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Link/entity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHabMYEeG1U_loq58soQ" name="relator" views="_ZfquhbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Link/relator"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Link"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHarMYEeG1U_loq58soQ" name="SituationTypeParameter" views="_ZfquhrMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHa7MYEeG1U_loq58soQ" name="nodeReference" views="_ZfquiLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationTypeParameter/nodeReference"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHbLMYEeG1U_loq58soQ" name="name" views="_ZfquibMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationTypeParameter/name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationTypeParameter"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHbbMYEeG1U_loq58soQ" name="AttributeReference" views="_ZfquirMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHbrMYEeG1U_loq58soQ" name="nodeParameter" views="_ZfqujLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/nodeParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHb7MYEeG1U_loq58soQ" name="sourceRelation" views="_ZfqujbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/sourceRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHcLMYEeG1U_loq58soQ" name="targetRelation" views="_ZfqujrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/targetRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHcbMYEeG1U_loq58soQ" name="entity" views="_Zfquj7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//AttributeReference/entity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHcrMYEeG1U_loq58soQ" name="attribute" views="_ZfqukLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//AttributeReference/attribute"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//AttributeReference"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHc7MYEeG1U_loq58soQ" name="ComparativeRelation" views="_ZfqukbMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHdLMYEeG1U_loq58soQ" name="parameter" views="_Zfquk7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//OperatorExpression/parameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHdbMYEeG1U_loq58soQ" name="isNegated" views="_ZfqulLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//OperatorExpression/isNegated"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHdrMYEeG1U_loq58soQ" name="source" views="_ZfqulbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//ComparativeRelation/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHd7MYEeG1U_loq58soQ" name="target" views="_ZfqulrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//ComparativeRelation/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHeLMYEeG1U_loq58soQ" name="relation" views="_Zfqul7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//ComparativeRelation/relation"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//ComparativeRelation"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHebMYEeG1U_loq58soQ" name="Literal" views="_ZfqumLMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHerMYEeG1U_loq58soQ" name="nodeParameter" views="_ZfqumrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/nodeParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHe7MYEeG1U_loq58soQ" name="sourceRelation" views="_Zfqum7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/sourceRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHfLMYEeG1U_loq58soQ" name="targetRelation" views="_ZfqunLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/targetRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHfbMYEeG1U_loq58soQ" name="value" views="_ZfqunbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Literal/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHfrMYEeG1U_loq58soQ" name="dataType" views="_ZfqunrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Literal/dataType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Literal"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHf7MYEeG1U_loq58soQ" name="SituationParticipant" views="_Zfqun7MYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHgLMYEeG1U_loq58soQ" name="nodeParameter" views="_ZfquobMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/nodeParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHgbMYEeG1U_loq58soQ" name="sourceRelation" views="_ZfquorMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/sourceRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHgrMYEeG1U_loq58soQ" name="targetRelation" views="_Zfquo7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/targetRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHg7MYEeG1U_loq58soQ" name="situationType" views="_ZfqupLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant/situationType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHhLMYEeG1U_loq58soQ" name="parameter" views="_ZfqupbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant/parameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHhbMYEeG1U_loq58soQ" name="isPast" views="_ZfquprMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant/isPast"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHhrMYEeG1U_loq58soQ" name="attribute" views="_Zfqup7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant/attribute"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHh7MYEeG1U_loq58soQ" name="SituationParameterReference" views="_ZfquqLMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHiLMYEeG1U_loq58soQ" name="nodeParameter" views="_ZfquqrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/nodeParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHibMYEeG1U_loq58soQ" name="sourceRelation" views="_Zfquq7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/sourceRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHirMYEeG1U_loq58soQ" name="targetRelation" views="_ZfqurLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/targetRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHi7MYEeG1U_loq58soQ" name="parameter" views="_ZfqurbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParameterReference/parameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHjLMYEeG1U_loq58soQ" name="situation" views="_ZfqurrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParameterReference/situation"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParameterReference"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHjbMYEeG1U_loq58soQ" name="TemporalOperatorExpression" views="_Zfqur7MYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHjrMYEeG1U_loq58soQ" name="parameter" views="_ZfqusbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//OperatorExpression/parameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHj7MYEeG1U_loq58soQ" name="isNegated" views="_ZfqusrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//OperatorExpression/isNegated"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHkLMYEeG1U_loq58soQ" name="source" views="_Zfqus7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//TemporalOperatorExpression/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHkbMYEeG1U_loq58soQ" name="target" views="_ZfqutLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//TemporalOperatorExpression/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHkrMYEeG1U_loq58soQ" name="operator" views="_ZfrVcLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//TemporalOperatorExpression/operator"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//TemporalOperatorExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHk7MYEeG1U_loq58soQ" name="SituationAttribute" views="_ZfrVcbMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHlLMYEeG1U_loq58soQ" name="nodeParameter" views="_ZfrVc7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/nodeParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHlbMYEeG1U_loq58soQ" name="sourceRelation" views="_ZfrVdLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/sourceRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHlrMYEeG1U_loq58soQ" name="targetRelation" views="_ZfrVdbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/targetRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHl7MYEeG1U_loq58soQ" name="situation" views="_ZfrVdrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationAttribute/situation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHmLMYEeG1U_loq58soQ" name="isOfType" views="_ZfrVd7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationAttribute/isOfType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHmbMYEeG1U_loq58soQ" name="literal" views="_ZfrVeLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationAttribute/literal"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationAttribute"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ZfqHm7MYEeG1U_loq58soQ" name="ExistsSituation" views="_ZfrVerMYEeG1U_loq58soQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHnLMYEeG1U_loq58soQ" name="nodeParameter" views="_ZfrVfLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/nodeParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHnbMYEeG1U_loq58soQ" name="sourceRelation" views="_ZfrVfbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/sourceRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHnrMYEeG1U_loq58soQ" name="targetRelation" views="_ZfrVfrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//Node/targetRelation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfqHn7MYEeG1U_loq58soQ" name="situationType" views="_ZfrVf7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant/situationType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfquYLMYEeG1U_loq58soQ" name="parameter" views="_ZfrVgLMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant/parameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfquYbMYEeG1U_loq58soQ" name="isPast" views="_ZfrVgbMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant/isPast"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfquYrMYEeG1U_loq58soQ" name="attribute" views="_ZfrVgrMYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//SituationParticipant/attribute"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ZfquY7MYEeG1U_loq58soQ" name="isNegated" views="_ZfrVg7MYEeG1U_loq58soQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//ExistsSituation/isNegated"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/br.ufes.inf.sml/model/sml.ecore#//ExistsSituation"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/br.ufes.inf.sml/model/sml.genmodel#//sml"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_ZfquZLMYEeG1U_loq58soQ" documentation="Views repository for sml GenPackage" name="sml">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_ZfquZbMYEeG1U_loq58soQ" name="sml">
+      <views xmi:id="_ZfquZrMYEeG1U_loq58soQ" name="SMLModel">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfquZ7MYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquaLMYEeG1U_loq58soQ" name="elements">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquabMYEeG1U_loq58soQ" name="contextModel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfquarMYEeG1U_loq58soQ" name="SituationType">
+        <elements xsi:type="eef-views:Container" xmi:id="_Zfqua7MYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqubLMYEeG1U_loq58soQ" name="elements">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqubbMYEeG1U_loq58soQ" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfqubrMYEeG1U_loq58soQ" name="SituationTypeBlock">
+        <elements xsi:type="eef-views:Container" xmi:id="_Zfqub7MYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqucLMYEeG1U_loq58soQ" name="elements">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqucbMYEeG1U_loq58soQ" name="disjoint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfqucrMYEeG1U_loq58soQ" name="EntityParticipant">
+        <elements xsi:type="eef-views:Container" xmi:id="_Zfquc7MYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqudLMYEeG1U_loq58soQ" name="nodeParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqudbMYEeG1U_loq58soQ" name="sourceRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqudrMYEeG1U_loq58soQ" name="targetRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfqud7MYEeG1U_loq58soQ" name="reference">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqueLMYEeG1U_loq58soQ" name="isOfType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfquebMYEeG1U_loq58soQ" name="RelatorParticipant">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfquerMYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfque7MYEeG1U_loq58soQ" name="nodeParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqufLMYEeG1U_loq58soQ" name="sourceRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqufbMYEeG1U_loq58soQ" name="targetRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqufrMYEeG1U_loq58soQ" name="reference">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfquf7MYEeG1U_loq58soQ" name="isOfType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqugLMYEeG1U_loq58soQ" name="links">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfqugbMYEeG1U_loq58soQ" name="Link">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfqugrMYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfqug7MYEeG1U_loq58soQ" name="isOfType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquhLMYEeG1U_loq58soQ" name="entity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquhbMYEeG1U_loq58soQ" name="relator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfquhrMYEeG1U_loq58soQ" name="SituationTypeParameter">
+        <elements xsi:type="eef-views:Container" xmi:id="_Zfquh7MYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquiLMYEeG1U_loq58soQ" name="nodeReference">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquibMYEeG1U_loq58soQ" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfquirMYEeG1U_loq58soQ" name="AttributeReference">
+        <elements xsi:type="eef-views:Container" xmi:id="_Zfqui7MYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqujLMYEeG1U_loq58soQ" name="nodeParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqujbMYEeG1U_loq58soQ" name="sourceRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqujrMYEeG1U_loq58soQ" name="targetRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfquj7MYEeG1U_loq58soQ" name="entity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqukLMYEeG1U_loq58soQ" name="attribute">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfqukbMYEeG1U_loq58soQ" name="ComparativeRelation">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfqukrMYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfquk7MYEeG1U_loq58soQ" name="parameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqulLMYEeG1U_loq58soQ" name="isNegated">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqulbMYEeG1U_loq58soQ" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqulrMYEeG1U_loq58soQ" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfqul7MYEeG1U_loq58soQ" name="relation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfqumLMYEeG1U_loq58soQ" name="Literal">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfqumbMYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqumrMYEeG1U_loq58soQ" name="nodeParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfqum7MYEeG1U_loq58soQ" name="sourceRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqunLMYEeG1U_loq58soQ" name="targetRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqunbMYEeG1U_loq58soQ" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqunrMYEeG1U_loq58soQ" name="dataType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_Zfqun7MYEeG1U_loq58soQ" name="SituationParticipant">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfquoLMYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquobMYEeG1U_loq58soQ" name="nodeParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquorMYEeG1U_loq58soQ" name="sourceRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfquo7MYEeG1U_loq58soQ" name="targetRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqupLMYEeG1U_loq58soQ" name="situationType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqupbMYEeG1U_loq58soQ" name="parameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquprMYEeG1U_loq58soQ" name="isPast">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfqup7MYEeG1U_loq58soQ" name="attribute">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfquqLMYEeG1U_loq58soQ" name="SituationParameterReference">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfquqbMYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfquqrMYEeG1U_loq58soQ" name="nodeParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfquq7MYEeG1U_loq58soQ" name="sourceRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqurLMYEeG1U_loq58soQ" name="targetRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqurbMYEeG1U_loq58soQ" name="parameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqurrMYEeG1U_loq58soQ" name="situation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_Zfqur7MYEeG1U_loq58soQ" name="TemporalOperatorExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfqusLMYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqusbMYEeG1U_loq58soQ" name="parameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqusrMYEeG1U_loq58soQ" name="isNegated">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Zfqus7MYEeG1U_loq58soQ" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfqutLMYEeG1U_loq58soQ" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVcLMYEeG1U_loq58soQ" name="operator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfrVcbMYEeG1U_loq58soQ" name="SituationAttribute">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfrVcrMYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVc7MYEeG1U_loq58soQ" name="nodeParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVdLMYEeG1U_loq58soQ" name="sourceRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVdbMYEeG1U_loq58soQ" name="targetRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVdrMYEeG1U_loq58soQ" name="situation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVd7MYEeG1U_loq58soQ" name="isOfType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVeLMYEeG1U_loq58soQ" name="literal">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ZfrVerMYEeG1U_loq58soQ" name="ExistsSituation">
+        <elements xsi:type="eef-views:Container" xmi:id="_ZfrVe7MYEeG1U_loq58soQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVfLMYEeG1U_loq58soQ" name="nodeParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVfbMYEeG1U_loq58soQ" name="sourceRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVfrMYEeG1U_loq58soQ" name="targetRelation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVf7MYEeG1U_loq58soQ" name="situationType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVgLMYEeG1U_loq58soQ" name="parameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVgbMYEeG1U_loq58soQ" name="isPast">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVgrMYEeG1U_loq58soQ" name="attribute">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ZfrVg7MYEeG1U_loq58soQ" name="isNegated">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

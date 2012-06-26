@@ -67,7 +67,7 @@ public interface RelatorParticipant extends Participant {
 	 * @return the value of the '<em>Links</em>' reference list.
 	 * @see sml.SmlPackage#getRelatorParticipant_Links()
 	 * @see sml.Link#getRelator
-	 * @model opposite="relator" derived="true"
+	 * @model opposite="relator"
 	 * @generated
 	 */
 	EList<Link> getLinks();

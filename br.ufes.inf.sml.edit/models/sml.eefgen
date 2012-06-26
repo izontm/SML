@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/br.ufes.inf.sml.edit/src-gen">
+  <editionContexts basePackage="br.ufes.inf" descriptorsContributorID="fr.obeo.dsl.viewpoint.diagram" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sml.components#_ZfpgQLMYEeG1U_loq58soQ"/>
+  </editionContexts>
+  <viewsRepositories basePackage="br.ufes.inf.sml" swtViews="true" formViews="true">
+    <viewsRepository href="sml.components#_ZfquZLMYEeG1U_loq58soQ"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

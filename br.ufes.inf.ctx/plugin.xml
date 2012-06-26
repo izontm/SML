@@ -10,11 +10,14 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.example.org/ctx"
-            class="ctx.ContextPackage"
-            genModel="model/ctx.genmodel"/>
+            class="ctx.CtxPackage"
+            genModel="model/ctx.genmodel"
+            uri="http://www.example.org/ctx">
+      </package>
    </extension>
+   
 
 </plugin>

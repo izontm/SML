@@ -19,7 +19,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link sml.SituationParticipant#getSituationType <em>Situation Type</em>}</li>
  *   <li>{@link sml.SituationParticipant#getParameter <em>Parameter</em>}</li>
  *   <li>{@link sml.SituationParticipant#isIsPast <em>Is Past</em>}</li>
- *   <li>{@link sml.SituationParticipant#getAttribute <em>Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SituationParticipant extends Node {
+public interface SituationParticipant extends Participant {
 	/**
 	 * Returns the value of the '<em><b>Situation Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -97,23 +96,5 @@ public interface SituationParticipant extends Node {
 	 * @generated
 	 */
 	void setIsPast(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Attribute</b></em>' reference list.
-	 * The list contents are of type {@link sml.SituationAttribute}.
-	 * It is bidirectional and its opposite is '{@link sml.SituationAttribute#getSituation <em>Situation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attribute</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute</em>' reference list.
-	 * @see sml.SmlPackage#getSituationParticipant_Attribute()
-	 * @see sml.SituationAttribute#getSituation
-	 * @model opposite="situation"
-	 * @generated
-	 */
-	EList<SituationAttribute> getAttribute();
 
 } // SituationParticipant

@@ -76,10 +76,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 				return createSMLModelAdapter();
 			}
 			@Override
-			public Adapter caseSMLModelElement(SMLModelElement object) {
-				return createSMLModelElementAdapter();
-			}
-			@Override
 			public Adapter caseSituationType(SituationType object) {
 				return createSituationTypeAdapter();
 			}
@@ -128,10 +124,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 				return createComparativeRelationAdapter();
 			}
 			@Override
-			public Adapter caseSituationTypeElementContainer(SituationTypeElementContainer object) {
-				return createSituationTypeElementContainerAdapter();
-			}
-			@Override
 			public Adapter caseLiteral(Literal object) {
 				return createLiteralAdapter();
 			}
@@ -150,10 +142,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTemporalOperatorExpression(TemporalOperatorExpression object) {
 				return createTemporalOperatorExpressionAdapter();
-			}
-			@Override
-			public Adapter caseSituationAttribute(SituationAttribute object) {
-				return createSituationAttributeAdapter();
 			}
 			@Override
 			public Adapter caseExistsSituation(ExistsSituation object) {
@@ -190,20 +178,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSMLModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link sml.SMLModelElement <em>SML Model Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see sml.SMLModelElement
-	 * @generated
-	 */
-	public Adapter createSMLModelElementAdapter() {
 		return null;
 	}
 
@@ -376,20 +350,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link sml.SituationTypeElementContainer <em>Situation Type Element Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see sml.SituationTypeElementContainer
-	 * @generated
-	 */
-	public Adapter createSituationTypeElementContainerAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link sml.Literal <em>Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -456,20 +416,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTemporalOperatorExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link sml.SituationAttribute <em>Situation Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see sml.SituationAttribute
-	 * @generated
-	 */
-	public Adapter createSituationAttributeAdapter() {
 		return null;
 	}
 
