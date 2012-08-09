@@ -37,7 +37,7 @@ public interface ComparativeFormalRelation extends ContextModelElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference list.
 	 * @see ctx.CtxPackage#getComparativeFormalRelation_Target()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<ComparableElements> getTarget();
@@ -53,7 +53,7 @@ public interface ComparativeFormalRelation extends ContextModelElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference list.
 	 * @see ctx.CtxPackage#getComparativeFormalRelation_Source()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<ComparableElements> getSource();

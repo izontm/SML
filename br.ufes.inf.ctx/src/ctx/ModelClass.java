@@ -28,7 +28,6 @@ public interface ModelClass extends ContextModelElement {
 	/**
 	 * Returns the value of the '<em><b>Attribute</b></em>' containment reference list.
 	 * The list contents are of type {@link ctx.Attribute}.
-	 * It is bidirectional and its opposite is '{@link ctx.Attribute#getAclass <em>Aclass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Attribute</em>' containment reference list isn't clear,
@@ -37,8 +36,7 @@ public interface ModelClass extends ContextModelElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attribute</em>' containment reference list.
 	 * @see ctx.CtxPackage#getModelClass_Attribute()
-	 * @see ctx.Attribute#getAclass
-	 * @model opposite="aclass" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Attribute> getAttribute();

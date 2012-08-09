@@ -293,22 +293,13 @@ public interface CtxPackage extends EPackage {
 	int ATTRIBUTE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Aclass</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__ACLASS = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Datatype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__DATATYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ATTRIBUTE__DATATYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -317,7 +308,7 @@ public interface CtxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ATTRIBUTE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link ctx.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -710,17 +701,6 @@ public interface CtxPackage extends EPackage {
 	EClass getAttribute();
 
 	/**
-	 * Returns the meta object for the container reference '{@link ctx.Attribute#getAclass <em>Aclass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Aclass</em>'.
-	 * @see ctx.Attribute#getAclass()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EReference getAttribute_Aclass();
-
-	/**
 	 * Returns the meta object for the reference '{@link ctx.Attribute#getDatatype <em>Datatype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1022,14 +1002,6 @@ public interface CtxPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ATTRIBUTE = eINSTANCE.getAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Aclass</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTRIBUTE__ACLASS = eINSTANCE.getAttribute_Aclass();
 
 		/**
 		 * The meta object literal for the '<em><b>Datatype</b></em>' reference feature.

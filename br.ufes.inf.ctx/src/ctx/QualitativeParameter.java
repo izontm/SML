@@ -36,7 +36,7 @@ public interface QualitativeParameter extends NamedElement {
 	 * @return the value of the '<em>Element</em>' reference.
 	 * @see #setElement(ComparableElements)
 	 * @see ctx.CtxPackage#getQualitativeParameter_Element()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	ComparableElements getElement();

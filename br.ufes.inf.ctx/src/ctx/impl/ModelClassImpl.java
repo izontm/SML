@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -72,24 +73,9 @@ public abstract class ModelClassImpl extends ContextModelElementImpl implements 
 	 */
 	public EList<Attribute> getAttribute() {
 		if (attribute == null) {
-			attribute = new EObjectContainmentWithInverseEList<Attribute>(Attribute.class, this, CtxPackage.MODEL_CLASS__ATTRIBUTE, CtxPackage.ATTRIBUTE__ACLASS);
+			attribute = new EObjectContainmentEList<Attribute>(Attribute.class, this, CtxPackage.MODEL_CLASS__ATTRIBUTE);
 		}
 		return attribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CtxPackage.MODEL_CLASS__ATTRIBUTE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAttribute()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

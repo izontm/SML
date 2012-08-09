@@ -37,7 +37,7 @@ public interface QualitativeFormalRelation extends ContextModelElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter</em>' containment reference list.
 	 * @see ctx.CtxPackage#getQualitativeFormalRelation_Parameter()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<QualitativeParameter> getParameter();
@@ -53,7 +53,7 @@ public interface QualitativeFormalRelation extends ContextModelElement {
 	 * @return the value of the '<em>Datatype</em>' reference.
 	 * @see #setDatatype(DataType)
 	 * @see ctx.CtxPackage#getQualitativeFormalRelation_Datatype()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	DataType getDatatype();

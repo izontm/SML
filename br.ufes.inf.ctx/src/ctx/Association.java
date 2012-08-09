@@ -36,7 +36,7 @@ public interface Association extends ContextModelElement {
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(RelatorClass)
 	 * @see ctx.CtxPackage#getAssociation_Source()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	RelatorClass getSource();
@@ -62,7 +62,7 @@ public interface Association extends ContextModelElement {
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(EntityClass)
 	 * @see ctx.CtxPackage#getAssociation_Target()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EntityClass getTarget();

@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: br.ufes.inf.ctx.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: ctx.provider.ContextEditPlugin$Implementation
+Bundle-Activator: ctx.provider.CtxEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
