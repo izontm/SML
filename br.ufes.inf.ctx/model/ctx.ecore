@@ -16,9 +16,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelatorClass" eSuperTypes="#//ModelClass"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement #//TypedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="aclass" eType="#//ModelClass"
         eOpposite="#//ModelClass/attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" eType="#//DataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -36,14 +37,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContextModelElement" abstract="true"
       eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QualitativeFormalRelation" eSuperTypes="#//ContextModelElement #//TypedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="QualitativeFormalRelation" eSuperTypes="#//ContextModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//QualitativeParameter" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QualitativeParameter" eSuperTypes="#//NamedElement #//TypedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualitativeParameter" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//ComparableElements"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComparableElements" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveFormalRelation" eSuperTypes="#//ComparativeFormalRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" eSuperTypes="#//DataType"/>
 </ecore:EPackage>

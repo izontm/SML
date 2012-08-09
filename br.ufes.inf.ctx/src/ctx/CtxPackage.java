@@ -293,22 +293,22 @@ public interface CtxPackage extends EPackage {
 	int ATTRIBUTE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Datatype</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__DATATYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Aclass</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__ACLASS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ATTRIBUTE__ACLASS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Datatype</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__DATATYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -459,22 +459,22 @@ public interface CtxPackage extends EPackage {
 	int QUALITATIVE_FORMAL_RELATION__NAME = CONTEXT_MODEL_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Datatype</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUALITATIVE_FORMAL_RELATION__DATATYPE = CONTEXT_MODEL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE_FORMAL_RELATION__PARAMETER = CONTEXT_MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int QUALITATIVE_FORMAL_RELATION__PARAMETER = CONTEXT_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Datatype</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITATIVE_FORMAL_RELATION__DATATYPE = CONTEXT_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Qualitative Formal Relation</em>' class.
@@ -505,13 +505,13 @@ public interface CtxPackage extends EPackage {
 	int QUALITATIVE_PARAMETER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Datatype</b></em>' reference.
+	 * The feature id for the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE_PARAMETER__DATATYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int QUALITATIVE_PARAMETER__ELEMENT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Qualitative Parameter</em>' class.
@@ -523,34 +523,6 @@ public interface CtxPackage extends EPackage {
 	int QUALITATIVE_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link ctx.impl.TypedElementImpl <em>Typed Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ctx.impl.TypedElementImpl
-	 * @see ctx.impl.CtxPackageImpl#getTypedElement()
-	 * @generated
-	 */
-	int TYPED_ELEMENT = 12;
-
-	/**
-	 * The feature id for the '<em><b>Datatype</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT__DATATYPE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Typed Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link ctx.impl.ComparableElementsImpl <em>Comparable Elements</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -558,7 +530,7 @@ public interface CtxPackage extends EPackage {
 	 * @see ctx.impl.CtxPackageImpl#getComparableElements()
 	 * @generated
 	 */
-	int COMPARABLE_ELEMENTS = 13;
+	int COMPARABLE_ELEMENTS = 12;
 
 	/**
 	 * The number of structural features of the '<em>Comparable Elements</em>' class.
@@ -577,7 +549,7 @@ public interface CtxPackage extends EPackage {
 	 * @see ctx.impl.CtxPackageImpl#getPrimitiveFormalRelation()
 	 * @generated
 	 */
-	int PRIMITIVE_FORMAL_RELATION = 14;
+	int PRIMITIVE_FORMAL_RELATION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -614,6 +586,34 @@ public interface CtxPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_FORMAL_RELATION_FEATURE_COUNT = COMPARATIVE_FORMAL_RELATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ctx.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ctx.impl.PrimitiveDataTypeImpl
+	 * @see ctx.impl.CtxPackageImpl#getPrimitiveDataType()
+	 * @generated
+	 */
+	int PRIMITIVE_DATA_TYPE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Primitive Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link ctx.ContextModel <em>Context Model</em>}'.
@@ -719,6 +719,17 @@ public interface CtxPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttribute_Aclass();
+
+	/**
+	 * Returns the meta object for the reference '{@link ctx.Attribute#getDatatype <em>Datatype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Datatype</em>'.
+	 * @see ctx.Attribute#getDatatype()
+	 * @see #getAttribute()
+	 * @generated
+	 */
+	EReference getAttribute_Datatype();
 
 	/**
 	 * Returns the meta object for class '{@link ctx.NamedElement <em>Named Element</em>}'.
@@ -847,6 +858,17 @@ public interface CtxPackage extends EPackage {
 	EReference getQualitativeFormalRelation_Parameter();
 
 	/**
+	 * Returns the meta object for the reference '{@link ctx.QualitativeFormalRelation#getDatatype <em>Datatype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Datatype</em>'.
+	 * @see ctx.QualitativeFormalRelation#getDatatype()
+	 * @see #getQualitativeFormalRelation()
+	 * @generated
+	 */
+	EReference getQualitativeFormalRelation_Datatype();
+
+	/**
 	 * Returns the meta object for class '{@link ctx.QualitativeParameter <em>Qualitative Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -857,25 +879,15 @@ public interface CtxPackage extends EPackage {
 	EClass getQualitativeParameter();
 
 	/**
-	 * Returns the meta object for class '{@link ctx.TypedElement <em>Typed Element</em>}'.
+	 * Returns the meta object for the reference '{@link ctx.QualitativeParameter#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Typed Element</em>'.
-	 * @see ctx.TypedElement
+	 * @return the meta object for the reference '<em>Element</em>'.
+	 * @see ctx.QualitativeParameter#getElement()
+	 * @see #getQualitativeParameter()
 	 * @generated
 	 */
-	EClass getTypedElement();
-
-	/**
-	 * Returns the meta object for the reference '{@link ctx.TypedElement#getDatatype <em>Datatype</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Datatype</em>'.
-	 * @see ctx.TypedElement#getDatatype()
-	 * @see #getTypedElement()
-	 * @generated
-	 */
-	EReference getTypedElement_Datatype();
+	EReference getQualitativeParameter_Element();
 
 	/**
 	 * Returns the meta object for class '{@link ctx.ComparableElements <em>Comparable Elements</em>}'.
@@ -896,6 +908,16 @@ public interface CtxPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPrimitiveFormalRelation();
+
+	/**
+	 * Returns the meta object for class '{@link ctx.PrimitiveDataType <em>Primitive Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Primitive Data Type</em>'.
+	 * @see ctx.PrimitiveDataType
+	 * @generated
+	 */
+	EClass getPrimitiveDataType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1010,6 +1032,14 @@ public interface CtxPackage extends EPackage {
 		EReference ATTRIBUTE__ACLASS = eINSTANCE.getAttribute_Aclass();
 
 		/**
+		 * The meta object literal for the '<em><b>Datatype</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE__DATATYPE = eINSTANCE.getAttribute_Datatype();
+
+		/**
 		 * The meta object literal for the '{@link ctx.impl.NamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1118,6 +1148,14 @@ public interface CtxPackage extends EPackage {
 		EReference QUALITATIVE_FORMAL_RELATION__PARAMETER = eINSTANCE.getQualitativeFormalRelation_Parameter();
 
 		/**
+		 * The meta object literal for the '<em><b>Datatype</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUALITATIVE_FORMAL_RELATION__DATATYPE = eINSTANCE.getQualitativeFormalRelation_Datatype();
+
+		/**
 		 * The meta object literal for the '{@link ctx.impl.QualitativeParameterImpl <em>Qualitative Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1128,22 +1166,12 @@ public interface CtxPackage extends EPackage {
 		EClass QUALITATIVE_PARAMETER = eINSTANCE.getQualitativeParameter();
 
 		/**
-		 * The meta object literal for the '{@link ctx.impl.TypedElementImpl <em>Typed Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ctx.impl.TypedElementImpl
-		 * @see ctx.impl.CtxPackageImpl#getTypedElement()
-		 * @generated
-		 */
-		EClass TYPED_ELEMENT = eINSTANCE.getTypedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Datatype</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPED_ELEMENT__DATATYPE = eINSTANCE.getTypedElement_Datatype();
+		EReference QUALITATIVE_PARAMETER__ELEMENT = eINSTANCE.getQualitativeParameter_Element();
 
 		/**
 		 * The meta object literal for the '{@link ctx.impl.ComparableElementsImpl <em>Comparable Elements</em>}' class.
@@ -1164,6 +1192,16 @@ public interface CtxPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PRIMITIVE_FORMAL_RELATION = eINSTANCE.getPrimitiveFormalRelation();
+
+		/**
+		 * The meta object literal for the '{@link ctx.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ctx.impl.PrimitiveDataTypeImpl
+		 * @see ctx.impl.CtxPackageImpl#getPrimitiveDataType()
+		 * @generated
+		 */
+		EClass PRIMITIVE_DATA_TYPE = eINSTANCE.getPrimitiveDataType();
 
 	}
 

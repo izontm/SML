@@ -4,13 +4,10 @@
  *
  * $Id$
  */
-package ctx.impl;
+package sml.impl;
 
-import ctx.CtxPackage;
-import ctx.DataType;
 import ctx.QualitativeFormalRelation;
-import ctx.QualitativeParameter;
-import ctx.TypedElement;
+import ctx.DataType;
 
 import java.util.Collection;
 
@@ -27,21 +24,25 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import sml.Function;
+import sml.Parameter;
+import sml.SmlPackage;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Qualitative Formal Relation</b></em>'.
+ * An implementation of the model object '<em><b>Function</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ctx.impl.QualitativeFormalRelationImpl#getParameter <em>Parameter</em>}</li>
- *   <li>{@link ctx.impl.QualitativeFormalRelationImpl#getDatatype <em>Datatype</em>}</li>
+ *   <li>{@link sml.impl.FunctionImpl#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link sml.impl.FunctionImpl#getFunction <em>Function</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class QualitativeFormalRelationImpl extends ContextModelElementImpl implements QualitativeFormalRelation {
+public class FunctionImpl extends NodeImpl implements Function {
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -50,24 +51,24 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<QualitativeParameter> parameter;
+	protected EList<Parameter> parameter;
 
 	/**
-	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference.
+	 * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDatatype()
+	 * @see #getFunction()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType datatype;
+	protected QualitativeFormalRelation function;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected QualitativeFormalRelationImpl() {
+	protected FunctionImpl() {
 		super();
 	}
 
@@ -78,7 +79,7 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CtxPackage.Literals.QUALITATIVE_FORMAL_RELATION;
+		return SmlPackage.Literals.FUNCTION;
 	}
 
 	/**
@@ -86,9 +87,9 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<QualitativeParameter> getParameter() {
+	public EList<Parameter> getParameter() {
 		if (parameter == null) {
-			parameter = new EObjectContainmentEList<QualitativeParameter>(QualitativeParameter.class, this, CtxPackage.QUALITATIVE_FORMAL_RELATION__PARAMETER);
+			parameter = new EObjectContainmentEList<Parameter>(Parameter.class, this, SmlPackage.FUNCTION__PARAMETER);
 		}
 		return parameter;
 	}
@@ -98,16 +99,16 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getDatatype() {
-		if (datatype != null && datatype.eIsProxy()) {
-			InternalEObject oldDatatype = (InternalEObject)datatype;
-			datatype = (DataType)eResolveProxy(oldDatatype);
-			if (datatype != oldDatatype) {
+	public QualitativeFormalRelation getFunction() {
+		if (function != null && function.eIsProxy()) {
+			InternalEObject oldFunction = (InternalEObject)function;
+			function = (QualitativeFormalRelation)eResolveProxy(oldFunction);
+			if (function != oldFunction) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CtxPackage.QUALITATIVE_FORMAL_RELATION__DATATYPE, oldDatatype, datatype));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmlPackage.FUNCTION__FUNCTION, oldFunction, function));
 			}
 		}
-		return datatype;
+		return function;
 	}
 
 	/**
@@ -115,8 +116,8 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetDatatype() {
-		return datatype;
+	public QualitativeFormalRelation basicGetFunction() {
+		return function;
 	}
 
 	/**
@@ -124,11 +125,11 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDatatype(DataType newDatatype) {
-		DataType oldDatatype = datatype;
-		datatype = newDatatype;
+	public void setFunction(QualitativeFormalRelation newFunction) {
+		QualitativeFormalRelation oldFunction = function;
+		function = newFunction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CtxPackage.QUALITATIVE_FORMAL_RELATION__DATATYPE, oldDatatype, datatype));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmlPackage.FUNCTION__FUNCTION, oldFunction, function));
 	}
 
 	/**
@@ -139,7 +140,7 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__PARAMETER:
+			case SmlPackage.FUNCTION__PARAMETER:
 				return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -153,11 +154,11 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__PARAMETER:
+			case SmlPackage.FUNCTION__PARAMETER:
 				return getParameter();
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__DATATYPE:
-				if (resolve) return getDatatype();
-				return basicGetDatatype();
+			case SmlPackage.FUNCTION__FUNCTION:
+				if (resolve) return getFunction();
+				return basicGetFunction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,12 +172,12 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__PARAMETER:
+			case SmlPackage.FUNCTION__PARAMETER:
 				getParameter().clear();
-				getParameter().addAll((Collection<? extends QualitativeParameter>)newValue);
+				getParameter().addAll((Collection<? extends Parameter>)newValue);
 				return;
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__DATATYPE:
-				setDatatype((DataType)newValue);
+			case SmlPackage.FUNCTION__FUNCTION:
+				setFunction((QualitativeFormalRelation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,11 +191,11 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__PARAMETER:
+			case SmlPackage.FUNCTION__PARAMETER:
 				getParameter().clear();
 				return;
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__DATATYPE:
-				setDatatype((DataType)null);
+			case SmlPackage.FUNCTION__FUNCTION:
+				setFunction((QualitativeFormalRelation)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -208,12 +209,12 @@ public class QualitativeFormalRelationImpl extends ContextModelElementImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__PARAMETER:
+			case SmlPackage.FUNCTION__PARAMETER:
 				return parameter != null && !parameter.isEmpty();
-			case CtxPackage.QUALITATIVE_FORMAL_RELATION__DATATYPE:
-				return datatype != null;
+			case SmlPackage.FUNCTION__FUNCTION:
+				return function != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //QualitativeFormalRelationImpl
+} //FunctionImpl

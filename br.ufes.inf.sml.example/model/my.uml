@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http:///schemas/context/_L1i7ILjTEeGL4_Q0zpwpyA/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/context/_L1i7ILjTEeGL4_Q0zpwpyA/0 platform:/plugin/br.ufes.inf.ctx/model/ctx.profile.uml#_L1i7IrjTEeGL4_Q0zpwpyA">
+  <uml:Model xmi:id="_beyP8LjKEeGL4_Q0zpwpyA" name="NewModel">
+    <packagedElement xmi:type="uml:Class" xmi:id="_uqenwLjVEeGL4_Q0zpwpyA" name="Person" isAbstract="true">
+      <ownedAttribute xmi:id="_zi8LgLjVEeGL4_Q0zpwpyA" name="name" type="_zYyUgLjWEeGL4_Q0zpwpyA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zi-nwbjVEeGL4_Q0zpwpyA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zi-nwLjVEeGL4_Q0zpwpyA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2o1lcLjVEeGL4_Q0zpwpyA" name="Loving"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DQJEMLjWEeGL4_Q0zpwpyA" name="Pacient">
+      <generalization xmi:id="_F_Y4sLjWEeGL4_Q0zpwpyA" general="_uqenwLjVEeGL4_Q0zpwpyA"/>
+      <ownedAttribute xmi:id="_NcyeYLjWEeGL4_Q0zpwpyA" name="temperature" type="_LqR-8LjWEeGL4_Q0zpwpyA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Nc0TkbjWEeGL4_Q0zpwpyA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Nc0TkLjWEeGL4_Q0zpwpyA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Gg0KwLjWEeGL4_Q0zpwpyA" name="Doctor">
+      <generalization xmi:id="_J3DGwLjWEeGL4_Q0zpwpyA" general="_uqenwLjVEeGL4_Q0zpwpyA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_LqR-8LjWEeGL4_Q0zpwpyA" name="Temperature"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VN64YLjWEeGL4_Q0zpwpyA" name="Treatment"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_zYyUgLjWEeGL4_Q0zpwpyA" name="String"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_mladwLjYEeGL4_Q0zpwpyA" name="treatmentsToPacient" memberEnd="_mladwbjYEeGL4_Q0zpwpyA _mlbE0LjYEeGL4_Q0zpwpyA" navigableOwnedEnd="_mladwbjYEeGL4_Q0zpwpyA _mlbE0LjYEeGL4_Q0zpwpyA">
+      <ownedEnd xmi:id="_mladwbjYEeGL4_Q0zpwpyA" name="treatments" type="_VN64YLjWEeGL4_Q0zpwpyA" association="_mladwLjYEeGL4_Q0zpwpyA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mladw7jYEeGL4_Q0zpwpyA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mladwrjYEeGL4_Q0zpwpyA"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_mlbE0LjYEeGL4_Q0zpwpyA" name="pacient" type="_DQJEMLjWEeGL4_Q0zpwpyA" association="_mladwLjYEeGL4_Q0zpwpyA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mlbE0rjYEeGL4_Q0zpwpyA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mlbE0bjYEeGL4_Q0zpwpyA"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_pBgswLjYEeGL4_Q0zpwpyA" name="treatmentsToDoctor" memberEnd="_pBgswbjYEeGL4_Q0zpwpyA _pBhT0LjYEeGL4_Q0zpwpyA" navigableOwnedEnd="_pBgswbjYEeGL4_Q0zpwpyA _pBhT0LjYEeGL4_Q0zpwpyA">
+      <ownedEnd xmi:id="_pBgswbjYEeGL4_Q0zpwpyA" name="treatments" type="_VN64YLjWEeGL4_Q0zpwpyA" association="_pBgswLjYEeGL4_Q0zpwpyA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pBgsw7jYEeGL4_Q0zpwpyA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pBgswrjYEeGL4_Q0zpwpyA"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_pBhT0LjYEeGL4_Q0zpwpyA" name="doctor" type="_Gg0KwLjWEeGL4_Q0zpwpyA" association="_pBgswLjYEeGL4_Q0zpwpyA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pBhT0rjYEeGL4_Q0zpwpyA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pBhT0bjYEeGL4_Q0zpwpyA"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FYUNMLvtEeGDsPqNjq3NYw" name="lovedToLover" memberEnd="_FYZswLvtEeGDsPqNjq3NYw _FYaT0bvtEeGDsPqNjq3NYw" navigableOwnedEnd="_FYZswLvtEeGDsPqNjq3NYw _FYaT0bvtEeGDsPqNjq3NYw">
+      <ownedEnd xmi:id="_FYZswLvtEeGDsPqNjq3NYw" name="lover" type="_2o1lcLjVEeGL4_Q0zpwpyA" association="_FYUNMLvtEeGDsPqNjq3NYw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FYaT0LvtEeGDsPqNjq3NYw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FYZswbvtEeGDsPqNjq3NYw"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_FYaT0bvtEeGDsPqNjq3NYw" name="loved" type="_uqenwLjVEeGL4_Q0zpwpyA" association="_FYUNMLvtEeGDsPqNjq3NYw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FYaT07vtEeGDsPqNjq3NYw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FYaT0rvtEeGDsPqNjq3NYw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MbriQLvtEeGDsPqNjq3NYw" name="loverToLoved" memberEnd="_MbsJULvtEeGDsPqNjq3NYw _MbswYLvtEeGDsPqNjq3NYw" navigableOwnedEnd="_MbsJULvtEeGDsPqNjq3NYw _MbswYLvtEeGDsPqNjq3NYw">
+      <ownedEnd xmi:id="_MbsJULvtEeGDsPqNjq3NYw" name="lover" type="_uqenwLjVEeGL4_Q0zpwpyA" association="_MbriQLvtEeGDsPqNjq3NYw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MbsJUrvtEeGDsPqNjq3NYw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MbsJUbvtEeGDsPqNjq3NYw"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_MbswYLvtEeGDsPqNjq3NYw" name="loved" type="_2o1lcLjVEeGL4_Q0zpwpyA" association="_MbriQLvtEeGDsPqNjq3NYw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MbswYrvtEeGDsPqNjq3NYw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MbswYbvtEeGDsPqNjq3NYw"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:id="_NPaxULlFEeGDMK5ZJP5Rfg">
+      <eAnnotations xmi:id="_NPbYYLlFEeGDMK5ZJP5Rfg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/br.ufes.inf.ctx/model/ctx.profile.uml#_L1i7IrjTEeGL4_Q0zpwpyA"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/br.ufes.inf.ctx/model/ctx.profile.uml#_DsGIwLjIEeGL4_Q0zpwpyA"/>
+    </profileApplication>
+  </uml:Model>
+  <context:Entity xmi:id="_Pl45cLlFEeGDMK5ZJP5Rfg" base_Class="_uqenwLjVEeGL4_Q0zpwpyA"/>
+  <context:Relator xmi:id="_RNwPILlFEeGDMK5ZJP5Rfg" base_Class="_2o1lcLjVEeGL4_Q0zpwpyA"/>
+  <context:Relator xmi:id="_S4OM4LlFEeGDMK5ZJP5Rfg" base_Class="_VN64YLjWEeGL4_Q0zpwpyA"/>
+</xmi:XMI>

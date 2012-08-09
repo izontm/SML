@@ -1124,6 +1124,107 @@ public interface SmlPackage extends EPackage {
 	int EXISTS_SITUATION_FEATURE_COUNT = SITUATION_PARTICIPANT_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link sml.impl.FunctionImpl <em>Function</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sml.impl.FunctionImpl
+	 * @see sml.impl.SmlPackageImpl#getFunction()
+	 * @generated
+	 */
+	int FUNCTION = 19;
+
+	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__NODE_PARAMETER = NODE__NODE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__SOURCE_RELATION = NODE__SOURCE_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Target Relation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__TARGET_RELATION = NODE__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__PARAMETER = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Function</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__FUNCTION = NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_FEATURE_COUNT = NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link sml.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sml.impl.ParameterImpl
+	 * @see sml.impl.SmlPackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 20;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__PARAMETER = 1;
+
+	/**
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link sml.TemporalOperatorType <em>Temporal Operator Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1131,7 +1232,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getTemporalOperatorType()
 	 * @generated
 	 */
-	int TEMPORAL_OPERATOR_TYPE = 19;
+	int TEMPORAL_OPERATOR_TYPE = 21;
 
 	/**
 	 * The meta object id for the '{@link sml.SituationAttributeType <em>Situation Attribute Type</em>}' enum.
@@ -1141,7 +1242,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationAttributeType()
 	 * @generated
 	 */
-	int SITUATION_ATTRIBUTE_TYPE = 20;
+	int SITUATION_ATTRIBUTE_TYPE = 22;
 
 
 	/**
@@ -1742,6 +1843,70 @@ public interface SmlPackage extends EPackage {
 	EAttribute getExistsSituation_IsNegated();
 
 	/**
+	 * Returns the meta object for class '{@link sml.Function <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Function</em>'.
+	 * @see sml.Function
+	 * @generated
+	 */
+	EClass getFunction();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link sml.Function#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter</em>'.
+	 * @see sml.Function#getParameter()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EReference getFunction_Parameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link sml.Function#getFunction <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Function</em>'.
+	 * @see sml.Function#getFunction()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EReference getFunction_Function();
+
+	/**
+	 * Returns the meta object for class '{@link sml.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see sml.Parameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link sml.Parameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see sml.Parameter#getValue()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EReference getParameter_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link sml.Parameter#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parameter</em>'.
+	 * @see sml.Parameter#getParameter()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EReference getParameter_Parameter();
+
+	/**
 	 * Returns the meta object for enum '{@link sml.TemporalOperatorType <em>Temporal Operator Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2268,6 +2433,58 @@ public interface SmlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EXISTS_SITUATION__IS_NEGATED = eINSTANCE.getExistsSituation_IsNegated();
+
+		/**
+		 * The meta object literal for the '{@link sml.impl.FunctionImpl <em>Function</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see sml.impl.FunctionImpl
+		 * @see sml.impl.SmlPackageImpl#getFunction()
+		 * @generated
+		 */
+		EClass FUNCTION = eINSTANCE.getFunction();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUNCTION__PARAMETER = eINSTANCE.getFunction_Parameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUNCTION__FUNCTION = eINSTANCE.getFunction_Function();
+
+		/**
+		 * The meta object literal for the '{@link sml.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see sml.impl.ParameterImpl
+		 * @see sml.impl.SmlPackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER__VALUE = eINSTANCE.getParameter_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER__PARAMETER = eINSTANCE.getParameter_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link sml.TemporalOperatorType <em>Temporal Operator Type</em>}' enum.

@@ -398,6 +398,52 @@ public class SmlItemProviderAdapterFactory extends SmlAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link sml.Function} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FunctionItemProvider functionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link sml.Function}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFunctionAdapter() {
+		if (functionItemProvider == null) {
+			functionItemProvider = new FunctionItemProvider(this);
+		}
+
+		return functionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link sml.Parameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterItemProvider parameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link sml.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterAdapter() {
+		if (parameterItemProvider == null) {
+			parameterItemProvider = new ParameterItemProvider(this);
+		}
+
+		return parameterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -510,6 +556,8 @@ public class SmlItemProviderAdapterFactory extends SmlAdapterFactory implements 
 		if (situationParameterReferenceItemProvider != null) situationParameterReferenceItemProvider.dispose();
 		if (temporalOperatorExpressionItemProvider != null) temporalOperatorExpressionItemProvider.dispose();
 		if (existsSituationItemProvider != null) existsSituationItemProvider.dispose();
+		if (functionItemProvider != null) functionItemProvider.dispose();
+		if (parameterItemProvider != null) parameterItemProvider.dispose();
 	}
 
 }

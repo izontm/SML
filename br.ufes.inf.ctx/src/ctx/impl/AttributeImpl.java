@@ -29,8 +29,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ctx.impl.AttributeImpl#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link ctx.impl.AttributeImpl#getAclass <em>Aclass</em>}</li>
+ *   <li>{@link ctx.impl.AttributeImpl#getDatatype <em>Datatype</em>}</li>
  * </ul>
  * </p>
  *
@@ -197,11 +197,11 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case CtxPackage.ATTRIBUTE__ACLASS:
+				return getAclass();
 			case CtxPackage.ATTRIBUTE__DATATYPE:
 				if (resolve) return getDatatype();
 				return basicGetDatatype();
-			case CtxPackage.ATTRIBUTE__ACLASS:
-				return getAclass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,11 +214,11 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CtxPackage.ATTRIBUTE__DATATYPE:
-				setDatatype((DataType)newValue);
-				return;
 			case CtxPackage.ATTRIBUTE__ACLASS:
 				setAclass((ModelClass)newValue);
+				return;
+			case CtxPackage.ATTRIBUTE__DATATYPE:
+				setDatatype((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,11 +232,11 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CtxPackage.ATTRIBUTE__DATATYPE:
-				setDatatype((DataType)null);
-				return;
 			case CtxPackage.ATTRIBUTE__ACLASS:
 				setAclass((ModelClass)null);
+				return;
+			case CtxPackage.ATTRIBUTE__DATATYPE:
+				setDatatype((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -250,44 +250,12 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CtxPackage.ATTRIBUTE__DATATYPE:
-				return datatype != null;
 			case CtxPackage.ATTRIBUTE__ACLASS:
 				return getAclass() != null;
+			case CtxPackage.ATTRIBUTE__DATATYPE:
+				return datatype != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == TypedElement.class) {
-			switch (derivedFeatureID) {
-				case CtxPackage.ATTRIBUTE__DATATYPE: return CtxPackage.TYPED_ELEMENT__DATATYPE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == TypedElement.class) {
-			switch (baseFeatureID) {
-				case CtxPackage.TYPED_ELEMENT__DATATYPE: return CtxPackage.ATTRIBUTE__DATATYPE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //AttributeImpl

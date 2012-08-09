@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package br.ufes.inf.uml2context.ui.common;
+package br.ufes.inf.uml2ctx.ui.common;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,7 +27,7 @@ import org.osgi.framework.Bundle;
 
 
 /**
- * Main entry point of the 'UML to Context Model' generation module.
+ * Main entry point of the 'Uml2ctx' generation module.
  */
 public class GenerateAll {
 
@@ -79,7 +79,7 @@ public class GenerateAll {
 			targetFolder.getLocation().toFile().mkdirs();
 		}
 		
-		// final URI template0 = getTemplateURI("br.ufes.inf.uml2context", new Path("/br/ufes/inf/uml2context/common/generate.emtl"));
+		// final URI template0 = getTemplateURI("br.ufes.inf.uml2ctx", new Path("/br/ufes/inf/uml2context/common/generate.emtl"));
 		// br.ufes.inf.uml2context.common.Generate gen0 = new br.ufes.inf.uml2context.common.Generate(modelURI, targetFolder.getLocation().toFile(), arguments) {
 		//	protected URI createTemplateURI(String entry) {
 		//		return template0;
@@ -89,7 +89,7 @@ public class GenerateAll {
 		monitor.subTask("Loading...");
 		br.ufes.inf.uml2context.common.Generate gen0 = new br.ufes.inf.uml2context.common.Generate(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("br.ufes.inf.uml2context", "br.ufes.inf.uml2context.common.Generate", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("br.ufes.inf.uml2ctx", "br.ufes.inf.uml2context.common.Generate", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 			

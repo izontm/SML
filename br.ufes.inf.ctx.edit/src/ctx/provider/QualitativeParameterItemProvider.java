@@ -59,25 +59,25 @@ public class QualitativeParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDatatypePropertyDescriptor(object);
+			addElementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Datatype feature.
+	 * This adds a property descriptor for the Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDatatypePropertyDescriptor(Object object) {
+	protected void addElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TypedElement_datatype_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypedElement_datatype_feature", "_UI_TypedElement_type"),
-				 CtxPackage.Literals.TYPED_ELEMENT__DATATYPE,
+				 getString("_UI_QualitativeParameter_element_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QualitativeParameter_element_feature", "_UI_QualitativeParameter_type"),
+				 CtxPackage.Literals.QUALITATIVE_PARAMETER__ELEMENT,
 				 true,
 				 false,
 				 true,

@@ -16,23 +16,5 @@ public class Access {
 	*/
 	// End of user code
 
-	private Account isAccessed;
-	private Device isAcessing;
 
-	public Account getIsAccessed() {
-		return isAccessed;
-	}
-
-	public void setIsAccessed(Account isAccessed) {
-		this.isAccessed = isAccessed;
-	}
-	
-	public Device getIsAcessing() {
-		return isAcessing;
-	}
-
-	public void setIsAcessing(Device isAcessing) {
-		this.isAcessing = isAcessing;
-	}
-	
 }

@@ -6,16 +6,16 @@
             adaptable="true"
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.uml"
-            id="br.ufes.inf.uml2context.ui.popupMenus.contribution.IFile">
-         <menu id="org.eclipse.acceleo.module.menu" label="SML" path="additionsAcceleo">
+            id="br.ufes.inf.uml2ctx.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="Acceleo Model to Text" path="additionsAcceleo">
                <groupMarker name="acceleo"/> 
          </menu>
          <action
-               class="br.ufes.inf.uml2context.ui.popupMenus.AcceleoGenerateUMLtoContextModelAction"
+               class="br.ufes.inf.uml2ctx.ui.popupMenus.AcceleoGenerateUml2ctxAction"
                enablesFor="+"
-               id="br.ufes.inf.uml2context.ui.popupMenus.acceleoGenerateUMLtoContextModelAction"
+               id="br.ufes.inf.uml2ctx.ui.popupMenus.acceleoGenerateUml2ctxAction"
                icon="icons/default.gif"
-               label="Generate Context Model"
+               label="Generate Uml2ctx"
                menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
       </objectContribution>
    </extension>

@@ -13,31 +13,29 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import sml.SituationTypeElementContainer;
+import sml.Function;
 import sml.SmlFactory;
 import sml.SmlPackage;
 
 /**
- * This is the item provider adapter for a {@link sml.SituationTypeElementContainer} object.
+ * This is the item provider adapter for a {@link sml.Function} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SituationTypeElementContainerItemProvider
-	extends ItemProviderAdapter
+public class FunctionItemProvider
+	extends NodeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -50,7 +48,7 @@ public class SituationTypeElementContainerItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SituationTypeElementContainerItemProvider(AdapterFactory adapterFactory) {
+	public FunctionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,8 +63,31 @@ public class SituationTypeElementContainerItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFunctionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Function feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFunctionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Function_function_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Function_function_feature", "_UI_Function_type"),
+				 SmlPackage.Literals.FUNCTION__FUNCTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -81,7 +102,7 @@ public class SituationTypeElementContainerItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS);
+			childrenFeatures.add(SmlPackage.Literals.FUNCTION__PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -100,6 +121,17 @@ public class SituationTypeElementContainerItemProvider
 	}
 
 	/**
+	 * This returns Function.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Function"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,7 +139,7 @@ public class SituationTypeElementContainerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SituationTypeElementContainer_type");
+		return getString("_UI_Function_type");
 	}
 
 	/**
@@ -121,8 +153,8 @@ public class SituationTypeElementContainerItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SituationTypeElementContainer.class)) {
-			case SmlPackage.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS:
+		switch (notification.getFeatureID(Function.class)) {
+			case SmlPackage.FUNCTION__PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -142,74 +174,8 @@ public class SituationTypeElementContainerItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createSituationTypeBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createEntityParticipant()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createRelatorParticipant()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createLink()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createAttributeReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createComparativeRelation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createSituationParticipant()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createSituationParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createTemporalOperatorExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createSituationAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE_ELEMENT_CONTAINER__ELEMENTS,
-				 SmlFactory.eINSTANCE.createExistsSituation()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return SmlEditPlugin.INSTANCE;
+				(SmlPackage.Literals.FUNCTION__PARAMETER,
+				 SmlFactory.eINSTANCE.createParameter()));
 	}
 
 }

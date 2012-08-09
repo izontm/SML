@@ -189,6 +189,11 @@ public class SituationTypeBlockItemProvider
 			(createChildParameter
 				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
 				 SmlFactory.eINSTANCE.createExistsSituation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SITUATION_TYPE_BLOCK__ELEMENTS,
+				 SmlFactory.eINSTANCE.createFunction()));
 	}
 
 }

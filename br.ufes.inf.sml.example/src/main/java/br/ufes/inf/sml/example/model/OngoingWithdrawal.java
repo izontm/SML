@@ -18,8 +18,6 @@ public class OngoingWithdrawal {
 	// End of user code
 
 	private Monetary value;
-	private Account hasWithdrawal;
-	private ATM doWithdrawal;
 
 	public Monetary getValue() {
 		return value;
@@ -27,22 +25,6 @@ public class OngoingWithdrawal {
 
 	public void setValue(Monetary value) {
 		this.value = value;
-	}
-	
-	public Account getHasWithdrawal() {
-		return hasWithdrawal;
-	}
-
-	public void setHasWithdrawal(Account hasWithdrawal) {
-		this.hasWithdrawal = hasWithdrawal;
-	}
-	
-	public ATM getDoWithdrawal() {
-		return doWithdrawal;
-	}
-
-	public void setDoWithdrawal(ATM doWithdrawal) {
-		this.doWithdrawal = doWithdrawal;
 	}
 	
 }

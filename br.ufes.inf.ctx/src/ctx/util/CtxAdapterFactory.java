@@ -120,16 +120,16 @@ public class CtxAdapterFactory extends AdapterFactoryImpl {
 				return createQualitativeParameterAdapter();
 			}
 			@Override
-			public Adapter caseTypedElement(TypedElement object) {
-				return createTypedElementAdapter();
-			}
-			@Override
 			public Adapter caseComparableElements(ComparableElements object) {
 				return createComparableElementsAdapter();
 			}
 			@Override
 			public Adapter casePrimitiveFormalRelation(PrimitiveFormalRelation object) {
 				return createPrimitiveFormalRelationAdapter();
+			}
+			@Override
+			public Adapter casePrimitiveDataType(PrimitiveDataType object) {
+				return createPrimitiveDataTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -320,20 +320,6 @@ public class CtxAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ctx.TypedElement <em>Typed Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ctx.TypedElement
-	 * @generated
-	 */
-	public Adapter createTypedElementAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link ctx.ComparableElements <em>Comparable Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -358,6 +344,20 @@ public class CtxAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPrimitiveFormalRelationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ctx.PrimitiveDataType <em>Primitive Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ctx.PrimitiveDataType
+	 * @generated
+	 */
+	public Adapter createPrimitiveDataTypeAdapter() {
 		return null;
 	}
 

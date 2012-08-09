@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package br.ufes.inf.uml2context.ui;
+package br.ufes.inf.uml2ctx.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -21,7 +21,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "br.ufes.inf.uml2context.ui";
+	public static final String PLUGIN_ID = "br.ufes.inf.uml2ctx.ui";
 
 	/**
 	 * The shared instance.

@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link ctx.QualitativeFormalRelation#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link ctx.QualitativeFormalRelation#getDatatype <em>Datatype</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface QualitativeFormalRelation extends ContextModelElement, TypedElement {
+public interface QualitativeFormalRelation extends ContextModelElement {
 	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' containment reference list.
 	 * The list contents are of type {@link ctx.QualitativeParameter}.
@@ -40,5 +41,31 @@ public interface QualitativeFormalRelation extends ContextModelElement, TypedEle
 	 * @generated
 	 */
 	EList<QualitativeParameter> getParameter();
+
+	/**
+	 * Returns the value of the '<em><b>Datatype</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Datatype</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Datatype</em>' reference.
+	 * @see #setDatatype(DataType)
+	 * @see ctx.CtxPackage#getQualitativeFormalRelation_Datatype()
+	 * @model
+	 * @generated
+	 */
+	DataType getDatatype();
+
+	/**
+	 * Sets the value of the '{@link ctx.QualitativeFormalRelation#getDatatype <em>Datatype</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Datatype</em>' reference.
+	 * @see #getDatatype()
+	 * @generated
+	 */
+	void setDatatype(DataType value);
 
 } // QualitativeFormalRelation

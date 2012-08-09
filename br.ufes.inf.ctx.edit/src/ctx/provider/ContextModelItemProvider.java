@@ -185,6 +185,11 @@ public class ContextModelItemProvider
 			(createChildParameter
 				(CtxPackage.Literals.CONTEXT_MODEL__ELEMENTS,
 				 CtxFactory.eINSTANCE.createPrimitiveFormalRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CtxPackage.Literals.CONTEXT_MODEL__ELEMENTS,
+				 CtxFactory.eINSTANCE.createPrimitiveDataType()));
 	}
 
 	/**

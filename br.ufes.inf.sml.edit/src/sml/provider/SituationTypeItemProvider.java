@@ -242,6 +242,11 @@ public class SituationTypeItemProvider
 			(createChildParameter
 				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createExistsSituation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
+				 SmlFactory.eINSTANCE.createFunction()));
 	}
 
 	/**

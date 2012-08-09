@@ -73,7 +73,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="formal_relation" label="Formal Relation" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']/@borderedNodeMappings[name='parameter_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='literal'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']/@borderedNodeMappings[name='parameter_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='block'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']" targetFinderExpression="&lt;%target%>" sourceFinderExpression="&lt;%source%>" domainClass="sml.ComparativeRelation" useDomainElement="true">
+        <edgeMappings name="formal_relation" label="Formal Relation" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']/@borderedNodeMappings[name='parameter_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='function']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='literal'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref']/@borderedNodeMappings[name='parameter_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='block'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subContainerMappings[name='situation_ref'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='function']" targetFinderExpression="&lt;%target%>" sourceFinderExpression="&lt;%source%>" domainClass="sml.ComparativeRelation" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="&lt;%relation.name%>">
@@ -145,6 +145,14 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="function_parameter" label="Function Parameter" sourceMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='function'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='literal']" targetMapping="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='function']" targetFinderExpression="&lt;%eContainer()%>" sourceFinderExpression="&lt;%value%>" domainClass="sml.Parameter" useDomainElement="true">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="&lt;%parameter.name%>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <containerMappings name="Situation" labelDirectEdit="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@optionalLayers[name='test_layer']/@toolSections.0/@ownedTools[name='label_situation']" semanticCandidatesExpression="[elements/]" domainClass="sml.SituationType">
           <borderedNodeMappings name="parameter" label="Parameter" labelDirectEdit="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@optionalLayers[name='test_layer']/@toolSections.0/@ownedTools[name='label_situation']" semanticCandidatesExpression="&lt;%eAllContents()%>" domainClass="sml.SituationTypeParameter">
             <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="" resizeKind="NSEW" widthComputationExpression="2" heightComputationExpression="2">
@@ -193,6 +201,13 @@
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="function" label="Function" semanticCandidatesExpression="&lt;%eContents()%>" domainClass="sml.Function">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="&lt;%function.name%>" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="6" verticalDiameterComputationExpression="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </style>
           </subNodeMappings>
           <subContainerMappings name="block" label="Situation Block" semanticCandidatesExpression="&lt;%eAllContents()%>" domainClass="sml.SituationTypeBlock" reusedNodeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='entity'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='relator'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='attribute'] //@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@containerMappings[name='Situation']/@subNodeMappings[name='literal']">
@@ -418,6 +433,33 @@
                 <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.SituationParameterReference" referenceName="elements">
                   <subModelOperations xsi:type="tool:SetValue" featureName="situation" valueExpression="&lt;%$container%>"/>
                   <subModelOperations xsi:type="tool:SetValue" featureName="parameter" valueExpression="&lt;%$element%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="function_tools" label="Functions">
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="wzd_function" label="Function" precondition="[container.oclIsTypeOf(SituationType) or container.oclIsTypeOf(SituationTypeBlock)/]" forceRefresh="true" candidatesExpression="&lt;%eContainer(&quot;SMLModel&quot;).contextModel.eAllContents(&quot;QualitativeFormalRelation&quot;)%>" message="Message">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$container%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.Function" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="function" valueExpression="&lt;%$element%>"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="new_fparam_ed" label="Parameter" edgeMappings="//@ownedViewpoints[name='sml_viewpoint']/@ownedRepresentations[name='sml_diagram']/@defaultLayer/@edgeMappings[name='function_parameter']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$target%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sml.Parameter" referenceName="parameter">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="&lt;%$source%>"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

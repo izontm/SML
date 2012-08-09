@@ -75,9 +75,9 @@ public class AttributeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TypedElement_datatype_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypedElement_datatype_feature", "_UI_TypedElement_type"),
-				 CtxPackage.Literals.TYPED_ELEMENT__DATATYPE,
+				 getString("_UI_Attribute_datatype_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_datatype_feature", "_UI_Attribute_type"),
+				 CtxPackage.Literals.ATTRIBUTE__DATATYPE,
 				 true,
 				 false,
 				 true,

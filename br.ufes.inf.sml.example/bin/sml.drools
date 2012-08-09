@@ -3,6 +3,7 @@ package br.ufes.inf.sml.example.rules;
 import org.drools.situation.base.SituationHelper;
 import org.drools.situation.base.CurrentSituation;
 import org.drools.situation.base.DeactivateSituationEvent;
+import org.drools.situation.base.DeactivateSituationEvent;
 import br.ufes.inf.sml.example.model.*;
 import br.ufes.inf.sml.example.situation.*;
 import br.ufes.inf.sml.example.builtin.*;
@@ -30,9 +31,9 @@ rule "OngoingSuspiciousWithdrawalRule"
 end
 rule "SuspiciousParallelLoginRule"
     when
-        $loggedin1 : LoggedInSituation($loggedin1_account:account)
+        $loggedin1:LoggedInSituation($loggedin1_account:account)
         exists(CurrentSituation (situation == $loggedin1))
-        $loggedin2 : LoggedInSituation(this overlaps $loggedin1, account == $loggedin1_account)
+        $loggedin2:LoggedInSituation(this overlaps $loggedin1, account == $loggedin1_account)
         exists(CurrentSituation (situation == $loggedin2))
         
     then
@@ -42,10 +43,10 @@ end
 rule "SuspiciousFarawayLoginRule"
     when
         $device1 : Device($device1_location:location)
-        $loggedin1 : LoggedInSituation($loggedin1_account:account, device == $device1)
+        $loggedin1:LoggedInSituation($loggedin1_account:account, device == $device1)
         exists(CurrentSituation (situation == $loggedin1))
         $device2 : Device(location not near["500km"] $device1_location)
-        $loggedin2 : LoggedInSituation(this before[0s, 2s] $loggedin1, account == $loggedin1_account, device == $device2)
+        $loggedin2:LoggedInSituation(this before[0s, 2s] $loggedin1, account == $loggedin1_account, device == $device2)
         not(exists(CurrentSituation (situation == $loggedin2)))
         
     then
@@ -55,7 +56,7 @@ end
 rule "AccountUnderObservationRule"
     when
         account : Account()
-        $ongoingsuspiciouswithdrawal1 : OngoingSuspiciousWithdrawalSituation(account == account)
+        $ongoingsuspiciouswithdrawal1:OngoingSuspiciousWithdrawalSituation(account == account)
         not(exists(CurrentSituation (situation == $ongoingsuspiciouswithdrawal1)))
         exists(DeactivateSituationEvent(situation == $ongoingsuspiciouswithdrawal1) over window:time(30d))
         
@@ -65,12 +66,74 @@ rule "AccountUnderObservationRule"
 end
 rule "AnyAccountUnderObservationRule"
     when
-        $ongoingsuspiciouswithdrawal1 : OngoingSuspiciousWithdrawalSituation()
+        $ongoingsuspiciouswithdrawal1:OngoingSuspiciousWithdrawalSituation()
         not(exists(CurrentSituation (situation == $ongoingsuspiciouswithdrawal1)))
         exists(DeactivateSituationEvent(situation == $ongoingsuspiciouswithdrawal1) over window:time(30d))
         
     then
         SituationHelper.situationDetected(drools, AnyAccountUnderObservationSituation.class);
+
+end
+rule "TestARule"
+    when
+    	
+    	// normal situation
+    		//current
+        $loggedin1:LoggedInSituation()
+        exists(CurrentSituation (situation == $loggedin1))
+        
+        	//past
+        $loggedin2:LoggedInSituation()
+        not(exists(CurrentSituation (situation == $loggedin2)))
+        
+        	//current and startTime
+        $loggedin3:LoggedInSituation()
+        exists(CurrentSituation (situation == $loggedin3))
+        ActivateSituationEvent(situation == $loggedin3) over window:time(10d)
+
+			//past and final TIme        
+        $loggedin4:LoggedInSituation()
+        not(exists(CurrentSituation (situation == $loggedin4)))
+        DeactivateSituationEvent(situation == $loggedin4) over window:time(10d)
+        
+        
+        // exists
+        	//current
+        exists($loggedin5:LoggedInSituation() and exists(CurrentSituation (situation == $loggedin5)))
+        
+        	//past
+        exists($loggedin8:LoggedInSituation() and not(exists(CurrentSituation (situation == $loggedin8))))
+        
+        	// current and starTime
+        $loggedin7:LoggedInSituation()
+        exists(CurrentSituation (situation == $loggedin7))
+        exists(ActivateSituationEvent(situation == $loggedin7) over window:time(5d)) 
+        
+        	// past and finalTime
+        $loggedin6:LoggedInSituation()
+        not(exists(CurrentSituation (situation == $loggedin6)))
+        exists(DeactivateSituationEvent(situation == $loggedin6) over window:time(5d))
+        
+        
+        // not exists 
+        	// current
+        not(exists($loggedin9:LoggedInSituation() and exists(CurrentSituation (situation == $loggedin9))))
+        
+        	//past
+        not(exists($loggedin12:LoggedInSituation() and not(exists(CurrentSituation (situation == $loggedin12)))))
+        
+        	// current and startTime	
+        $loggedin11:LoggedInSituation()
+        exists(CurrentSituation (situation == $loggedin11))
+        not(exists(ActivateSituationEvent(situation == $loggedin11) over window:time(2d)))
+        
+        	// past and final
+        $loggedin10:LoggedInSituation()
+        not(exists(CurrentSituation (situation == $loggedin10)))
+        not(exists(DeactivateSituationEvent(situation == $loggedin10) over window:time(2d)))
+        
+    then
+        SituationHelper.situationDetected(drools, TestASituation.class);
 
 end
 

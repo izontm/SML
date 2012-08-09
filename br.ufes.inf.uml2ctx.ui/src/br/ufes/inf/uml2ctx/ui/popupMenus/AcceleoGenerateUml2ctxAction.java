@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package br.ufes.inf.uml2context.ui.popupMenus;
+package br.ufes.inf.uml2ctx.ui.popupMenus;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -28,16 +28,16 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import br.ufes.inf.uml2context.ui.Activator;
-import br.ufes.inf.uml2context.ui.common.GenerateAll;
+import br.ufes.inf.uml2ctx.ui.Activator;
+import br.ufes.inf.uml2ctx.ui.common.GenerateAll;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionDelegate;
 
 /**
- * UML to Context Model code generation.
+ * Uml2ctx code generation.
  */
-public class AcceleoGenerateUMLtoContextModelAction extends ActionDelegate implements IActionDelegate {
+public class AcceleoGenerateUml2ctxAction extends ActionDelegate implements IActionDelegate {
 	
 	/**
 	 * Selected model files.
@@ -71,7 +71,7 @@ public class AcceleoGenerateUMLtoContextModelAction extends ActionDelegate imple
 							IFile model = (IFile)filesIt.next();
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
-								IContainer target = model.getProject().getFolder("model");
+								IContainer target = model.getProject().getFolder("src-gen");
 								GenerateAll generator = new GenerateAll(modelURI, target, getArguments());
 								generator.doGenerate(monitor);
 							} catch (IOException e) {

@@ -217,6 +217,11 @@ public class SMLModelItemProvider
 			(createChildParameter
 				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
 				 CtxFactory.eINSTANCE.createPrimitiveFormalRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmlPackage.Literals.SML_MODEL__PRIMITIVE_CONTEXT_ELEMENTS,
+				 CtxFactory.eINSTANCE.createPrimitiveDataType()));
 	}
 
 	/**

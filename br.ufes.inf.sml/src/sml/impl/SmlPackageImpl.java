@@ -21,11 +21,13 @@ import sml.ComparativeRelation;
 import sml.EntityParticipant;
 import sml.ExistsSituation;
 import sml.ExportableNode;
+import sml.Function;
 import sml.ForallSituation;
 import sml.Link;
 import sml.Literal;
 import sml.Node;
 import sml.OperatorExpression;
+import sml.Parameter;
 import sml.Participant;
 import sml.RelatorParticipant;
 import sml.SMLModel;
@@ -183,6 +185,20 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * @generated
 	 */
 	private EClass existsSituationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass functionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -771,6 +787,60 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFunction() {
+		return functionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFunction_Parameter() {
+		return (EReference)functionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFunction_Function() {
+		return (EReference)functionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameter() {
+		return parameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameter_Value() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameter_Parameter() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTemporalOperatorType() {
 		return temporalOperatorTypeEEnum;
 	}
@@ -887,6 +957,14 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		existsSituationEClass = createEClass(EXISTS_SITUATION);
 		createEAttribute(existsSituationEClass, EXISTS_SITUATION__IS_NEGATED);
 
+		functionEClass = createEClass(FUNCTION);
+		createEReference(functionEClass, FUNCTION__PARAMETER);
+		createEReference(functionEClass, FUNCTION__FUNCTION);
+
+		parameterEClass = createEClass(PARAMETER);
+		createEReference(parameterEClass, PARAMETER__VALUE);
+		createEReference(parameterEClass, PARAMETER__PARAMETER);
+
 		// Create enums
 		temporalOperatorTypeEEnum = createEEnum(TEMPORAL_OPERATOR_TYPE);
 		situationAttributeTypeEEnum = createEEnum(SITUATION_ATTRIBUTE_TYPE);
@@ -938,6 +1016,7 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 		situationParameterReferenceEClass.getESuperTypes().add(this.getNode());
 		temporalOperatorExpressionEClass.getESuperTypes().add(this.getOperatorExpression());
 		existsSituationEClass.getESuperTypes().add(this.getSituationParticipant());
+		functionEClass.getESuperTypes().add(this.getNode());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(smlModelEClass, SMLModel.class, "SMLModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1014,6 +1093,14 @@ public class SmlPackageImpl extends EPackageImpl implements SmlPackage {
 
 		initEClass(existsSituationEClass, ExistsSituation.class, "ExistsSituation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExistsSituation_IsNegated(), ecorePackage.getEBoolean(), "isNegated", null, 0, 1, ExistsSituation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFunction_Parameter(), this.getParameter(), null, "parameter", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFunction_Function(), theCtxPackage.getQualitativeFormalRelation(), null, "function", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameter_Value(), this.getNode(), null, "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameter_Parameter(), theCtxPackage.getQualitativeParameter(), null, "parameter", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(temporalOperatorTypeEEnum, TemporalOperatorType.class, "TemporalOperatorType");

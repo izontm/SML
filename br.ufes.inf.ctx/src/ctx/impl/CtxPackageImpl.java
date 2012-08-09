@@ -18,6 +18,7 @@ import ctx.DataType;
 import ctx.EntityClass;
 import ctx.ModelClass;
 import ctx.NamedElement;
+import ctx.PrimitiveDataType;
 import ctx.PrimitiveFormalRelation;
 import ctx.QualitativeFormalRelation;
 import ctx.QualitativeParameter;
@@ -126,13 +127,6 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass typedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass comparableElementsEClass = null;
 
 	/**
@@ -141,6 +135,13 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 	 * @generated
 	 */
 	private EClass primitiveFormalRelationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass primitiveDataTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -298,6 +299,15 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAttribute_Datatype() {
+		return (EReference)attributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -406,6 +416,15 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getQualitativeFormalRelation_Datatype() {
+		return (EReference)qualitativeFormalRelationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getQualitativeParameter() {
 		return qualitativeParameterEClass;
 	}
@@ -415,17 +434,8 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTypedElement() {
-		return typedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTypedElement_Datatype() {
-		return (EReference)typedElementEClass.getEStructuralFeatures().get(0);
+	public EReference getQualitativeParameter_Element() {
+		return (EReference)qualitativeParameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -444,6 +454,15 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 	 */
 	public EClass getPrimitiveFormalRelation() {
 		return primitiveFormalRelationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPrimitiveDataType() {
+		return primitiveDataTypeEClass;
 	}
 
 	/**
@@ -488,6 +507,7 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEReference(attributeEClass, ATTRIBUTE__ACLASS);
+		createEReference(attributeEClass, ATTRIBUTE__DATATYPE);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -506,15 +526,16 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 
 		qualitativeFormalRelationEClass = createEClass(QUALITATIVE_FORMAL_RELATION);
 		createEReference(qualitativeFormalRelationEClass, QUALITATIVE_FORMAL_RELATION__PARAMETER);
+		createEReference(qualitativeFormalRelationEClass, QUALITATIVE_FORMAL_RELATION__DATATYPE);
 
 		qualitativeParameterEClass = createEClass(QUALITATIVE_PARAMETER);
-
-		typedElementEClass = createEClass(TYPED_ELEMENT);
-		createEReference(typedElementEClass, TYPED_ELEMENT__DATATYPE);
+		createEReference(qualitativeParameterEClass, QUALITATIVE_PARAMETER__ELEMENT);
 
 		comparableElementsEClass = createEClass(COMPARABLE_ELEMENTS);
 
 		primitiveFormalRelationEClass = createEClass(PRIMITIVE_FORMAL_RELATION);
+
+		primitiveDataTypeEClass = createEClass(PRIMITIVE_DATA_TYPE);
 	}
 
 	/**
@@ -550,17 +571,15 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 		entityClassEClass.getESuperTypes().add(this.getComparableElements());
 		relatorClassEClass.getESuperTypes().add(this.getModelClass());
 		attributeEClass.getESuperTypes().add(this.getNamedElement());
-		attributeEClass.getESuperTypes().add(this.getTypedElement());
 		dataTypeEClass.getESuperTypes().add(this.getContextModelElement());
 		dataTypeEClass.getESuperTypes().add(this.getComparableElements());
 		comparativeFormalRelationEClass.getESuperTypes().add(this.getContextModelElement());
 		associationEClass.getESuperTypes().add(this.getContextModelElement());
 		contextModelElementEClass.getESuperTypes().add(this.getNamedElement());
 		qualitativeFormalRelationEClass.getESuperTypes().add(this.getContextModelElement());
-		qualitativeFormalRelationEClass.getESuperTypes().add(this.getTypedElement());
 		qualitativeParameterEClass.getESuperTypes().add(this.getNamedElement());
-		qualitativeParameterEClass.getESuperTypes().add(this.getTypedElement());
 		primitiveFormalRelationEClass.getESuperTypes().add(this.getComparativeFormalRelation());
+		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contextModelEClass, ContextModel.class, "ContextModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -577,6 +596,7 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttribute_Aclass(), this.getModelClass(), this.getModelClass_Attribute(), "aclass", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_Datatype(), this.getDataType(), null, "datatype", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -595,15 +615,16 @@ public class CtxPackageImpl extends EPackageImpl implements CtxPackage {
 
 		initEClass(qualitativeFormalRelationEClass, QualitativeFormalRelation.class, "QualitativeFormalRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQualitativeFormalRelation_Parameter(), this.getQualitativeParameter(), null, "parameter", null, 0, -1, QualitativeFormalRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQualitativeFormalRelation_Datatype(), this.getDataType(), null, "datatype", null, 0, 1, QualitativeFormalRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(qualitativeParameterEClass, QualitativeParameter.class, "QualitativeParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(typedElementEClass, TypedElement.class, "TypedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTypedElement_Datatype(), this.getDataType(), null, "datatype", null, 0, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQualitativeParameter_Element(), this.getComparableElements(), null, "element", null, 0, 1, QualitativeParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(comparableElementsEClass, ComparableElements.class, "ComparableElements", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(primitiveFormalRelationEClass, PrimitiveFormalRelation.class, "PrimitiveFormalRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(primitiveDataTypeEClass, PrimitiveDataType.class, "PrimitiveDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

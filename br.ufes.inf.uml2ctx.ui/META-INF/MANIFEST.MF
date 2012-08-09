@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo UML to Context Model Module IDE Plug-in
+Bundle-Name: Acceleo Uml2ctx Module IDE Plug-in
 Bundle-SymbolicName: br.ufes.inf.uml2ctx.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: br.ufes.inf.uml2context.ui.Activator
+Bundle-Activator: br.ufes.inf.uml2ctx.ui.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.core.resources,
+ org.eclipse.core.resources, 
  br.ufes.inf.uml2ctx,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,

@@ -23,6 +23,7 @@ import br.ufes.inf.sml.example.builtin.*;
 //
 // End of user code
 
+import org.drools.situation.base.ActivateSituationEvent;;
 /**
  * This is a sample class to launch a rule.
  */

@@ -79,9 +79,9 @@ public class QualitativeFormalRelationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TypedElement_datatype_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypedElement_datatype_feature", "_UI_TypedElement_type"),
-				 CtxPackage.Literals.TYPED_ELEMENT__DATATYPE,
+				 getString("_UI_QualitativeFormalRelation_datatype_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QualitativeFormalRelation_datatype_feature", "_UI_QualitativeFormalRelation_type"),
+				 CtxPackage.Literals.QUALITATIVE_FORMAL_RELATION__DATATYPE,
 				 true,
 				 false,
 				 true,

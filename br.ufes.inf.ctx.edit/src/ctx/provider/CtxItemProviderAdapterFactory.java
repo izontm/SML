@@ -306,6 +306,29 @@ public class CtxItemProviderAdapterFactory extends CtxAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link ctx.PrimitiveDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PrimitiveDataTypeItemProvider primitiveDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ctx.PrimitiveDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPrimitiveDataTypeAdapter() {
+		if (primitiveDataTypeItemProvider == null) {
+			primitiveDataTypeItemProvider = new PrimitiveDataTypeItemProvider(this);
+		}
+
+		return primitiveDataTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -414,6 +437,7 @@ public class CtxItemProviderAdapterFactory extends CtxAdapterFactory implements 
 		if (qualitativeFormalRelationItemProvider != null) qualitativeFormalRelationItemProvider.dispose();
 		if (qualitativeParameterItemProvider != null) qualitativeParameterItemProvider.dispose();
 		if (primitiveFormalRelationItemProvider != null) primitiveFormalRelationItemProvider.dispose();
+		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 	}
 
 }

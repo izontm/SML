@@ -6,6 +6,7 @@
  */
 package ctx.impl;
 
+import ctx.ComparableElements;
 import ctx.CtxPackage;
 import ctx.DataType;
 import ctx.QualitativeParameter;
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ctx.impl.QualitativeParameterImpl#getDatatype <em>Datatype</em>}</li>
+ *   <li>{@link ctx.impl.QualitativeParameterImpl#getElement <em>Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,15 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class QualitativeParameterImpl extends NamedElementImpl implements QualitativeParameter {
 	/**
-	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference.
+	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDatatype()
+	 * @see #getElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType datatype;
-
+	protected ComparableElements element;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,16 +66,16 @@ public class QualitativeParameterImpl extends NamedElementImpl implements Qualit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getDatatype() {
-		if (datatype != null && datatype.eIsProxy()) {
-			InternalEObject oldDatatype = (InternalEObject)datatype;
-			datatype = (DataType)eResolveProxy(oldDatatype);
-			if (datatype != oldDatatype) {
+	public ComparableElements getElement() {
+		if (element != null && element.eIsProxy()) {
+			InternalEObject oldElement = (InternalEObject)element;
+			element = (ComparableElements)eResolveProxy(oldElement);
+			if (element != oldElement) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CtxPackage.QUALITATIVE_PARAMETER__DATATYPE, oldDatatype, datatype));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CtxPackage.QUALITATIVE_PARAMETER__ELEMENT, oldElement, element));
 			}
 		}
-		return datatype;
+		return element;
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class QualitativeParameterImpl extends NamedElementImpl implements Qualit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetDatatype() {
-		return datatype;
+	public ComparableElements basicGetElement() {
+		return element;
 	}
 
 	/**
@@ -92,11 +92,11 @@ public class QualitativeParameterImpl extends NamedElementImpl implements Qualit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDatatype(DataType newDatatype) {
-		DataType oldDatatype = datatype;
-		datatype = newDatatype;
+	public void setElement(ComparableElements newElement) {
+		ComparableElements oldElement = element;
+		element = newElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CtxPackage.QUALITATIVE_PARAMETER__DATATYPE, oldDatatype, datatype));
+			eNotify(new ENotificationImpl(this, Notification.SET, CtxPackage.QUALITATIVE_PARAMETER__ELEMENT, oldElement, element));
 	}
 
 	/**
@@ -107,9 +107,9 @@ public class QualitativeParameterImpl extends NamedElementImpl implements Qualit
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_PARAMETER__DATATYPE:
-				if (resolve) return getDatatype();
-				return basicGetDatatype();
+			case CtxPackage.QUALITATIVE_PARAMETER__ELEMENT:
+				if (resolve) return getElement();
+				return basicGetElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,8 +122,8 @@ public class QualitativeParameterImpl extends NamedElementImpl implements Qualit
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_PARAMETER__DATATYPE:
-				setDatatype((DataType)newValue);
+			case CtxPackage.QUALITATIVE_PARAMETER__ELEMENT:
+				setElement((ComparableElements)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class QualitativeParameterImpl extends NamedElementImpl implements Qualit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_PARAMETER__DATATYPE:
-				setDatatype((DataType)null);
+			case CtxPackage.QUALITATIVE_PARAMETER__ELEMENT:
+				setElement((ComparableElements)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -152,42 +152,10 @@ public class QualitativeParameterImpl extends NamedElementImpl implements Qualit
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CtxPackage.QUALITATIVE_PARAMETER__DATATYPE:
-				return datatype != null;
+			case CtxPackage.QUALITATIVE_PARAMETER__ELEMENT:
+				return element != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == TypedElement.class) {
-			switch (derivedFeatureID) {
-				case CtxPackage.QUALITATIVE_PARAMETER__DATATYPE: return CtxPackage.TYPED_ELEMENT__DATATYPE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == TypedElement.class) {
-			switch (baseFeatureID) {
-				case CtxPackage.TYPED_ELEMENT__DATATYPE: return CtxPackage.QUALITATIVE_PARAMETER__DATATYPE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //QualitativeParameterImpl

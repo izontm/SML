@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ctx:ContextModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.example.org/ctx">
+  <elements xsi:type="ctx:EntityClass" name="Person" isAbstract="true">
+    <attribute name="name" datatype="//@elements.6"/>
+  </elements>
+  <elements xsi:type="ctx:RelatorClass" name="Loving"/>
+  <elements xsi:type="ctx:EntityClass" name="Pacient" superclass="//@elements.0">
+    <attribute name="temperature" datatype="//@elements.4"/>
+  </elements>
+  <elements xsi:type="ctx:EntityClass" name="Doctor" superclass="//@elements.0"/>
+  <elements xsi:type="ctx:DataType" name="Temperature"/>
+  <elements xsi:type="ctx:RelatorClass" name="Treatment"/>
+  <elements xsi:type="ctx:DataType" name="String"/>
+  <elements xsi:type="ctx:Association" name="lover" source="//@elements.1" target="//@elements.0"/>
+  <elements xsi:type="ctx:Association" name="loving" source="//@elements.1" target="//@elements.0"/>
+  <elements xsi:type="ctx:Association" name="pacient" source="//@elements.5" target="//@elements.2"/>
+  <elements xsi:type="ctx:Association" name="doctor" source="//@elements.5" target="//@elements.3"/>
+</ctx:ContextModel>

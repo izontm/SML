@@ -114,4 +114,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExistsSituation" eSuperTypes="#//SituationParticipant">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNegated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="ecore:EClass ../../br.ufes.inf.ctx/model/ctx.ecore#//QualitativeFormalRelation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass ../../br.ufes.inf.ctx/model/ctx.ecore#//QualitativeParameter"/>
+  </eClassifiers>
 </ecore:EPackage>

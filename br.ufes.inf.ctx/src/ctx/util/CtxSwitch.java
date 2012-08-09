@@ -107,7 +107,6 @@ public class CtxSwitch<T> extends Switch<T> {
 				Attribute attribute = (Attribute)theEObject;
 				T result = caseAttribute(attribute);
 				if (result == null) result = caseNamedElement(attribute);
-				if (result == null) result = caseTypedElement(attribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -153,7 +152,6 @@ public class CtxSwitch<T> extends Switch<T> {
 				QualitativeFormalRelation qualitativeFormalRelation = (QualitativeFormalRelation)theEObject;
 				T result = caseQualitativeFormalRelation(qualitativeFormalRelation);
 				if (result == null) result = caseContextModelElement(qualitativeFormalRelation);
-				if (result == null) result = caseTypedElement(qualitativeFormalRelation);
 				if (result == null) result = caseNamedElement(qualitativeFormalRelation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -162,13 +160,6 @@ public class CtxSwitch<T> extends Switch<T> {
 				QualitativeParameter qualitativeParameter = (QualitativeParameter)theEObject;
 				T result = caseQualitativeParameter(qualitativeParameter);
 				if (result == null) result = caseNamedElement(qualitativeParameter);
-				if (result == null) result = caseTypedElement(qualitativeParameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CtxPackage.TYPED_ELEMENT: {
-				TypedElement typedElement = (TypedElement)theEObject;
-				T result = caseTypedElement(typedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -184,6 +175,16 @@ public class CtxSwitch<T> extends Switch<T> {
 				if (result == null) result = caseComparativeFormalRelation(primitiveFormalRelation);
 				if (result == null) result = caseContextModelElement(primitiveFormalRelation);
 				if (result == null) result = caseNamedElement(primitiveFormalRelation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CtxPackage.PRIMITIVE_DATA_TYPE: {
+				PrimitiveDataType primitiveDataType = (PrimitiveDataType)theEObject;
+				T result = casePrimitiveDataType(primitiveDataType);
+				if (result == null) result = caseDataType(primitiveDataType);
+				if (result == null) result = caseContextModelElement(primitiveDataType);
+				if (result == null) result = caseComparableElements(primitiveDataType);
+				if (result == null) result = caseNamedElement(primitiveDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -372,21 +373,6 @@ public class CtxSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTypedElement(TypedElement object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Comparable Elements</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -413,6 +399,21 @@ public class CtxSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePrimitiveFormalRelation(PrimitiveFormalRelation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrimitiveDataType(PrimitiveDataType object) {
 		return null;
 	}
 
