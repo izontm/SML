@@ -73,46 +73,11 @@ public class SmlFactoryImpl extends EFactoryImpl implements SmlFactory {
 			case SmlPackage.LITERAL: return createLiteral();
 			case SmlPackage.SITUATION_PARTICIPANT: return createSituationParticipant();
 			case SmlPackage.SITUATION_PARAMETER_REFERENCE: return createSituationParameterReference();
-			case SmlPackage.TEMPORAL_OPERATOR_EXPRESSION: return createTemporalOperatorExpression();
 			case SmlPackage.EXISTS_SITUATION: return createExistsSituation();
 			case SmlPackage.FUNCTION: return createFunction();
 			case SmlPackage.PARAMETER: return createParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case SmlPackage.TEMPORAL_OPERATOR_TYPE:
-				return createTemporalOperatorTypeFromString(eDataType, initialValue);
-			case SmlPackage.SITUATION_ATTRIBUTE_TYPE:
-				return createSituationAttributeTypeFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case SmlPackage.TEMPORAL_OPERATOR_TYPE:
-				return convertTemporalOperatorTypeToString(eDataType, instanceValue);
-			case SmlPackage.SITUATION_ATTRIBUTE_TYPE:
-				return convertSituationAttributeTypeToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -241,16 +206,6 @@ public class SmlFactoryImpl extends EFactoryImpl implements SmlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemporalOperatorExpression createTemporalOperatorExpression() {
-		TemporalOperatorExpressionImpl temporalOperatorExpression = new TemporalOperatorExpressionImpl();
-		return temporalOperatorExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ExistsSituation createExistsSituation() {
 		ExistsSituationImpl existsSituation = new ExistsSituationImpl();
 		return existsSituation;
@@ -274,46 +229,6 @@ public class SmlFactoryImpl extends EFactoryImpl implements SmlFactory {
 	public Parameter createParameter() {
 		ParameterImpl parameter = new ParameterImpl();
 		return parameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TemporalOperatorType createTemporalOperatorTypeFromString(EDataType eDataType, String initialValue) {
-		TemporalOperatorType result = TemporalOperatorType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertTemporalOperatorTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SituationAttributeType createSituationAttributeTypeFromString(EDataType eDataType, String initialValue) {
-		SituationAttributeType result = SituationAttributeType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertSituationAttributeTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

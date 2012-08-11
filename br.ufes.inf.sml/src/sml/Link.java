@@ -64,7 +64,7 @@ public interface Link extends SituationTypeElement {
 	 * @return the value of the '<em>Entity</em>' reference.
 	 * @see #setEntity(EntityParticipant)
 	 * @see sml.SmlPackage#getLink_Entity()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EntityParticipant getEntity();
@@ -92,7 +92,7 @@ public interface Link extends SituationTypeElement {
 	 * @see #setRelator(RelatorParticipant)
 	 * @see sml.SmlPackage#getLink_Relator()
 	 * @see sml.RelatorParticipant#getLinks
-	 * @model opposite="links"
+	 * @model opposite="links" required="true"
 	 * @generated
 	 */
 	RelatorParticipant getRelator();

@@ -39,7 +39,7 @@ public interface AttributeReference extends ExportableNode {
 	 * @see #setEntity(Participant)
 	 * @see sml.SmlPackage#getAttributeReference_Entity()
 	 * @see sml.Participant#getReference
-	 * @model opposite="reference"
+	 * @model opposite="reference" required="true"
 	 * @generated
 	 */
 	Participant getEntity();

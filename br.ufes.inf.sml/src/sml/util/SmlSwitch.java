@@ -153,17 +153,9 @@ public class SmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmlPackage.OPERATOR_EXPRESSION: {
-				OperatorExpression operatorExpression = (OperatorExpression)theEObject;
-				T result = caseOperatorExpression(operatorExpression);
-				if (result == null) result = caseSituationTypeElement(operatorExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SmlPackage.COMPARATIVE_RELATION: {
 				ComparativeRelation comparativeRelation = (ComparativeRelation)theEObject;
 				T result = caseComparativeRelation(comparativeRelation);
-				if (result == null) result = caseOperatorExpression(comparativeRelation);
 				if (result == null) result = caseSituationTypeElement(comparativeRelation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -203,14 +195,6 @@ public class SmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmlPackage.TEMPORAL_OPERATOR_EXPRESSION: {
-				TemporalOperatorExpression temporalOperatorExpression = (TemporalOperatorExpression)theEObject;
-				T result = caseTemporalOperatorExpression(temporalOperatorExpression);
-				if (result == null) result = caseOperatorExpression(temporalOperatorExpression);
-				if (result == null) result = caseSituationTypeElement(temporalOperatorExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SmlPackage.EXISTS_SITUATION: {
 				ExistsSituation existsSituation = (ExistsSituation)theEObject;
 				T result = caseExistsSituation(existsSituation);
@@ -225,6 +209,7 @@ public class SmlSwitch<T> extends Switch<T> {
 			case SmlPackage.FUNCTION: {
 				Function function = (Function)theEObject;
 				T result = caseFunction(function);
+				if (result == null) result = caseExportableNode(function);
 				if (result == null) result = caseNode(function);
 				if (result == null) result = caseSituationTypeElement(function);
 				if (result == null) result = defaultCase(theEObject);
@@ -406,21 +391,6 @@ public class SmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operator Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operator Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOperatorExpression(OperatorExpression object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Comparative Relation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -492,21 +462,6 @@ public class SmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSituationParameterReference(SituationParameterReference object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Temporal Operator Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Temporal Operator Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTemporalOperatorExpression(TemporalOperatorExpression object) {
 		return null;
 	}
 

@@ -192,22 +192,13 @@ public interface SmlPackage extends EPackage {
 	int NODE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__NODE_PARAMETER = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__SOURCE_RELATION = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 1;
+	int NODE__SOURCE_RELATION = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target Relation</b></em>' reference list.
@@ -216,7 +207,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__TARGET_RELATION = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 2;
+	int NODE__TARGET_RELATION = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -225,16 +216,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_TYPE_BLOCK__NODE_PARAMETER = NODE__NODE_PARAMETER;
+	int NODE_FEATURE_COUNT = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
@@ -283,15 +265,6 @@ public interface SmlPackage extends EPackage {
 	int EXPORTABLE_NODE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORTABLE_NODE__NODE_PARAMETER = NODE__NODE_PARAMETER;
-
-	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -310,13 +283,22 @@ public interface SmlPackage extends EPackage {
 	int EXPORTABLE_NODE__TARGET_RELATION = NODE__TARGET_RELATION;
 
 	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORTABLE_NODE__NODE_PARAMETER = NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Exportable Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORTABLE_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
+	int EXPORTABLE_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link sml.impl.ParticipantImpl <em>Participant</em>}' class.
@@ -326,16 +308,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getParticipant()
 	 * @generated
 	 */
-	int PARTICIPANT = 14;
-
-	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTICIPANT__NODE_PARAMETER = EXPORTABLE_NODE__NODE_PARAMETER;
+	int PARTICIPANT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
@@ -354,6 +327,15 @@ public interface SmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARTICIPANT__TARGET_RELATION = EXPORTABLE_NODE__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTICIPANT__NODE_PARAMETER = EXPORTABLE_NODE__NODE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference list.
@@ -384,15 +366,6 @@ public interface SmlPackage extends EPackage {
 	int ENTITY_PARTICIPANT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_PARTICIPANT__NODE_PARAMETER = PARTICIPANT__NODE_PARAMETER;
-
-	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -409,6 +382,15 @@ public interface SmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_PARTICIPANT__TARGET_RELATION = PARTICIPANT__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_PARTICIPANT__NODE_PARAMETER = PARTICIPANT__NODE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference list.
@@ -448,15 +430,6 @@ public interface SmlPackage extends EPackage {
 	int RELATOR_PARTICIPANT = 7;
 
 	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATOR_PARTICIPANT__NODE_PARAMETER = PARTICIPANT__NODE_PARAMETER;
-
-	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -473,6 +446,15 @@ public interface SmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELATOR_PARTICIPANT__TARGET_RELATION = PARTICIPANT__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATOR_PARTICIPANT__NODE_PARAMETER = PARTICIPANT__NODE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference list.
@@ -604,15 +586,6 @@ public interface SmlPackage extends EPackage {
 	int ATTRIBUTE_REFERENCE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_REFERENCE__NODE_PARAMETER = EXPORTABLE_NODE__NODE_PARAMETER;
-
-	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -629,6 +602,15 @@ public interface SmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_REFERENCE__TARGET_RELATION = EXPORTABLE_NODE__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_REFERENCE__NODE_PARAMETER = EXPORTABLE_NODE__NODE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' reference.
@@ -658,43 +640,6 @@ public interface SmlPackage extends EPackage {
 	int ATTRIBUTE_REFERENCE_FEATURE_COUNT = EXPORTABLE_NODE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link sml.impl.OperatorExpressionImpl <em>Operator Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sml.impl.OperatorExpressionImpl
-	 * @see sml.impl.SmlPackageImpl#getOperatorExpression()
-	 * @generated
-	 */
-	int OPERATOR_EXPRESSION = 11;
-
-	/**
-	 * The feature id for the '<em><b>Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATOR_EXPRESSION__PARAMETER = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Negated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATOR_EXPRESSION__IS_NEGATED = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Operator Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATOR_EXPRESSION_FEATURE_COUNT = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link sml.impl.ComparativeRelationImpl <em>Comparative Relation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -702,25 +647,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getComparativeRelation()
 	 * @generated
 	 */
-	int COMPARATIVE_RELATION = 12;
-
-	/**
-	 * The feature id for the '<em><b>Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARATIVE_RELATION__PARAMETER = OPERATOR_EXPRESSION__PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Is Negated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARATIVE_RELATION__IS_NEGATED = OPERATOR_EXPRESSION__IS_NEGATED;
+	int COMPARATIVE_RELATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -729,7 +656,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPARATIVE_RELATION__SOURCE = OPERATOR_EXPRESSION_FEATURE_COUNT + 0;
+	int COMPARATIVE_RELATION__SOURCE = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -738,7 +665,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPARATIVE_RELATION__TARGET = OPERATOR_EXPRESSION_FEATURE_COUNT + 1;
+	int COMPARATIVE_RELATION__TARGET = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -747,7 +674,25 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPARATIVE_RELATION__RELATION = OPERATOR_EXPRESSION_FEATURE_COUNT + 2;
+	int COMPARATIVE_RELATION__RELATION = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARATIVE_RELATION__PARAMETER = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Is Negated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARATIVE_RELATION__IS_NEGATED = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Comparative Relation</em>' class.
@@ -756,7 +701,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPARATIVE_RELATION_FEATURE_COUNT = OPERATOR_EXPRESSION_FEATURE_COUNT + 3;
+	int COMPARATIVE_RELATION_FEATURE_COUNT = SITUATION_TYPE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link sml.impl.LiteralImpl <em>Literal</em>}' class.
@@ -766,16 +711,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getLiteral()
 	 * @generated
 	 */
-	int LITERAL = 13;
-
-	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL__NODE_PARAMETER = NODE__NODE_PARAMETER;
+	int LITERAL = 12;
 
 	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
@@ -830,16 +766,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationParticipant()
 	 * @generated
 	 */
-	int SITUATION_PARTICIPANT = 15;
-
-	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_PARTICIPANT__NODE_PARAMETER = PARTICIPANT__NODE_PARAMETER;
+	int SITUATION_PARTICIPANT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
@@ -858,6 +785,15 @@ public interface SmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int SITUATION_PARTICIPANT__TARGET_RELATION = PARTICIPANT__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITUATION_PARTICIPANT__NODE_PARAMETER = PARTICIPANT__NODE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference list.
@@ -912,16 +848,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getSituationParameterReference()
 	 * @generated
 	 */
-	int SITUATION_PARAMETER_REFERENCE = 16;
-
-	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATION_PARAMETER_REFERENCE__NODE_PARAMETER = NODE__NODE_PARAMETER;
+	int SITUATION_PARAMETER_REFERENCE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
@@ -969,70 +896,6 @@ public interface SmlPackage extends EPackage {
 	int SITUATION_PARAMETER_REFERENCE_FEATURE_COUNT = NODE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link sml.impl.TemporalOperatorExpressionImpl <em>Temporal Operator Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sml.impl.TemporalOperatorExpressionImpl
-	 * @see sml.impl.SmlPackageImpl#getTemporalOperatorExpression()
-	 * @generated
-	 */
-	int TEMPORAL_OPERATOR_EXPRESSION = 17;
-
-	/**
-	 * The feature id for the '<em><b>Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_OPERATOR_EXPRESSION__PARAMETER = OPERATOR_EXPRESSION__PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Is Negated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_OPERATOR_EXPRESSION__IS_NEGATED = OPERATOR_EXPRESSION__IS_NEGATED;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_OPERATOR_EXPRESSION__SOURCE = OPERATOR_EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_OPERATOR_EXPRESSION__TARGET = OPERATOR_EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_OPERATOR_EXPRESSION__OPERATOR = OPERATOR_EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Temporal Operator Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_OPERATOR_EXPRESSION_FEATURE_COUNT = OPERATOR_EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link sml.impl.ExistsSituationImpl <em>Exists Situation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1040,16 +903,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getExistsSituation()
 	 * @generated
 	 */
-	int EXISTS_SITUATION = 18;
-
-	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXISTS_SITUATION__NODE_PARAMETER = SITUATION_PARTICIPANT__NODE_PARAMETER;
+	int EXISTS_SITUATION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
@@ -1068,6 +922,15 @@ public interface SmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXISTS_SITUATION__TARGET_RELATION = SITUATION_PARTICIPANT__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXISTS_SITUATION__NODE_PARAMETER = SITUATION_PARTICIPANT__NODE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference list.
@@ -1131,16 +994,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 19;
-
-	/**
-	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__NODE_PARAMETER = NODE__NODE_PARAMETER;
+	int FUNCTION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Source Relation</b></em>' reference list.
@@ -1149,7 +1003,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__SOURCE_RELATION = NODE__SOURCE_RELATION;
+	int FUNCTION__SOURCE_RELATION = EXPORTABLE_NODE__SOURCE_RELATION;
 
 	/**
 	 * The feature id for the '<em><b>Target Relation</b></em>' reference list.
@@ -1158,7 +1012,16 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__TARGET_RELATION = NODE__TARGET_RELATION;
+	int FUNCTION__TARGET_RELATION = EXPORTABLE_NODE__TARGET_RELATION;
+
+	/**
+	 * The feature id for the '<em><b>Node Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__NODE_PARAMETER = EXPORTABLE_NODE__NODE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -1167,7 +1030,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__PARAMETER = NODE_FEATURE_COUNT + 0;
+	int FUNCTION__PARAMETER = EXPORTABLE_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Function</b></em>' reference.
@@ -1176,7 +1039,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__FUNCTION = NODE_FEATURE_COUNT + 1;
+	int FUNCTION__FUNCTION = EXPORTABLE_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Function</em>' class.
@@ -1185,7 +1048,7 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FEATURE_COUNT = NODE_FEATURE_COUNT + 2;
+	int FUNCTION_FEATURE_COUNT = EXPORTABLE_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link sml.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1195,7 +1058,7 @@ public interface SmlPackage extends EPackage {
 	 * @see sml.impl.SmlPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 20;
+	int PARAMETER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' reference.
@@ -1223,27 +1086,6 @@ public interface SmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_FEATURE_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link sml.TemporalOperatorType <em>Temporal Operator Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sml.TemporalOperatorType
-	 * @see sml.impl.SmlPackageImpl#getTemporalOperatorType()
-	 * @generated
-	 */
-	int TEMPORAL_OPERATOR_TYPE = 21;
-
-	/**
-	 * The meta object id for the '{@link sml.SituationAttributeType <em>Situation Attribute Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sml.SituationAttributeType
-	 * @see sml.impl.SmlPackageImpl#getSituationAttributeType()
-	 * @generated
-	 */
-	int SITUATION_ATTRIBUTE_TYPE = 22;
-
 
 	/**
 	 * Returns the meta object for class '{@link sml.SMLModel <em>SML Model</em>}'.
@@ -1373,17 +1215,6 @@ public interface SmlPackage extends EPackage {
 	EClass getNode();
 
 	/**
-	 * Returns the meta object for the reference '{@link sml.Node#getNodeParameter <em>Node Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Node Parameter</em>'.
-	 * @see sml.Node#getNodeParameter()
-	 * @see #getNode()
-	 * @generated
-	 */
-	EReference getNode_NodeParameter();
-
-	/**
 	 * Returns the meta object for the reference list '{@link sml.Node#getSourceRelation <em>Source Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1414,6 +1245,17 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExportableNode();
+
+	/**
+	 * Returns the meta object for the reference '{@link sml.ExportableNode#getNodeParameter <em>Node Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Node Parameter</em>'.
+	 * @see sml.ExportableNode#getNodeParameter()
+	 * @see #getExportableNode()
+	 * @generated
+	 */
+	EReference getExportableNode_NodeParameter();
 
 	/**
 	 * Returns the meta object for class '{@link sml.EntityParticipant <em>Entity Participant</em>}'.
@@ -1576,38 +1418,6 @@ public interface SmlPackage extends EPackage {
 	EReference getAttributeReference_Attribute();
 
 	/**
-	 * Returns the meta object for class '{@link sml.OperatorExpression <em>Operator Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operator Expression</em>'.
-	 * @see sml.OperatorExpression
-	 * @generated
-	 */
-	EClass getOperatorExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link sml.OperatorExpression#getParameter <em>Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parameter</em>'.
-	 * @see sml.OperatorExpression#getParameter()
-	 * @see #getOperatorExpression()
-	 * @generated
-	 */
-	EAttribute getOperatorExpression_Parameter();
-
-	/**
-	 * Returns the meta object for the attribute '{@link sml.OperatorExpression#isIsNegated <em>Is Negated</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Negated</em>'.
-	 * @see sml.OperatorExpression#isIsNegated()
-	 * @see #getOperatorExpression()
-	 * @generated
-	 */
-	EAttribute getOperatorExpression_IsNegated();
-
-	/**
 	 * Returns the meta object for class '{@link sml.ComparativeRelation <em>Comparative Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1649,6 +1459,28 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComparativeRelation_Relation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link sml.ComparativeRelation#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parameter</em>'.
+	 * @see sml.ComparativeRelation#getParameter()
+	 * @see #getComparativeRelation()
+	 * @generated
+	 */
+	EAttribute getComparativeRelation_Parameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link sml.ComparativeRelation#isIsNegated <em>Is Negated</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Negated</em>'.
+	 * @see sml.ComparativeRelation#isIsNegated()
+	 * @see #getComparativeRelation()
+	 * @generated
+	 */
+	EAttribute getComparativeRelation_IsNegated();
 
 	/**
 	 * Returns the meta object for class '{@link sml.Literal <em>Literal</em>}'.
@@ -1779,49 +1611,6 @@ public interface SmlPackage extends EPackage {
 	EReference getSituationParameterReference_Situation();
 
 	/**
-	 * Returns the meta object for class '{@link sml.TemporalOperatorExpression <em>Temporal Operator Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Temporal Operator Expression</em>'.
-	 * @see sml.TemporalOperatorExpression
-	 * @generated
-	 */
-	EClass getTemporalOperatorExpression();
-
-	/**
-	 * Returns the meta object for the reference '{@link sml.TemporalOperatorExpression#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see sml.TemporalOperatorExpression#getSource()
-	 * @see #getTemporalOperatorExpression()
-	 * @generated
-	 */
-	EReference getTemporalOperatorExpression_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link sml.TemporalOperatorExpression#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see sml.TemporalOperatorExpression#getTarget()
-	 * @see #getTemporalOperatorExpression()
-	 * @generated
-	 */
-	EReference getTemporalOperatorExpression_Target();
-
-	/**
-	 * Returns the meta object for the attribute '{@link sml.TemporalOperatorExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see sml.TemporalOperatorExpression#getOperator()
-	 * @see #getTemporalOperatorExpression()
-	 * @generated
-	 */
-	EAttribute getTemporalOperatorExpression_Operator();
-
-	/**
 	 * Returns the meta object for class '{@link sml.ExistsSituation <em>Exists Situation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1905,26 +1694,6 @@ public interface SmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getParameter_Parameter();
-
-	/**
-	 * Returns the meta object for enum '{@link sml.TemporalOperatorType <em>Temporal Operator Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Temporal Operator Type</em>'.
-	 * @see sml.TemporalOperatorType
-	 * @generated
-	 */
-	EEnum getTemporalOperatorType();
-
-	/**
-	 * Returns the meta object for enum '{@link sml.SituationAttributeType <em>Situation Attribute Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Situation Attribute Type</em>'.
-	 * @see sml.SituationAttributeType
-	 * @generated
-	 */
-	EEnum getSituationAttributeType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2055,14 +1824,6 @@ public interface SmlPackage extends EPackage {
 		EClass NODE = eINSTANCE.getNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Node Parameter</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NODE__NODE_PARAMETER = eINSTANCE.getNode_NodeParameter();
-
-		/**
 		 * The meta object literal for the '<em><b>Source Relation</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2087,6 +1848,14 @@ public interface SmlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXPORTABLE_NODE = eINSTANCE.getExportableNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Node Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPORTABLE_NODE__NODE_PARAMETER = eINSTANCE.getExportableNode_NodeParameter();
 
 		/**
 		 * The meta object literal for the '{@link sml.impl.EntityParticipantImpl <em>Entity Participant</em>}' class.
@@ -2219,32 +1988,6 @@ public interface SmlPackage extends EPackage {
 		EReference ATTRIBUTE_REFERENCE__ATTRIBUTE = eINSTANCE.getAttributeReference_Attribute();
 
 		/**
-		 * The meta object literal for the '{@link sml.impl.OperatorExpressionImpl <em>Operator Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see sml.impl.OperatorExpressionImpl
-		 * @see sml.impl.SmlPackageImpl#getOperatorExpression()
-		 * @generated
-		 */
-		EClass OPERATOR_EXPRESSION = eINSTANCE.getOperatorExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameter</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATOR_EXPRESSION__PARAMETER = eINSTANCE.getOperatorExpression_Parameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Negated</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATOR_EXPRESSION__IS_NEGATED = eINSTANCE.getOperatorExpression_IsNegated();
-
-		/**
 		 * The meta object literal for the '{@link sml.impl.ComparativeRelationImpl <em>Comparative Relation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2277,6 +2020,22 @@ public interface SmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPARATIVE_RELATION__RELATION = eINSTANCE.getComparativeRelation_Relation();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPARATIVE_RELATION__PARAMETER = eINSTANCE.getComparativeRelation_Parameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Negated</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPARATIVE_RELATION__IS_NEGATED = eINSTANCE.getComparativeRelation_IsNegated();
 
 		/**
 		 * The meta object literal for the '{@link sml.impl.LiteralImpl <em>Literal</em>}' class.
@@ -2383,40 +2142,6 @@ public interface SmlPackage extends EPackage {
 		EReference SITUATION_PARAMETER_REFERENCE__SITUATION = eINSTANCE.getSituationParameterReference_Situation();
 
 		/**
-		 * The meta object literal for the '{@link sml.impl.TemporalOperatorExpressionImpl <em>Temporal Operator Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see sml.impl.TemporalOperatorExpressionImpl
-		 * @see sml.impl.SmlPackageImpl#getTemporalOperatorExpression()
-		 * @generated
-		 */
-		EClass TEMPORAL_OPERATOR_EXPRESSION = eINSTANCE.getTemporalOperatorExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEMPORAL_OPERATOR_EXPRESSION__SOURCE = eINSTANCE.getTemporalOperatorExpression_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEMPORAL_OPERATOR_EXPRESSION__TARGET = eINSTANCE.getTemporalOperatorExpression_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEMPORAL_OPERATOR_EXPRESSION__OPERATOR = eINSTANCE.getTemporalOperatorExpression_Operator();
-
-		/**
 		 * The meta object literal for the '{@link sml.impl.ExistsSituationImpl <em>Exists Situation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2485,26 +2210,6 @@ public interface SmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAMETER__PARAMETER = eINSTANCE.getParameter_Parameter();
-
-		/**
-		 * The meta object literal for the '{@link sml.TemporalOperatorType <em>Temporal Operator Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see sml.TemporalOperatorType
-		 * @see sml.impl.SmlPackageImpl#getTemporalOperatorType()
-		 * @generated
-		 */
-		EEnum TEMPORAL_OPERATOR_TYPE = eINSTANCE.getTemporalOperatorType();
-
-		/**
-		 * The meta object literal for the '{@link sml.SituationAttributeType <em>Situation Attribute Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see sml.SituationAttributeType
-		 * @see sml.impl.SmlPackageImpl#getSituationAttributeType()
-		 * @generated
-		 */
-		EEnum SITUATION_ATTRIBUTE_TYPE = eINSTANCE.getSituationAttributeType();
 
 	}
 

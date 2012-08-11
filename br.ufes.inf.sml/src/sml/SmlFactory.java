@@ -134,15 +134,6 @@ public interface SmlFactory extends EFactory {
 	SituationParameterReference createSituationParameterReference();
 
 	/**
-	 * Returns a new object of class '<em>Temporal Operator Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Temporal Operator Expression</em>'.
-	 * @generated
-	 */
-	TemporalOperatorExpression createTemporalOperatorExpression();
-
-	/**
 	 * Returns a new object of class '<em>Exists Situation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

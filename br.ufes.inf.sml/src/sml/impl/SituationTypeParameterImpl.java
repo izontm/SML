@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import sml.ExportableNode;
 import sml.Node;
 import sml.SituationTypeParameter;
 import sml.SmlPackage;
@@ -42,7 +43,7 @@ public class SituationTypeParameterImpl extends EObjectImpl implements Situation
 	 * @generated
 	 * @ordered
 	 */
-	protected Node nodeReference;
+	protected ExportableNode nodeReference;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -88,10 +89,10 @@ public class SituationTypeParameterImpl extends EObjectImpl implements Situation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node getNodeReference() {
+	public ExportableNode getNodeReference() {
 		if (nodeReference != null && nodeReference.eIsProxy()) {
 			InternalEObject oldNodeReference = (InternalEObject)nodeReference;
-			nodeReference = (Node)eResolveProxy(oldNodeReference);
+			nodeReference = (ExportableNode)eResolveProxy(oldNodeReference);
 			if (nodeReference != oldNodeReference) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmlPackage.SITUATION_TYPE_PARAMETER__NODE_REFERENCE, oldNodeReference, nodeReference));
@@ -105,7 +106,7 @@ public class SituationTypeParameterImpl extends EObjectImpl implements Situation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node basicGetNodeReference() {
+	public ExportableNode basicGetNodeReference() {
 		return nodeReference;
 	}
 
@@ -114,8 +115,8 @@ public class SituationTypeParameterImpl extends EObjectImpl implements Situation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNodeReference(Node newNodeReference, NotificationChain msgs) {
-		Node oldNodeReference = nodeReference;
+	public NotificationChain basicSetNodeReference(ExportableNode newNodeReference, NotificationChain msgs) {
+		ExportableNode oldNodeReference = nodeReference;
 		nodeReference = newNodeReference;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmlPackage.SITUATION_TYPE_PARAMETER__NODE_REFERENCE, oldNodeReference, newNodeReference);
@@ -129,13 +130,13 @@ public class SituationTypeParameterImpl extends EObjectImpl implements Situation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNodeReference(Node newNodeReference) {
+	public void setNodeReference(ExportableNode newNodeReference) {
 		if (newNodeReference != nodeReference) {
 			NotificationChain msgs = null;
 			if (nodeReference != null)
-				msgs = ((InternalEObject)nodeReference).eInverseRemove(this, SmlPackage.NODE__NODE_PARAMETER, Node.class, msgs);
+				msgs = ((InternalEObject)nodeReference).eInverseRemove(this, SmlPackage.EXPORTABLE_NODE__NODE_PARAMETER, ExportableNode.class, msgs);
 			if (newNodeReference != null)
-				msgs = ((InternalEObject)newNodeReference).eInverseAdd(this, SmlPackage.NODE__NODE_PARAMETER, Node.class, msgs);
+				msgs = ((InternalEObject)newNodeReference).eInverseAdd(this, SmlPackage.EXPORTABLE_NODE__NODE_PARAMETER, ExportableNode.class, msgs);
 			msgs = basicSetNodeReference(newNodeReference, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -174,8 +175,8 @@ public class SituationTypeParameterImpl extends EObjectImpl implements Situation
 		switch (featureID) {
 			case SmlPackage.SITUATION_TYPE_PARAMETER__NODE_REFERENCE:
 				if (nodeReference != null)
-					msgs = ((InternalEObject)nodeReference).eInverseRemove(this, SmlPackage.NODE__NODE_PARAMETER, Node.class, msgs);
-				return basicSetNodeReference((Node)otherEnd, msgs);
+					msgs = ((InternalEObject)nodeReference).eInverseRemove(this, SmlPackage.EXPORTABLE_NODE__NODE_PARAMETER, ExportableNode.class, msgs);
+				return basicSetNodeReference((ExportableNode)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -220,7 +221,7 @@ public class SituationTypeParameterImpl extends EObjectImpl implements Situation
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SmlPackage.SITUATION_TYPE_PARAMETER__NODE_REFERENCE:
-				setNodeReference((Node)newValue);
+				setNodeReference((ExportableNode)newValue);
 				return;
 			case SmlPackage.SITUATION_TYPE_PARAMETER__NAME:
 				setName((String)newValue);
@@ -238,7 +239,7 @@ public class SituationTypeParameterImpl extends EObjectImpl implements Situation
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SmlPackage.SITUATION_TYPE_PARAMETER__NODE_REFERENCE:
-				setNodeReference((Node)null);
+				setNodeReference((ExportableNode)null);
 				return;
 			case SmlPackage.SITUATION_TYPE_PARAMETER__NAME:
 				setName(NAME_EDEFAULT);

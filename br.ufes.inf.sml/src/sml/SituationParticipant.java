@@ -38,7 +38,7 @@ public interface SituationParticipant extends Participant {
 	 * @return the value of the '<em>Situation Type</em>' reference.
 	 * @see #setSituationType(SituationType)
 	 * @see sml.SmlPackage#getSituationParticipant_SituationType()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	SituationType getSituationType();

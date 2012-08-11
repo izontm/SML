@@ -19,6 +19,8 @@ import ctx.ComparativeFormalRelation;
  *   <li>{@link sml.ComparativeRelation#getSource <em>Source</em>}</li>
  *   <li>{@link sml.ComparativeRelation#getTarget <em>Target</em>}</li>
  *   <li>{@link sml.ComparativeRelation#getRelation <em>Relation</em>}</li>
+ *   <li>{@link sml.ComparativeRelation#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link sml.ComparativeRelation#isIsNegated <em>Is Negated</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,7 +28,7 @@ import ctx.ComparativeFormalRelation;
  * @model
  * @generated
  */
-public interface ComparativeRelation extends OperatorExpression {
+public interface ComparativeRelation extends SituationTypeElement {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link sml.Node#getSourceRelation <em>Source Relation</em>}'.
@@ -40,7 +42,7 @@ public interface ComparativeRelation extends OperatorExpression {
 	 * @see #setSource(Node)
 	 * @see sml.SmlPackage#getComparativeRelation_Source()
 	 * @see sml.Node#getSourceRelation
-	 * @model opposite="sourceRelation"
+	 * @model opposite="sourceRelation" required="true"
 	 * @generated
 	 */
 	Node getSource();
@@ -68,7 +70,7 @@ public interface ComparativeRelation extends OperatorExpression {
 	 * @see #setTarget(Node)
 	 * @see sml.SmlPackage#getComparativeRelation_Target()
 	 * @see sml.Node#getTargetRelation
-	 * @model opposite="targetRelation"
+	 * @model opposite="targetRelation" required="true"
 	 * @generated
 	 */
 	Node getTarget();
@@ -108,5 +110,57 @@ public interface ComparativeRelation extends OperatorExpression {
 	 * @generated
 	 */
 	void setRelation(ComparativeFormalRelation value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameter</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameter</em>' attribute.
+	 * @see #setParameter(String)
+	 * @see sml.SmlPackage#getComparativeRelation_Parameter()
+	 * @model
+	 * @generated
+	 */
+	String getParameter();
+
+	/**
+	 * Sets the value of the '{@link sml.ComparativeRelation#getParameter <em>Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parameter</em>' attribute.
+	 * @see #getParameter()
+	 * @generated
+	 */
+	void setParameter(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Negated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Negated</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Negated</em>' attribute.
+	 * @see #setIsNegated(boolean)
+	 * @see sml.SmlPackage#getComparativeRelation_IsNegated()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsNegated();
+
+	/**
+	 * Sets the value of the '{@link sml.ComparativeRelation#isIsNegated <em>Is Negated</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Negated</em>' attribute.
+	 * @see #isIsNegated()
+	 * @generated
+	 */
+	void setIsNegated(boolean value);
 
 } // ComparativeRelation

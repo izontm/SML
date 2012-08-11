@@ -36,7 +36,7 @@ public interface SituationParameterReference extends Node {
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(SituationTypeParameter)
 	 * @see sml.SmlPackage#getSituationParameterReference_Parameter()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	SituationTypeParameter getParameter();
@@ -64,7 +64,7 @@ public interface SituationParameterReference extends Node {
 	 * @see #setSituation(SituationParticipant)
 	 * @see sml.SmlPackage#getSituationParameterReference_Situation()
 	 * @see sml.SituationParticipant#getParameter
-	 * @model opposite="parameter"
+	 * @model opposite="parameter" required="true"
 	 * @generated
 	 */
 	SituationParticipant getSituation();

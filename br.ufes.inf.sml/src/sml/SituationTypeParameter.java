@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface SituationTypeParameter extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Node Reference</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link sml.Node#getNodeParameter <em>Node Parameter</em>}'.
+	 * It is bidirectional and its opposite is '{@link sml.ExportableNode#getNodeParameter <em>Node Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Node Reference</em>' reference isn't clear,
@@ -36,13 +36,13 @@ public interface SituationTypeParameter extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Node Reference</em>' reference.
-	 * @see #setNodeReference(Node)
+	 * @see #setNodeReference(ExportableNode)
 	 * @see sml.SmlPackage#getSituationTypeParameter_NodeReference()
-	 * @see sml.Node#getNodeParameter
-	 * @model opposite="nodeParameter"
+	 * @see sml.ExportableNode#getNodeParameter
+	 * @model opposite="nodeParameter" required="true"
 	 * @generated
 	 */
-	Node getNodeReference();
+	ExportableNode getNodeReference();
 
 	/**
 	 * Sets the value of the '{@link sml.SituationTypeParameter#getNodeReference <em>Node Reference</em>}' reference.
@@ -52,7 +52,7 @@ public interface SituationTypeParameter extends EObject {
 	 * @see #getNodeReference()
 	 * @generated
 	 */
-	void setNodeReference(Node value);
+	void setNodeReference(ExportableNode value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -116,10 +116,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 				return createAttributeReferenceAdapter();
 			}
 			@Override
-			public Adapter caseOperatorExpression(OperatorExpression object) {
-				return createOperatorExpressionAdapter();
-			}
-			@Override
 			public Adapter caseComparativeRelation(ComparativeRelation object) {
 				return createComparativeRelationAdapter();
 			}
@@ -138,10 +134,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSituationParameterReference(SituationParameterReference object) {
 				return createSituationParameterReferenceAdapter();
-			}
-			@Override
-			public Adapter caseTemporalOperatorExpression(TemporalOperatorExpression object) {
-				return createTemporalOperatorExpressionAdapter();
 			}
 			@Override
 			public Adapter caseExistsSituation(ExistsSituation object) {
@@ -330,20 +322,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link sml.OperatorExpression <em>Operator Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see sml.OperatorExpression
-	 * @generated
-	 */
-	public Adapter createOperatorExpressionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link sml.ComparativeRelation <em>Comparative Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -410,20 +388,6 @@ public class SmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSituationParameterReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link sml.TemporalOperatorExpression <em>Temporal Operator Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see sml.TemporalOperatorExpression
-	 * @generated
-	 */
-	public Adapter createTemporalOperatorExpressionAdapter() {
 		return null;
 	}
 

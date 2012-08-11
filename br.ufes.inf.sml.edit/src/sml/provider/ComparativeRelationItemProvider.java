@@ -21,6 +21,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import sml.ComparativeRelation;
 import sml.SmlPackage;
 
@@ -31,7 +33,7 @@ import sml.SmlPackage;
  * @generated
  */
 public class ComparativeRelationItemProvider
-	extends OperatorExpressionItemProvider
+	extends SituationTypeElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -62,6 +64,8 @@ public class ComparativeRelationItemProvider
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addRelationPropertyDescriptor(object);
+			addParameterPropertyDescriptor(object);
+			addIsNegatedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -133,6 +137,50 @@ public class ComparativeRelationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComparativeRelation_parameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComparativeRelation_parameter_feature", "_UI_ComparativeRelation_type"),
+				 SmlPackage.Literals.COMPARATIVE_RELATION__PARAMETER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Negated feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsNegatedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComparativeRelation_isNegated_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComparativeRelation_isNegated_feature", "_UI_ComparativeRelation_type"),
+				 SmlPackage.Literals.COMPARATIVE_RELATION__IS_NEGATED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns ComparativeRelation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,6 +215,13 @@ public class ComparativeRelationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ComparativeRelation.class)) {
+			case SmlPackage.COMPARATIVE_RELATION__PARAMETER:
+			case SmlPackage.COMPARATIVE_RELATION__IS_NEGATED:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -38,7 +38,7 @@ public interface Parameter extends EObject {
 	 * @return the value of the '<em>Value</em>' reference.
 	 * @see #setValue(Node)
 	 * @see sml.SmlPackage#getParameter_Value()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Node getValue();

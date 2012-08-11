@@ -42,7 +42,7 @@ import sml.SmlPackage;
  *
  * @generated
  */
-public class FunctionImpl extends NodeImpl implements Function {
+public class FunctionImpl extends ExportableNodeImpl implements Function {
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

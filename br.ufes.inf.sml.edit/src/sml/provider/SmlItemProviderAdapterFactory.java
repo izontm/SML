@@ -352,29 +352,6 @@ public class SmlItemProviderAdapterFactory extends SmlAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link sml.TemporalOperatorExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TemporalOperatorExpressionItemProvider temporalOperatorExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link sml.TemporalOperatorExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTemporalOperatorExpressionAdapter() {
-		if (temporalOperatorExpressionItemProvider == null) {
-			temporalOperatorExpressionItemProvider = new TemporalOperatorExpressionItemProvider(this);
-		}
-
-		return temporalOperatorExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link sml.ExistsSituation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -554,7 +531,6 @@ public class SmlItemProviderAdapterFactory extends SmlAdapterFactory implements 
 		if (literalItemProvider != null) literalItemProvider.dispose();
 		if (situationParticipantItemProvider != null) situationParticipantItemProvider.dispose();
 		if (situationParameterReferenceItemProvider != null) situationParameterReferenceItemProvider.dispose();
-		if (temporalOperatorExpressionItemProvider != null) temporalOperatorExpressionItemProvider.dispose();
 		if (existsSituationItemProvider != null) existsSituationItemProvider.dispose();
 		if (functionItemProvider != null) functionItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();

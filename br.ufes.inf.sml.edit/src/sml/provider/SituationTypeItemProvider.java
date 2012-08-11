@@ -236,11 +236,6 @@ public class SituationTypeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
-				 SmlFactory.eINSTANCE.createTemporalOperatorExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SmlPackage.Literals.SITUATION_TYPE__ELEMENTS,
 				 SmlFactory.eINSTANCE.createExistsSituation()));
 
 		newChildDescriptors.add

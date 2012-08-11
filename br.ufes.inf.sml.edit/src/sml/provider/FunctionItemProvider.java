@@ -35,7 +35,7 @@ import sml.SmlPackage;
  * @generated
  */
 public class FunctionItemProvider
-	extends NodeItemProvider
+	extends ExportableNodeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
