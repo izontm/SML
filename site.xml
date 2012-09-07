@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/br.ufes.inf.sml.feature_1.0.0.201209070856.jar" id="br.ufes.inf.sml.feature" version="1.0.0.201209070856">
+      <category name="sml_category"/>
+   </feature>
+   <category-def name="sml_category" label="SML"/>
+</site>
