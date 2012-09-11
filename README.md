@@ -28,4 +28,7 @@ This project provides a set of eclipse plugins for specification and realization
 * SML example project and generated code:
   * br.inf.ufes.example
 
-This project will only provide the source code of Eclipse plugins. In order to run the editor or the transformation, you must export the plugins related to SML (br.ufes.inf.ctx.editor and br.ufes.inf.sml.editor), or run these projects as an Eclipse application.
+To install SML tools in Eclipse, use the following update site:
+`http://izontm.github.com/SML`
+
+The installation process can be seen [here](https://vimeo.com/49210820)

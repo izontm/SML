@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="resources" name="br.inf.ufes.sml.generate">
+<project default="resources" name="br.ufes.inf.sml.generate">
     <property name="ECLIPSE_HOME" value="../../../../../.."/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="br.inf.ufes.sml.generate.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/br.inf.ufes.sml.generate/bin"/>
+    <path id="br.ufes.inf.sml.generate.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/br.ufes.inf.sml.generate/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.7.0.v20110110.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.7.2.v20120110-1415.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.6.0.v20110523.jar"/>
@@ -15,10 +15,10 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.4.2.v20120111-2020.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/obeodesigner.app/Contents/MacOS/workspace/br.inf.ufes.sml/bin"/>
+        <pathelement location="${ECLIPSE_HOME}/obeodesigner.app/Contents/MacOS/workspace/br.ufes.inf.sml/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/obeodesigner.app/Contents/MacOS/workspace/br.inf.ufes.context/bin"/>
+        <pathelement location="${ECLIPSE_HOME}/obeodesigner.app/Contents/MacOS/workspace/br.ufes.inf.context/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_3.1.0.v20120206-0606.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
@@ -33,23 +33,23 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/com.google.guava_11.0.1.jar"/>
     </path>
 
-    <path id="br.inf.ufes.sml.generate.classpath">
-        <path refid="br.inf.ufes.sml.generate.libraryclasspath"/>
+    <path id="br.ufes.inf.sml.generate.classpath">
+        <path refid="br.ufes.inf.sml.generate.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="br.inf.ufes.sml.generate.libraryclasspath.alljars">
-        <pathelement location="../br.inf.ufes.sml.generate/bin"/>
+    <path id="br.ufes.inf.sml.generate.libraryclasspath.alljars">
+        <pathelement location="../br.ufes.inf.sml.generate/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="br.inf.ufes.sml.generate.classpath.alljars">
-        <path refid="br.inf.ufes.sml.generate.libraryclasspath.alljars"/>
+    <path id="br.ufes.inf.sml.generate.classpath.alljars">
+        <path refid="br.ufes.inf.sml.generate.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="resources">
-        <java classname="br.inf.ufes.br.sml.main.Resources" classpathref="br.inf.ufes.sml.generate.classpath">
+        <java classname="br.ufes.inf.br.sml.main.Resources" classpathref="br.ufes.inf.sml.generate.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -60,7 +60,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="resources.alljars">
-        <java classname="br.inf.ufes.br.sml.main.Resources" classpathref="br.inf.ufes.sml.generate.classpath">
+        <java classname="br.ufes.inf.br.sml.main.Resources" classpathref="br.ufes.inf.sml.generate.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

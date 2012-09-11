@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Sml Module Runtime Plug-in
 Bundle-SymbolicName: br.ufes.inf.sml.generate
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: br.inf.ufes.br.sml.Activator
+Bundle-Activator: br.ufes.inf.sml.generate.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
@@ -21,6 +21,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: br.inf.ufes.br.sml.main
+Export-Package: br.ufes.inf.sml.generate.main
 Import-Package: org.eclipse.uml2.uml.resource
 

@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
-Bundle-Name: br.inf.ufes.sml.design
+Bundle-Name: br.ufes.inf.sml.design
 Bundle-SymbolicName: br.ufes.inf.sml.design;singleton=true
-Bundle-Version: 1.0.0
-Bundle-Activator: br.inf.ufes.sml.design.Activator
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: br.ufes.inf.sml.design.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  fr.obeo.dsl.viewpoint,

@@ -315,7 +315,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_lZt2Ea2oEeGfP6hfFepbrQ" routing="Tree"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_lZt2Eq2oEeGfP6hfFepbrQ" fontName="Lucida Grande"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lZt2E62oEeGfP6hfFepbrQ" points="[0, 0, 319, 97]$[0, -18, 319, 79]$[-297, -18, 22, 79]$[-297, -97, 22, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lZt2E62oEeGfP6hfFepbrQ" points="[0, 0, 337, 88]$[0, -10, 337, 78]$[-316, -10, 21, 78]$[-316, -88, 21, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lZvEMK2oEeGfP6hfFepbrQ" id="(0.5,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lZvEMa2oEeGfP6hfFepbrQ" id="(0.5,1.0)"/>
           </edges>
@@ -3342,7 +3342,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_bQ6vE-J3EeGATc9Dodh5bg"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_bQ6IBOJ3EeGATc9Dodh5bg" fontName="Lucida Grande" italic="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bQ6IBeJ3EeGATc9Dodh5bg" x="207" y="-18" width="93"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bQ6IBeJ3EeGATc9Dodh5bg" x="207" y="-27" width="93"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_bQ6vFOJ3EeGATc9Dodh5bg" type="2003" element="_bOTf8OJ3EeGATc9Dodh5bg">
             <children xmi:type="notation:Node" xmi:id="_bQ7WIOJ3EeGATc9Dodh5bg" type="5007"/>
@@ -3786,7 +3786,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_bRRUaeJ3EeGATc9Dodh5bg" routing="Tree"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_bRRUauJ3EeGATc9Dodh5bg" fontName="Lucida Grande"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bRRUa-J3EeGATc9Dodh5bg" points="[0, 0, 52, 97]$[0, -81, 52, 16]$[-50, -81, 2, 16]$[-50, -97, 2, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bRRUa-J3EeGATc9Dodh5bg" points="[0, 0, -2, 97]$[0, -82, -2, 15]$[2, -82, 0, 15]$[2, -97, 0, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bRR7duJ3EeGATc9Dodh5bg" id="(0.49586776859504134,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bRR7d-J3EeGATc9Dodh5bg" id="(0.4953271028037383,1.0)"/>
           </edges>
@@ -3802,7 +3802,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_bRR7eeJ3EeGATc9Dodh5bg" routing="Tree"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_bRR7euJ3EeGATc9Dodh5bg" fontName="Lucida Grande"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bRR7e-J3EeGATc9Dodh5bg" points="[0, 0, 119, 162]$[0, -144, 119, 18]$[-113, -144, 6, 18]$[-113, -162, 6, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bRR7e-J3EeGATc9Dodh5bg" points="[-1, 0, 122, 153]$[-1, -144, 122, 9]$[-122, -144, 1, 9]$[-122, -153, 1, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bRSihuJ3EeGATc9Dodh5bg" id="(0.5,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bRSih-J3EeGATc9Dodh5bg" id="(0.49382716049382713,1.0)"/>
           </edges>

@@ -1,72 +1,68 @@
 [comment encoding = UTF-8 /]
 [module generate('http://www.eclipse.org/uml2/3.0.0/UML')]
 
-[comment query that selects the UML motel elements to be transformed into a Context model /]
-[query public isRelator(aClass : Type) : Boolean = (aClass.eContents(Stereotype)->select(s : Stereotype| s.name = 'Relator')->size() = 1) or aClass.name.contains('<<Relator>>')/]
+[comment query that defines if a class is a relator /]
+[query public isRelator(aClass : Type) : Boolean = 
+  aClass.oclIsTypeOf(Class) and aClass.getAppliedStereotypes()->select(s : Stereotype|s.name = 'Relator')->size() = 1
+/]
 
-[query public contextContent(aModel : Model) : OrderedSet(Element) =
-	aModel.eAllContents(Element)->select(
-		s : Element |
-		s.oclIsTypeOf(Association) or
-		s.oclIsTypeOf(Class) or
-		s.oclIsTypeOf(DataType) or
-		s.oclIsTypeOf(Operation)
-	)->asOrderedSet()/]
+[query public isEntity(aClass : Type) : Boolean = 
+  aClass.oclIsTypeOf(Class) and not aClass.isRelator()
+/]
 
-[comment helper template to clear the name of a class/]
-[template public cleanName(aClass : Class) post (trim())]
-[name.replaceAll('<<[^>]+>>', '')/]
-[/template]
+[query public isContextElement(element : Element) : Boolean =
+  element.oclIsTypeOf(Class)
+  or element.oclIsTypeOf(Association)
+  or element.oclIsTypeOf(DataType)
+/]
 
 [comment main template that generate a Context model (xmi format) based on a UML model and a empty SML model that refers to the this model. /]
 [template public generateElement(aModel : Model)]
 [comment @main/]
-[let content : OrderedSet(Element) = aModel.contextContent()]
+
 [file (getProperty('contextFile'), false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <ctx:ContextModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.example.org/ctx">
-	[for (aAny : Element | content)]
-		[if (aAny.oclIsTypeOf(Class))]
-			[let aClass : Class = aAny.oclAsType(Class)]
-  <elements xsi:type="ctx:[if (aClass.isRelator())]Relator[else]Entity[/if]Class" name="[aClass.cleanName()/]"[if (aClass.generalization->size()>0)] superclass="//@elements.[content->indexOf(aClass.generalization->asSequence()->first().general)-1/]"[/if] [if (aClass.isAbstract)] isAbstract="true"[/if]>
+[let content : OrderedSet(Element) = aModel.packagedElement->select(p:PackageableElement | p.isContextElement())->asOrderedSet()]
+	[for (element : Element | content)]
+		[if (element.oclIsTypeOf(Class))]
+			[let aClass : Class = element.oclAsType(Class)]
+				[if (aClass.isRelator())]
+  <elements xsi:type="ctx:RelatorClass" name="[aClass.name/]">
+				[else]
+  <elements xsi:type="ctx:EntityClass" name="[aClass.name/]"[if (aClass.generalization->size()>0)] superclass="//@elements.[content->indexOf(aClass.generalization->asSequence()->first().general)-1/]"[/if][if (aClass.isAbstract)] isAbstract="true"[/if]>
+				[/if]
 				[for (aProperty : Property | aClass.ownedAttribute)]
     <attribute name="[aProperty.name/]" datatype="//@elements.[content->indexOf(aProperty.type)-1/]"/>
 				[/for]
   </elements>
 			[/let]
 		[/if]
-		[if (aAny.oclIsTypeOf(DataType))]
-			[let aDataType : DataType = aAny.oclAsType(DataType)]
+		[if (element.oclIsTypeOf(DataType))]
+			[let aDataType : DataType = element.oclAsType(DataType)]
   <elements xsi:type="ctx:DataType" name="[aDataType.name/]"/>
 			[/let]
 		[/if]
-		[if (aAny.oclIsTypeOf(Association))]
-			[let aAssociation : Association = aAny.oclAsType(Association)]
-  <elements xsi:type="ctx:Association" name="[aAssociation.name/]" source="//@elements.[content->indexOf(aAssociation.ownedEnd->select(p:Property|p.type.isRelator())->first().type)-1/]" target="//@elements.[content->indexOf(aAssociation.ownedEnd->select(p:Property|not p.type.isRelator())->first().type)-1/]"/>
-			[/let]
-		[/if]
-	[if (aAny.oclIsTypeOf(Operation))]
-			[let aOperation : Operation = aAny.oclAsType(Operation)]
-  <elements xsi:type="ctx:QualitativeFormalRelation" name="[aOperation.name/]" datatype="//@elements.[content->indexOf(aOperation.type)-1/]">
-				[for (aParameter : Parameter | aOperation.ownedParameter->select(p:Parameter | p.direction.toString() = 'in'))]
-    <parameter name="[aParameter.name/]" datatype="//@elements.[content->indexOf(aOperation.type)-1/]"/>
-				[/for]
-  </elements>
+		[if (element.oclIsTypeOf(Association))]
+			[let aAssociation : Association = element.oclAsType(Association)]
+  <elements xsi:type="ctx:Association" name="[aAssociation.ownedEnd->select(p:Property|p.type.isEntity())->first().name/]" source="//@elements.[content->indexOf(aAssociation.ownedEnd->collect(p:Property|p.type)->select(c:Type|c.isRelator())->first())-1/]" target="//@elements.[content->indexOf(aAssociation.ownedEnd->collect(p:Property|p.type)->select(c:Type|c.isEntity())->first())-1/]"/>
 			[/let]
 		[/if]
 	[/for]
-  <elements xsi:type="ctx:ComparativeFormalRelation" name="equals"/>
-  <elements xsi:type="ctx:ComparativeFormalRelation" name="greater than"/>
-  <elements xsi:type="ctx:ComparativeFormalRelation" name="&lt;"/>
-  <elements xsi:type="ctx:ComparativeFormalRelation" name="&lt;="/>
-  <elements xsi:type="ctx:ComparativeFormalRelation" name=">="/>
+[/let]
+  <elements xsi:type="ctx:PrimitiveFormalRelation" name="equals"/>
+  <elements xsi:type="ctx:PrimitiveFormalRelation" name="greather than"/>
+  <elements xsi:type="ctx:PrimitiveFormalRelation" name="less than"/>
+  <elements xsi:type="ctx:PrimitiveFormalRelation" name="greather than or equals"/>
+  <elements xsi:type="ctx:PrimitiveFormalRelation" name="less than or equals"/>
 </ctx:ContextModel>
 [/file]
+
 [file (getProperty('smlFile'), false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <sml:SMLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sml="http://www.example.org/sml">
   <contextModel href="[getProperty('contextFile')/]#/"/>
 </sml:SMLModel>
 [/file]
-[/let]
+
 [/template]

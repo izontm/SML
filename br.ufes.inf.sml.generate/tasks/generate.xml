@@ -51,7 +51,7 @@
 
     <!-- The default task with the jars used by this project -->
     <target name="generate">
-        <java classname="br.inf.ufes.br.sml.main.Generate" classpathref="br.ufes.inf.sml.generate.classpath">
+        <java classname="br.ufes.inf.sml.generate.main.Generate" classpathref="br.ufes.inf.sml.generate.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -62,7 +62,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generate.alljars">
-        <java classname="br.inf.ufes.br.sml.main.Generate" classpathref="br.ufes.inf.sml.generate.classpath">
+        <java classname="br.ufes.inf.sml.generate.main.Generate" classpathref="br.ufes.inf.sml.generate.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
